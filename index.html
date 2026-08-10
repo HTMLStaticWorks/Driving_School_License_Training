@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CARZDRIZ</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<!-- Google Fonts: Poppins (Display/Headline) & Inter (Body/Labels) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "var(--color-inverse-surface)",
+                      "background": "var(--color-background)",
+                      "secondary-container": "var(--color-secondary-container)",
+                      "surface-container-highest": "var(--color-surface-container-highest)",
+                      "on-tertiary-fixed": "var(--color-on-tertiary-fixed)",
+                      "primary-fixed-dim": "var(--color-primary-fixed-dim)",
+                      "on-tertiary-container": "var(--color-on-tertiary-container)",
+                      "error-container": "var(--color-error-container)",
+                      "primary-fixed": "var(--color-primary-fixed)",
+                      "surface-container": "var(--color-surface-container)",
+                      "tertiary": "var(--color-tertiary)",
+                      "surface-variant": "var(--color-surface-variant)",
+                      "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)",
+                      "outline-variant": "var(--color-outline-variant)",
+                      "secondary": "var(--color-secondary)",
+                      "tertiary-container": "var(--color-tertiary-container)",
+                      "on-surface-variant": "var(--color-on-surface-variant)",
+                      "on-primary": "var(--color-on-primary)",
+                      "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)",
+                      "primary-container": "var(--color-primary-container)",
+                      "inverse-on-surface": "var(--color-inverse-on-surface)",
+                      "on-error": "var(--color-on-error)",
+                      "surface-container-lowest": "var(--color-surface-container-lowest)",
+                      "surface": "var(--color-surface)",
+                      "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)",
+                      "primary": "var(--color-primary)",
+                      "secondary-fixed-dim": "var(--color-secondary-fixed-dim)",
+                      "outline": "var(--color-outline)",
+                      "on-surface": "var(--color-on-surface)",
+                      "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)",
+                      "on-secondary": "var(--color-on-secondary)",
+                      "inverse-primary": "var(--color-inverse-primary)",
+                      "on-primary-container": "var(--color-on-primary-container)",
+                      "on-tertiary": "var(--color-on-tertiary)",
+                      "error": "var(--color-error)",
+                      "on-primary-fixed": "var(--color-on-primary-fixed)",
+                      "surface-tint": "var(--color-surface-tint)",
+                      "surface-container-high": "var(--color-surface-container-high)",
+                      "surface-bright": "var(--color-surface-bright)",
+                      "secondary-fixed": "var(--color-secondary-fixed)",
+                      "surface-dim": "var(--color-surface-dim)",
+                      "on-error-container": "var(--color-on-error-container)",
+                      "surface-container-low": "var(--color-surface-container-low)",
+                      "on-background": "var(--color-on-background)",
+                      "on-secondary-container": "var(--color-on-secondary-container)",
+                      "on-secondary-fixed": "var(--color-on-secondary-fixed)",
+                      "tertiary-fixed": "var(--color-tertiary-fixed)",
+                      "brand-teal": "var(--color-brand-teal)",
+                      "brand-orange": "var(--color-brand-orange)"
+},
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "container-max": "1280px",
+                      "unit": "4px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "xl": "48px",
+                      "2xl": "80px",
+                      "xs": "4px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Inter"],
+                      "display-lg": ["Poppins"],
+                      "body-sm": ["Inter"],
+                      "headline-lg-mobile": ["Poppins"],
+                      "headline-md": ["Poppins"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Poppins"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                      "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                      "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+:root {
+  --color-inverse-surface: #2f3032;
+  --color-background: #faf9fb;
+  --color-secondary-container: #7af5f5;
+  --color-surface-container-highest: #e3e2e4;
+  --color-on-tertiary-fixed: #291800;
+  --color-primary-fixed-dim: #b0c9e8;
+  --color-on-tertiary-container: #ad8a5a;
+  --color-error-container: #ffdad6;
+  --color-primary-fixed: #d1e4ff;
+  --color-surface-container: #efedf0;
+  --color-tertiary: #201100;
+  --color-surface-variant: #e3e2e4;
+  --color-on-tertiary-fixed-variant: #5d4119;
+  --color-outline-variant: #c3c6ce;
+  --color-secondary: #006a6a;
+  --color-tertiary-container: #3b2400;
+  --color-on-surface-variant: #43474d;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed-variant: #314863;
+  --color-primary-container: #102a43;
+  --color-inverse-on-surface: #f2f0f3;
+  --color-on-error: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface: #faf9fb;
+  --color-tertiary-fixed-dim: #e8c08c;
+  --color-primary: #00152a;
+  --color-secondary-fixed-dim: #5bd9d8;
+  --color-outline: #74777e;
+  --color-on-surface: #1b1c1e;
+  --color-on-secondary-fixed-variant: #004f4f;
+  --color-on-secondary: #ffffff;
+  --color-inverse-primary: #b0c9e8;
+  --color-on-primary-container: #7a92b0;
+  --color-on-tertiary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-on-primary-fixed: #011d35;
+  --color-surface-tint: #49607c;
+  --color-surface-container-high: #e9e8ea;
+  --color-surface-bright: #faf9fb;
+  --color-secondary-fixed: #7af5f5;
+  --color-surface-dim: #dbd9dc;
+  --color-on-error-container: #93000a;
+  --color-surface-container-low: #f4f3f5;
+  --color-on-background: #1b1c1e;
+  --color-on-secondary-container: #007070;
+  --color-on-secondary-fixed: #002020;
+  --color-tertiary-fixed: #ffddb4;
+  --color-brand-teal: #00A6A6;
+  --color-brand-orange: #FF7A3D;
+}
+.dark {
+  --color-inverse-surface: #cdcecf;
+  --color-background: #121212;
+  --color-secondary-container: #00695c;
+  --color-surface-container-highest: #1c1b1c;
+  --color-on-tertiary-fixed: #f8e4c7;
+  --color-primary-fixed-dim: #1c3049;
+  --color-on-tertiary-container: #9c805a;
+  --color-error-container: #370a06;
+  --color-primary-fixed: #061a37;
+  --color-surface-container: #1f1c20;
+  --color-tertiary: #f8e1c7;
+  --color-surface-variant: #2a2a2a;
+  --color-on-tertiary-fixed-variant: #dfc8a8;
+  --color-outline-variant: #32343a;
+  --color-secondary: #80cbc4;
+  --color-tertiary-container: #f9e6c9;
+  --color-on-surface-variant: #b0b0b0;
+  --color-on-primary: #0d47a1;
+  --color-on-primary-fixed-variant: #a0b3c9;
+  --color-primary-container: #1976d2;
+  --color-inverse-on-surface: #1f1b21;
+  --color-on-error: #1e1e1e;
+  --color-surface-container-lowest: #1e1e1e;
+  --color-surface: #1e1e1e;
+  --color-tertiary-fixed-dim: #694920;
+  --color-primary: #90caf9;
+  --color-secondary-fixed-dim: #329796;
+  --color-outline: #82848a;
+  --color-on-surface: #e0e0e0;
+  --color-on-secondary-fixed-variant: #b7f7f7;
+  --color-on-secondary: #004d40;
+  --color-inverse-primary: #1c3049;
+  --color-on-primary-container: #bbdefb;
+  --color-on-tertiary: #1e1e1e;
+  --color-error: #d45555;
+  --color-on-primary-fixed: #cfe5f8;
+  --color-surface-tint: #889ab0;
+  --color-surface-container-high: #1e1d1f;
+  --color-surface-bright: #1e1923;
+  --color-secondary-fixed: #167878;
+  --color-surface-dim: #242325;
+  --color-on-error-container: #f07a82;
+  --color-surface-container-low: #1e1c20;
+  --color-on-background: #e0e0e0;
+  --color-on-secondary-container: #b2dfdb;
+  --color-on-secondary-fixed: #c7f8f8;
+  --color-tertiary-fixed: #432807;
+  --color-brand-teal: #69eeee;
+  --color-brand-orange: #ae4413;
+}
+
+        /* removed hardcoded body bg */
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+    </style>
+</head>
+<body class="transition-colors duration-300 bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="sticky w-full top-0 z-50 bg-surface border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-gutter max-w-container-max mx-auto h-20 transition-all duration-300">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-headline-md icon-fill">directions_car</span>
+<span class="text-headline-md font-headline-md font-bold text-primary tracking-tight">CARZDRIZ</span>
+</div>
+<div class="hidden xl:flex items-center gap-lg">
+<a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="index.html">Home</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="home2.html">Home 2</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson</a>
+</div>
+<div class="flex items-center gap-md">
+<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="hidden xl:flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-wider">
+RTL
+</button>
+<button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" aria-label="Toggle Dark Mode" class="hidden xl:flex items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button id="mobile-menu-btn" aria-label="Open Menu" class="flex xl:hidden items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a class="inline-flex items-center justify-center font-label-caps text-label-caps bg-primary text-on-primary px-lg py-sm rounded-lg shadow-sm hover:shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all uppercase tracking-wider" href="register.html">Sign Up</a>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="px-gutter py-2xl max-w-container-max mx-auto overflow-hidden">
+<div class="grid md:grid-cols-2 gap-xl items-center">
+<div class="flex flex-col gap-lg z-10 text-center md:text-left items-center md:items-start">
+<div class="inline-flex items-center gap-sm bg-secondary-container/20 text-on-secondary-container px-md py-xs rounded-full w-fit border border-secondary-container/30 mx-auto md:mx-0">
+<span class="material-symbols-outlined text-[16px] icon-fill">verified</span>
+<span class="font-label-caps text-label-caps uppercase">#1 Rated Driving School</span>
+</div>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary leading-tight">
+                        Learn to Drive. <br/><span class="text-secondary">Drive With Confidence.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto md:mx-0">
+                        Professional driving lessons designed to help you become a confident, responsible, and test-ready driver. Master the road ahead with expert guidance.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-md pt-sm justify-center md:justify-start w-full sm:w-auto">
+<a class="inline-flex items-center justify-center font-label-caps text-label-caps bg-primary text-on-primary px-xl py-md rounded-lg shadow-sm hover:shadow-md hover:-translate-y-[1px] transition-all uppercase tracking-wider w-full sm:w-auto" href="#">
+                            Book a Driving Lesson
+                        </a>
+<a class="inline-flex items-center justify-center font-label-caps text-label-caps text-secondary border-2 border-secondary px-xl py-md rounded-lg hover:bg-secondary/5 transition-colors uppercase tracking-wider w-full sm:w-auto" href="#">
+                            View Lesson Packages
+                        </a>
+</div>
+</div>
+<div class="relative h-[400px] md:h-[600px] rounded-xl overflow-hidden shadow-lg border border-outline-variant/20">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent z-10 mix-blend-multiply"></div>
+<img class="absolute inset-0 w-full h-full object-cover object-top" data-alt="A professional driving instructor in a modern dual-control car, smiling encouragingly at a young female student driver behind the wheel. The setting is a bright, sunny day on a quiet suburban street. The mood is confident, safe, and educational. The lighting is natural and high-key, highlighting the modern dashboard and the professional midnight navy uniform of the instructor. Clean, premium automotive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtlLmysGiGeVVtk842RbG_rQ8BPeh2LMNrhaeIG1CXxUsGAYJJ_vbflIYbz2clB8tYxzgi7NWgRlAN2WLw8NlLiRI_Cg3HzH5JD_LzZo5iYnwGt7G2-DaeLBhTXXk8sXfUBUaFhJH2U5z8WdBvTDOj3NGsh9wI4Lb-yl-4t5Nwy0OPkRZQx62ufDav7PA-S1ybkQ8zAz-gKi6YBOq-9ZdiK7MY1XOfHEgSc0DR72YIfFpXX9S4IYFM"/>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="bg-surface text-on-surface py-xl border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-2 md:grid-cols-4 gap-lg text-center divide-x divide-outline-variant/30">
+<div class="flex flex-col gap-xs p-sm">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary">94%</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">First-Time Pass Rate</span>
+</div>
+<div class="flex flex-col gap-xs p-sm">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary">2,500+</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Students Trained</span>
+</div>
+<div class="flex flex-col gap-xs p-sm">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary">15k+</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Driving Hours Completed</span>
+</div>
+<div class="flex flex-col gap-xs p-sm border-r-0">
+<span class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-secondary">10+</span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Years Experience</span>
+</div>
+</div>
+</section>
+<!-- Packages Section (Bento Grid) -->
+<section class="py-2xl px-gutter max-w-container-max mx-auto bg-surface">
+<div class="text-center mb-xl flex flex-col items-center gap-sm">
+<h2 class="font-headline-md text-headline-md text-primary">Tailored Lesson Packages</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Whether you're starting from scratch or just need a refresher, we have a structured program designed for your success.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Starter Package -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(16,42,67,0.05)] hover:shadow-[0_4px_20px_rgba(16,42,67,0.12)] transition-shadow flex flex-col gap-md relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-1 bg-secondary opacity-20 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary text-headline-md icon-fill">sports_score</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-sm py-xs rounded text-[10px] font-bold uppercase tracking-widest">Beginner</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">Starter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">5 comprehensive lessons to build fundamental vehicle control.</p>
+</div>
+<ul class="flex flex-col gap-sm mt-auto border-t border-secondary/10 pt-md">
+<li class="flex items-center gap-sm font-body-sm text-body-sm"><span class="material-symbols-outlined text-secondary text-[18px]">check</span> Basic Maneuvers</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm"><span class="material-symbols-outlined text-secondary text-[18px]">check</span> Quiet Street Navigation</li>
+</ul>
+</div>
+<!-- Confidence Package -->
+<div class="bg-primary p-lg rounded-xl shadow-[0_4px_20px_rgba(16,42,67,0.12)] md:-translate-y-md flex flex-col gap-md relative overflow-hidden group border border-primary-container">
+<div class="absolute top-0 left-0 w-full h-1 bg-secondary-fixed"></div>
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary-fixed text-headline-md icon-fill">speed</span>
+<span class="bg-secondary text-on-secondary px-sm py-xs rounded text-[10px] font-bold uppercase tracking-widest">Most Popular</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-primary mb-xs">Confidence</h3>
+<p class="font-body-sm text-body-sm text-on-primary/80">10 lessons focused on traffic integration and defensive driving.</p>
+</div>
+<ul class="flex flex-col gap-sm mt-auto border-t border-primary-fixed-dim/20 pt-md text-on-primary">
+<li class="flex items-center gap-sm font-body-sm text-body-sm"><span class="material-symbols-outlined text-secondary-fixed text-[18px]">check</span> Urban Traffic Handling</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm"><span class="material-symbols-outlined text-secondary-fixed text-[18px]">check</span> Parallel Parking Mastery</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm"><span class="material-symbols-outlined text-secondary-fixed text-[18px]">check</span> Mock Test Prep</li>
+</ul>
+<a class="mt-sm inline-flex items-center justify-center font-label-caps text-label-caps bg-on-primary text-primary px-md py-sm rounded-lg hover:bg-surface-container-low transition-colors uppercase tracking-wider w-full" href="#">Select Package</a>
+</div>
+<div class="flex flex-col gap-md">
+<!-- Test Ready -->
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(16,42,67,0.05)] hover:shadow-[0_4px_20px_rgba(16,42,67,0.12)] transition-shadow flex flex-col gap-sm h-full relative group">
+<div class="absolute top-0 left-0 w-full h-1 bg-secondary opacity-20 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-[20px] text-primary">Test Ready</h3>
+<span class="bg-error-container text-on-error-container px-sm py-xs rounded text-[10px] font-bold uppercase tracking-widest">20 Lessons</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The complete zero-to-license program ensuring absolute readiness.</p>
+</div>
+<!-- Intensive -->
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(16,42,67,0.05)] hover:shadow-[0_4px_20px_rgba(16,42,67,0.12)] transition-shadow flex flex-col gap-sm h-full relative group">
+<div class="absolute top-0 left-0 w-full h-1 bg-secondary opacity-20 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-center">
+<h3 class="font-headline-md text-[20px] text-primary">Intensive</h3>
+<span class="material-symbols-outlined text-secondary">timer</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Accelerated daily training for rapid skill acquisition.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="bg-surface-container py-2xl px-gutter border-t border-outline-variant/20">
+<div class="max-w-container-max mx-auto">
+<div class="mb-xl flex flex-col items-start gap-sm">
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">The Apex Advantage</span>
+<h2 class="font-headline-md text-headline-md text-primary">Why Choose Us</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<div class="flex flex-col gap-md group">
+<div class="w-full h-48 rounded-xl overflow-hidden bg-surface-container-high relative mb-xs shadow-sm">
+    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Certified Instructor" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 object-top">
+</div>
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-fill text-[28px]">school</span>
+</div>
+<h4 class="font-headline-md text-[18px] text-primary">Certified Instructors</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rigorous background checks and continuous pedagogical training ensure you learn from the absolute best.</p>
+</div>
+<div class="flex flex-col gap-md group">
+<div class="w-full h-48 rounded-xl overflow-hidden bg-surface-container-high relative mb-xs shadow-sm">
+    <img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=600&q=80" alt="Modern Vehicle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+</div>
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-fill text-[28px]">directions_car</span>
+</div>
+<h4 class="font-headline-md text-[18px] text-primary">Modern Vehicles</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Train in dual-controlled, late-model cars equipped with the latest safety technology and driver assists.</p>
+</div>
+<div class="flex flex-col gap-md group">
+<div class="w-full h-48 rounded-xl overflow-hidden bg-surface-container-high relative mb-xs shadow-sm">
+    <img src="https://images.unsplash.com/photo-1512314889357-e157c22f938d?auto=format&fit=crop&w=600&q=80" alt="Flexible Scheduling Calendar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+</div>
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-fill text-[28px]">calendar_month</span>
+</div>
+<h4 class="font-headline-md text-[18px] text-primary">Flexible Scheduling</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Book lessons online 24/7 with schedules that accommodate your school, work, and personal life.</p>
+</div>
+<div class="flex flex-col gap-md group">
+<div class="w-full h-48 rounded-xl overflow-hidden bg-surface-container-high relative mb-xs shadow-sm">
+    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80" alt="Proven Results Student" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+</div>
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined icon-fill text-[28px]">trending_up</span>
+</div>
+<h4 class="font-headline-md text-[18px] text-primary">Proven Results</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Our structured curriculum is data-driven, resulting in one of the highest first-time pass rates in the region.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Fleet Showcase -->
+<section class="py-2xl px-gutter max-w-container-max mx-auto bg-surface overflow-hidden">
+<div class="text-center mb-xl flex flex-col items-center gap-sm animate-on-scroll">
+<span class="font-label-caps text-label-caps uppercase text-brand-orange tracking-widest text-[#FF7A3D]">Vehicles</span>
+<h2 class="font-headline-md text-headline-md text-primary">Our Modern Training Fleet</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Learn in comfortable, dual-controlled vehicles equipped with the latest safety features.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Car 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(16,42,67,0.05)] overflow-hidden flex flex-col animate-on-scroll delay-100">
+<div class="h-48 bg-surface-container-highest relative flex items-center justify-center overflow-hidden">
+<img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80" alt="Performance Hatchback" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+</div>
+<div class="p-lg flex flex-col gap-md">
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Performance Hatchback</h3>
+<p class="font-body-sm text-body-sm text-brand-teal text-[#00A6A6]">Automatic</p>
+</div>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Dual Control System</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> 5-Star Safety Rating</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Rearview Camera</li>
+</ul>
+</div>
+</div>
+<!-- Car 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(16,42,67,0.05)] overflow-hidden flex flex-col animate-on-scroll delay-200">
+<div class="h-48 bg-surface-container-highest relative flex items-center justify-center overflow-hidden">
+<img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="Manual Sedan" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+</div>
+<div class="p-lg flex flex-col gap-md">
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Manual Sedan</h3>
+<p class="font-body-sm text-body-sm text-brand-teal text-[#00A6A6]">Manual</p>
+</div>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Dual Control System</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Hill Start Assist</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Easy Clutch Control</li>
+</ul>
+</div>
+</div>
+<!-- Car 3 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(16,42,67,0.05)] overflow-hidden flex flex-col animate-on-scroll delay-300">
+<div class="h-48 bg-surface-container-highest relative flex items-center justify-center overflow-hidden">
+<img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Automatic SUV" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+</div>
+<div class="p-lg flex flex-col gap-md">
+<div>
+<h3 class="font-headline-md text-[20px] text-primary">Automatic SUV</h3>
+<p class="font-body-sm text-body-sm text-brand-teal text-[#00A6A6]">Automatic</p>
+</div>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Elevated Seating Position</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Advanced Blind Spot Monitoring</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> 360-Degree Camera</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Student Testimonials -->
+<section class="bg-primary-container/5 py-2xl px-gutter border-y border-outline-variant/20 overflow-hidden">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-xl flex flex-col items-center gap-sm animate-on-scroll">
+<span class="font-label-caps text-label-caps uppercase text-brand-orange tracking-widest text-[#FF7A3D]">Success Stories</span>
+<h2 class="font-headline-md text-headline-md text-primary">Hear from our Graduates</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Testimonial 1 -->
+<div class="bg-surface p-lg rounded-xl shadow-sm border border-outline-variant/20 flex flex-col gap-md animate-on-scroll delay-100 relative">
+<span class="material-symbols-outlined absolute top-lg right-lg text-4xl text-outline-variant/20">format_quote</span>
+<div class="flex items-center gap-sm text-brand-orange text-[#FF7A3D]">
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Passed first time! My instructor was incredibly patient and made me feel at ease behind the wheel. The mock tests were exactly like the real thing."</p>
+<div class="flex items-center gap-md mt-auto pt-md border-t border-outline-variant/20">
+<img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Sarah Jenkins" class="w-10 h-10 rounded-full object-cover">
+<div>
+<h4 class="font-label-caps text-[14px] text-primary">Sarah Jenkins</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Manual License</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface p-lg rounded-xl shadow-sm border border-outline-variant/20 flex flex-col gap-md animate-on-scroll delay-200 relative">
+<span class="material-symbols-outlined absolute top-lg right-lg text-4xl text-outline-variant/20">format_quote</span>
+<div class="flex items-center gap-sm text-brand-orange text-[#FF7A3D]">
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"I was so nervous to start driving in my 30s, but CARZDRIZ gave me the confidence I needed. The Intensive course was perfect for my schedule."</p>
+<div class="flex items-center gap-md mt-auto pt-md border-t border-outline-variant/20">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Michael Thompson" class="w-10 h-10 rounded-full object-cover">
+<div>
+<h4 class="font-label-caps text-[14px] text-primary">Michael Thompson</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Automatic License</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface p-lg rounded-xl shadow-sm border border-outline-variant/20 flex flex-col gap-md animate-on-scroll delay-300 relative">
+<span class="material-symbols-outlined absolute top-lg right-lg text-4xl text-outline-variant/20">format_quote</span>
+<div class="flex items-center gap-sm text-brand-orange text-[#FF7A3D]">
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+<span class="material-symbols-outlined icon-fill text-[20px]">star</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic">"Highly recommend! The cars are top-notch and the instructors really know how to break down complex maneuvers into simple steps."</p>
+<div class="flex items-center gap-md mt-auto pt-md border-t border-outline-variant/20">
+<img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Amanda Lee" class="w-10 h-10 rounded-full object-cover">
+<div>
+<h4 class="font-label-caps text-[14px] text-primary">Amanda Lee</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Refresher Course</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic FAQ -->
+<section class="py-2xl px-gutter max-w-3xl mx-auto bg-surface overflow-hidden">
+<div class="text-center mb-xl flex flex-col items-center gap-sm animate-on-scroll">
+<span class="font-label-caps text-label-caps uppercase text-brand-orange tracking-widest text-[#FF7A3D]">Got Questions?</span>
+<h2 class="font-headline-md text-headline-md text-primary">Frequently Asked Questions</h2>
+</div>
+<div class="flex flex-col gap-sm animate-on-scroll delay-100">
+<div class="border border-outline-variant/30 rounded-lg overflow-hidden bg-surface-container-lowest">
+<button class="faq-btn w-full px-lg py-md flex justify-between items-center text-left hover:bg-surface-container-low transition-colors">
+<span class="font-headline-md text-[18px] text-primary">How do I start my driving lessons?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">add</span>
+</button>
+<div class="faq-content bg-surface-container-lowest">
+<p class="px-lg pb-md font-body-sm text-body-sm text-on-surface-variant">Simply select a package from our website and book your first lesson online. You will need to hold a valid provisional driving license before your first lesson.</p>
+</div>
+</div>
+<div class="border border-outline-variant/30 rounded-lg overflow-hidden bg-surface-container-lowest">
+<button class="faq-btn w-full px-lg py-md flex justify-between items-center text-left hover:bg-surface-container-low transition-colors">
+<span class="font-headline-md text-[18px] text-primary">What documents do I need to bring?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">add</span>
+</button>
+<div class="faq-content bg-surface-container-lowest">
+<p class="px-lg pb-md font-body-sm text-body-sm text-on-surface-variant">For your first lesson, please bring your physical provisional driving license. We will also need you to share your driving license check code so we can verify your eligibility.</p>
+</div>
+</div>
+<div class="border border-outline-variant/30 rounded-lg overflow-hidden bg-surface-container-lowest">
+<button class="faq-btn w-full px-lg py-md flex justify-between items-center text-left hover:bg-surface-container-low transition-colors">
+<span class="font-headline-md text-[18px] text-primary">Can I choose my instructor?</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300">add</span>
+</button>
+<div class="faq-content bg-surface-container-lowest">
+<p class="px-lg pb-md font-body-sm text-body-sm text-on-surface-variant">Yes! You can browse our instructor profiles online and select the one you feel most comfortable with, subject to their availability in your area.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-xl px-gutter py-2xl max-w-container-max mx-auto border-b border-primary-fixed-dim/20">
+    <!-- Brand & Contact -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-on-primary text-headline-md icon-fill">directions_car</span>
+            <span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">CARZDRIZ</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-primary/70 max-w-sm">
+            Precision in every turn. Empowering the next generation of safe, confident drivers with professional instructors and modern vehicles.
+        </p>
+        <div class="flex flex-col gap-xs mt-sm">
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">location_on</span>
+                <span class="font-body-sm text-body-sm">123 Driving School Lane, Cityville, ST 12345</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">call</span>
+                <span class="font-body-sm text-body-sm">(555) 123-4567</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">mail</span>
+                <span class="font-body-sm text-body-sm">info@elitedriving.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Quick Links</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="index.html">Home</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About Us</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
+        </div>
+    </div>
+
+    <!-- Legal & Support -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Support</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="dashboard.html">Student Dashboard</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="login.html">Login</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="register.html">Sign Up</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2 lg:col-span-1">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Newsletter</h4>
+        <p class="font-body-sm text-body-sm text-on-primary/70">Subscribe for driving tips and exclusive offers.</p>
+        <form class="flex flex-col gap-sm mt-xs" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Your email address" class="w-full bg-surface text-on-surface placeholder:text-on-surface/60 border-none rounded-lg px-md py-sm font-body-sm focus:ring-2 focus:ring-secondary-fixed outline-none" required>
+            <button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider py-sm rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bottom Bar -->
+<div class="px-gutter py-md max-w-container-max mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-sm">
+    <span class="font-body-sm text-body-sm text-on-primary/50">© 2026 CARZDRIZ. All rights reserved.</span>
+    
+    <!-- Social Icons using SVG for actual brands instead of just material icons -->
+    <div class="flex gap-md opacity-80">
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Facebook">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Twitter">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Instagram">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+    </div>
+</div>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+                entry.target.classList.remove('opacity-0', 'translate-y-10');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+        el.classList.add('transition-all', 'duration-700', 'ease-out', 'opacity-0', 'translate-y-10');
+        observer.observe(el);
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.material-symbols-outlined');
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                icon.textContent = 'add';
+                icon.classList.remove('rotate-45');
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                icon.textContent = 'add';
+                icon.classList.add('rotate-45');
+            }
+        });
+    });
+});
+</script>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-surface-dim/80 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+<!-- Mobile Menu Sidebar -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 max-w-sm bg-surface z-[70] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+    <div class="p-lg flex justify-between items-center border-b border-outline-variant/30">
+        <span class="text-headline-sm font-headline-sm font-bold text-primary">Menu</span>
+        <button id="close-mobile-menu" class="text-on-surface-variant hover:text-primary p-sm rounded-full hover:bg-surface-container transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col py-md overflow-y-auto">
+        <a href="index.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Home</a>
+        <a href="home2.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Home 2</a>
+        <a href="about.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">About</a>
+        <a href="services.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Services</a>
+        <a href="instructors.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Instructors</a>
+        <a href="lesson.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Lesson</a>
+        <div class="h-px w-full bg-outline-variant/30 my-sm"></div>
+        <a href="register.html" class="px-lg py-md text-primary font-bold hover:bg-primary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Sign Up</a>
+        <a href="login.html" class="px-lg py-md text-secondary hover:bg-secondary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Login</a>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMenu() {
+            if (!mobileMenu) return;
+            mobileMenuOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.remove('opacity-0');
+                mobileMenu.classList.remove('translate-x-full');
+            }, 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeMenu() {
+            if (!mobileMenu) return;
+            mobileMenuOverlay.classList.add('opacity-0');
+            mobileMenu.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', openMenu);
+        }
+        if (closeMobileMenuBtn) {
+            closeMobileMenuBtn.addEventListener('click', closeMenu);
+        }
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMenu);
+        }
+    });
+</script>
+
+</body></html>

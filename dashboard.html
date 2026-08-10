@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CARZDRIZ - Student Dashboard</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "var(--color-inverse-surface)",
+                      "background": "var(--color-background)",
+                      "secondary-container": "var(--color-secondary-container)",
+                      "surface-container-highest": "var(--color-surface-container-highest)",
+                      "on-tertiary-fixed": "var(--color-on-tertiary-fixed)",
+                      "primary-fixed-dim": "var(--color-primary-fixed-dim)",
+                      "on-tertiary-container": "var(--color-on-tertiary-container)",
+                      "error-container": "var(--color-error-container)",
+                      "primary-fixed": "var(--color-primary-fixed)",
+                      "surface-container": "var(--color-surface-container)",
+                      "tertiary": "var(--color-tertiary)",
+                      "surface-variant": "var(--color-surface-variant)",
+                      "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)",
+                      "outline-variant": "var(--color-outline-variant)",
+                      "secondary": "var(--color-secondary)",
+                      "tertiary-container": "var(--color-tertiary-container)",
+                      "on-surface-variant": "var(--color-on-surface-variant)",
+                      "on-primary": "var(--color-on-primary)",
+                      "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)",
+                      "primary-container": "var(--color-primary-container)",
+                      "inverse-on-surface": "var(--color-inverse-on-surface)",
+                      "on-error": "var(--color-on-error)",
+                      "surface-container-lowest": "var(--color-surface-container-lowest)",
+                      "surface": "var(--color-surface)",
+                      "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)",
+                      "primary": "var(--color-primary)",
+                      "secondary-fixed-dim": "var(--color-secondary-fixed-dim)",
+                      "outline": "var(--color-outline)",
+                      "on-surface": "var(--color-on-surface)",
+                      "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)",
+                      "on-secondary": "var(--color-on-secondary)",
+                      "inverse-primary": "var(--color-inverse-primary)",
+                      "on-primary-container": "var(--color-on-primary-container)",
+                      "on-tertiary": "var(--color-on-tertiary)",
+                      "error": "var(--color-error)",
+                      "on-primary-fixed": "var(--color-on-primary-fixed)",
+                      "surface-tint": "var(--color-surface-tint)",
+                      "surface-container-high": "var(--color-surface-container-high)",
+                      "surface-bright": "var(--color-surface-bright)",
+                      "secondary-fixed": "var(--color-secondary-fixed)",
+                      "surface-dim": "var(--color-surface-dim)",
+                      "on-error-container": "var(--color-on-error-container)",
+                      "surface-container-low": "var(--color-surface-container-low)",
+                      "on-background": "var(--color-on-background)",
+                      "on-secondary-container": "var(--color-on-secondary-container)",
+                      "on-secondary-fixed": "var(--color-on-secondary-fixed)",
+                      "tertiary-fixed": "var(--color-tertiary-fixed)",
+                      "brand-teal": "var(--color-brand-teal)",
+                      "brand-orange": "var(--color-brand-orange)"
+},
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "container-max": "1280px",
+                      "unit": "4px",
+                      "md": "16px",
+                      "lg": "24px",
+                      "xl": "48px",
+                      "2xl": "80px",
+                      "xs": "4px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Poppins"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Poppins"
+                      ],
+                      "headline-md": [
+                              "Poppins"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Poppins"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "56px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "28px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "40px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+:root {
+  --color-inverse-surface: #2f3032;
+  --color-background: #faf9fb;
+  --color-secondary-container: #7af5f5;
+  --color-surface-container-highest: #e3e2e4;
+  --color-on-tertiary-fixed: #291800;
+  --color-primary-fixed-dim: #b0c9e8;
+  --color-on-tertiary-container: #ad8a5a;
+  --color-error-container: #ffdad6;
+  --color-primary-fixed: #d1e4ff;
+  --color-surface-container: #efedf0;
+  --color-tertiary: #201100;
+  --color-surface-variant: #e3e2e4;
+  --color-on-tertiary-fixed-variant: #5d4119;
+  --color-outline-variant: #c3c6ce;
+  --color-secondary: #006a6a;
+  --color-tertiary-container: #3b2400;
+  --color-on-surface-variant: #43474d;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed-variant: #314863;
+  --color-primary-container: #102a43;
+  --color-inverse-on-surface: #f2f0f3;
+  --color-on-error: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface: #faf9fb;
+  --color-tertiary-fixed-dim: #e8c08c;
+  --color-primary: #00152a;
+  --color-secondary-fixed-dim: #5bd9d8;
+  --color-outline: #74777e;
+  --color-on-surface: #1b1c1e;
+  --color-on-secondary-fixed-variant: #004f4f;
+  --color-on-secondary: #ffffff;
+  --color-inverse-primary: #b0c9e8;
+  --color-on-primary-container: #7a92b0;
+  --color-on-tertiary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-on-primary-fixed: #011d35;
+  --color-surface-tint: #49607c;
+  --color-surface-container-high: #e9e8ea;
+  --color-surface-bright: #faf9fb;
+  --color-secondary-fixed: #7af5f5;
+  --color-surface-dim: #dbd9dc;
+  --color-on-error-container: #93000a;
+  --color-surface-container-low: #f4f3f5;
+  --color-on-background: #1b1c1e;
+  --color-on-secondary-container: #007070;
+  --color-on-secondary-fixed: #002020;
+  --color-tertiary-fixed: #ffddb4;
+  --color-brand-teal: #00A6A6;
+  --color-brand-orange: #FF7A3D;
+}
+.dark {
+  --color-inverse-surface: #cdcecf;
+  --color-background: #121212;
+  --color-secondary-container: #00695c;
+  --color-surface-container-highest: #1c1b1c;
+  --color-on-tertiary-fixed: #f8e4c7;
+  --color-primary-fixed-dim: #1c3049;
+  --color-on-tertiary-container: #9c805a;
+  --color-error-container: #370a06;
+  --color-primary-fixed: #061a37;
+  --color-surface-container: #1f1c20;
+  --color-tertiary: #f8e1c7;
+  --color-surface-variant: #2a2a2a;
+  --color-on-tertiary-fixed-variant: #dfc8a8;
+  --color-outline-variant: #32343a;
+  --color-secondary: #80cbc4;
+  --color-tertiary-container: #f9e6c9;
+  --color-on-surface-variant: #b0b0b0;
+  --color-on-primary: #0d47a1;
+  --color-on-primary-fixed-variant: #a0b3c9;
+  --color-primary-container: #1976d2;
+  --color-inverse-on-surface: #1f1b21;
+  --color-on-error: #1e1e1e;
+  --color-surface-container-lowest: #1e1e1e;
+  --color-surface: #1e1e1e;
+  --color-tertiary-fixed-dim: #694920;
+  --color-primary: #90caf9;
+  --color-secondary-fixed-dim: #329796;
+  --color-outline: #82848a;
+  --color-on-surface: #e0e0e0;
+  --color-on-secondary-fixed-variant: #b7f7f7;
+  --color-on-secondary: #004d40;
+  --color-inverse-primary: #1c3049;
+  --color-on-primary-container: #bbdefb;
+  --color-on-tertiary: #1e1e1e;
+  --color-error: #d45555;
+  --color-on-primary-fixed: #cfe5f8;
+  --color-surface-tint: #889ab0;
+  --color-surface-container-high: #1e1d1f;
+  --color-surface-bright: #1e1923;
+  --color-secondary-fixed: #167878;
+  --color-surface-dim: #242325;
+  --color-on-error-container: #f07a82;
+  --color-surface-container-low: #1e1c20;
+  --color-on-background: #e0e0e0;
+  --color-on-secondary-container: #b2dfdb;
+  --color-on-secondary-fixed: #c7f8f8;
+  --color-tertiary-fixed: #432807;
+  --color-brand-teal: #69eeee;
+  --color-brand-orange: #ae4413;
+}
+
+        body {
+            background-color: #F5F8FA; /* Level 0 Flat */
+        }
+        .card-shadow {
+            box-shadow: 0 4px 20px rgba(16, 42, 67, 0.05); /* Level 1 */
+        }
+        .card-shadow-hover:hover {
+            box-shadow: 0 4px 20px rgba(16, 42, 67, 0.12); /* Level 2 */
+        }
+        .road-rule {
+            border-bottom: 1px solid rgba(0, 106, 106, 0.1);
+        }
+        .accent-orange {
+            background-color: #ff6b35; /* Signal Orange approximation if not in theme, mapping to a vibrant color if needed, but using theme tertiary-fixed-dim or similar conceptually, though the prompt specifies Signal Orange. Will use a custom class or inline style if strict to brand description, but best to stick to theme colors where possible. Using primary/secondary for main. */
+        }
+    </style>
+</head>
+<body class="transition-colors duration-300 font-body-md text-on-surface flex min-h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="bg-surface-container-low dark:bg-inverse-surface flex flex-col h-screen fixed left-0 top-0 py-lg px-md z-40 w-64 shadow-md hidden xl:flex">
+<div class="mb-xl">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">CARZDRIZ</span>
+</div>
+<div class="flex flex-col items-center mb-xl">
+<img alt="Student Portrait" class="w-20 h-20 rounded-full object-cover mb-sm shadow-sm" data-alt="A professional headshot of a young adult driving student wearing casual modern clothing, set against a clean, bright neutral background. The lighting is soft and flattering, creating a high-key, modern light-mode aesthetic consistent with a premium corporate educational platform. The mood is confident and ready to learn." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFbJAp-KWasdBlHewyWGLU_NsLxxTrl7kHH1_LIVgT4iEYGtIoEAbqdXqjgeqUqdq2I-yOOusTtcWGvNAGy2mYXyKazeKNVLEUebUMu3duZDYabaY-LIqRz2JDnrdQG6equUq4VFDUtxO3gBwiaKfLek7gTUiAPL94rl0yU1OfD6I4HIfobfAmM_O4YOjMhuJvVvvksxfs3EsKL_nLGGhuF6804zuGVigmOMQ6UNsFr3ioxNZPaK8W"/>
+<h2 class="text-body-lg font-body-lg font-bold text-primary">Welcome back, Alex</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">65% Course Completed</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active: Dashboard -->
+<a class="flex items-center px-4 py-3 bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg font-bold text-label-caps font-label-caps scale-[0.98] transition-transform" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-caps font-label-caps rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">calendar_month</span>
+                My Bookings
+            </a>
+<a class="flex items-center px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-caps font-label-caps rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">speed</span>
+                Driving Progress
+            </a>
+<a class="flex items-center px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-caps font-label-caps rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">chat_bubble</span>
+                Feedback
+            </a>
+<a class="flex items-center px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-caps font-label-caps rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">person</span>
+                Profile
+            </a>
+</nav>
+<div class="mt-auto pt-lg border-t border-outline-variant/20">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-caps text-label-caps shadow-sm hover:shadow-md transition-shadow mb-4">Book New Lesson</button>
+<a class="flex items-center px-4 py-3 text-on-surface-variant dark:text-outline-variant hover:bg-surface-container-high hover:text-on-surface transition-all text-label-caps font-label-caps rounded-lg" href="#">
+<span class="material-symbols-outlined mr-3">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 ml-0 xl:ml-64 flex flex-col min-h-screen">
+<!-- TopAppBar (Shared Component) -->
+<header class="bg-surface dark:bg-surface-dim border-b border-outline-variant/10 flat no shadows flex justify-between items-center px-lg h-16 w-full z-30 sticky top-0">
+<div class="flex items-center xl:hidden">
+<button class="text-on-surface-variant hover:bg-surface-container transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<div class="hidden xl:block">
+<h1 class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed">Student Portal</h1>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-on-surface-variant dark:text-outline-variant hover:bg-surface-container dark:hover:bg-inverse-surface transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-outline-variant hover:bg-surface-container dark:hover:bg-inverse-surface transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined">contrast</span>
+</button>
+<div class="xl:hidden">
+<img alt="User Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="A small circular avatar of a young driving student, softly lit in a modern, clean environment, reflecting a premium corporate brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3t3OOpG7VAXV3BIQCtAoCK9whfWaZObHZmmfFPvn5Bzg98I0E63bXitj4MwJAr77OJ65L4gKOxvqK2R4qZAou5S2NesRQbkXG0F6hfIlmofZ2K6Wq3A6la6Tqs6eBj4p6Xh8dyUlFrpGQu1_KgK3d1UCsmunj8ohG7rpTxiqoCbBS1UupzTX6vsLLKHfcsONfkro64JYQyWJ4sb9zj4WWoqTJJbIHBz8JXATE7b_iQOEbQUiAOYXs"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Content Canvas -->
+<main class="flex-1 p-lg md:p-2xl max-w-container-max mx-auto w-full space-y-xl">
+<!-- Greeting & Quick Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-md md:gap-lg">
+<!-- Main Welcome / Progress Banner -->
+<div class="md:col-span-4 bg-surface rounded-xl p-lg card-shadow relative overflow-hidden flex flex-col justify-between">
+<div class="absolute top-0 right-0 w-64 h-full bg-secondary/5 rounded-bl-full pointer-events-none"></div>
+<div class="text-center md:text-left">
+<h2 class="text-headline-md font-headline-md font-bold text-primary mb-2">Good morning, Alex</h2>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto md:mx-0">You're making excellent progress. Keep up the momentum on your journey to becoming a licensed driver.</p>
+</div>
+<div class="mt-xl">
+<div class="flex justify-between items-end mb-sm">
+<span class="text-label-caps font-label-caps text-secondary font-bold">18 of 30 Required Hours Completed</span>
+<span class="text-headline-md font-headline-md text-primary font-bold">60%</span>
+</div>
+<div class="w-full h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+</div>
+<!-- Summary Cards -->
+<div class="bg-surface rounded-xl p-md card-shadow card-shadow-hover transition-shadow flex items-center justify-between">
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-1">Completed Hours</p>
+<p class="text-headline-lg font-headline-lg text-primary">18<span class="text-body-md text-outline">/30</span></p>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">timer</span>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-md card-shadow card-shadow-hover transition-shadow flex items-center justify-between">
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-1">Upcoming Lessons</p>
+<p class="text-headline-lg font-headline-lg text-primary">3</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event</span>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-md card-shadow card-shadow-hover transition-shadow flex items-center justify-between">
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-1">Completed Lessons</p>
+<p class="text-headline-lg font-headline-lg text-primary">12</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+</div>
+<div class="bg-surface rounded-xl p-md card-shadow card-shadow-hover transition-shadow flex items-center justify-between">
+<div>
+<p class="text-label-caps font-label-caps text-on-surface-variant mb-1">Overall Progress</p>
+<p class="text-headline-lg font-headline-lg text-primary">60%</p>
+</div>
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim/20 flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+</div>
+</div>
+</section>
+<!-- Main Layout: 2 Columns -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg md:gap-xl">
+<!-- Left Column (Wider) -->
+<div class="lg:col-span-2 space-y-xl">
+<!-- Upcoming Lessons Table -->
+<section class="bg-surface rounded-xl p-lg card-shadow">
+<div class="flex justify-between items-center mb-md pb-sm border-b border-outline-variant/20">
+<h3 class="text-headline-md font-headline-md text-primary">Upcoming Lessons</h3>
+<button class="text-label-caps font-label-caps text-secondary font-bold hover:text-primary transition-colors flex items-center">
+                                View All <span class="material-symbols-outlined ml-1 text-[16px]">arrow_forward</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-label-caps font-label-caps text-on-surface-variant road-rule">
+<th class="py-3 px-2 font-medium">Date &amp; Time</th>
+<th class="py-3 px-2 font-medium">Instructor</th>
+<th class="py-3 px-2 font-medium">Vehicle</th>
+<th class="py-3 px-2 font-medium text-right">Status</th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md">
+<tr class="road-rule hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-2">
+<div class="font-bold text-primary">Oct 12, 2024</div>
+<div class="text-body-sm text-outline">10:00 AM - 12:00 PM</div>
+</td>
+<td class="py-4 px-2">
+<div class="flex items-center">
+<img alt="Instructor" class="w-8 h-8 rounded-full object-cover mr-2" data-alt="A small circular avatar of a professional male driving instructor wearing a dark navy polo shirt, lit with soft daylight against a clean white background, reflecting a premium corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqFkYEuccspf_nAkuF90db67AoQD8maUQJGFGg_o4aDA0bJAcxb1bmidh6BDNIjzNuw8VCzu0pgZJA4L9pVVQCFYtodUBIpq4aUiZ5zYaZqLHOv_U91kI3vUwcSt0BBbPnj5vVRNoNsgO1kRt8ArPzwiAJ6L5qgYcmxeh3Ia7hvLMKNfb1W1GfREiKF-uWm6z5tJam83VS4o9PgqICobd_HcTvh0y2GZAmi2z6SFSKTxRKXK2Rxy4P"/>
+<span>David R.</span>
+</div>
+</td>
+<td class="py-4 px-2 text-outline">Honda Civic (Auto)</td>
+<td class="py-4 px-2 text-right">
+<span class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-label-caps font-label-caps rounded-full border border-secondary/20">Confirmed</span>
+</td>
+</tr>
+<tr class="road-rule hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-2">
+<div class="font-bold text-primary">Oct 15, 2024</div>
+<div class="text-body-sm text-outline">2:00 PM - 4:00 PM</div>
+</td>
+<td class="py-4 px-2">
+<div class="flex items-center">
+<img alt="Instructor" class="w-8 h-8 rounded-full object-cover mr-2" data-alt="A small circular avatar of a professional female driving instructor wearing a neat uniform, set against a pristine white background with high-key lighting for a modern corporate look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFcGglm3BPyENLN14F0Ww0Rb8M0hq4qMoN1wp9XsD1nhYvwRLvgz6rCpJ67Mu6B__M8wMViQPHPuH66kqJDAgr2tG5p2vIIcjF2oZeQg7Lm9nc1zR_Kbe1Y9EEsenJWU9CRmYel7y_XIfFUJWNhEzpssBRMLodPWoivNioGBgRv1MHb0KAHKyYqQygqJFvbPm4r3ztgGHEhe8Vh7nrAZEe-g6eYsQKg-zJonF5MFmYI2RmcKPeo7-1"/>
+<span>Sarah M.</span>
+</div>
+</td>
+<td class="py-4 px-2 text-outline">Toyota Corolla (Manual)</td>
+<td class="py-4 px-2 text-right">
+<span class="inline-block px-3 py-1 bg-surface-container-high text-on-surface-variant text-label-caps font-label-caps rounded-full">Pending</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Instructor Feedback Cards -->
+<section class="bg-surface rounded-xl p-lg card-shadow">
+<h3 class="text-headline-md font-headline-md text-primary mb-md pb-sm border-b border-outline-variant/20">Recent Instructor Feedback</h3>
+<div class="space-y-4">
+<!-- Feedback Card 1 -->
+<div class="border border-outline-variant/30 rounded-lg p-md hover:border-secondary transition-colors">
+<div class="flex justify-between items-start mb-2">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-secondary mr-2">verified</span>
+<span class="font-bold text-primary">Lesson 12: Highway Merging</span>
+</div>
+<span class="text-label-caps font-label-caps text-outline">Oct 5, 2024</span>
+</div>
+<div class="flex items-center mb-3 text-tertiary-fixed-dim">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant">star</span>
+<span class="ml-2 text-body-sm text-on-surface-variant font-medium">4.0 / 5</span>
+</div>
+<p class="text-body-md text-on-surface-variant mb-3">"Alex showed great confidence when entering the highway today. Shoulder checks were consistent."</p>
+<div class="bg-surface-container-low p-3 rounded text-body-sm border-l-2 border-primary">
+<span class="font-bold text-primary block mb-1">Focus Area:</span>
+                                    Maintain smoother acceleration during the actual merge point. Avoid hesitant braking.
+                                </div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Narrower) -->
+<div class="space-y-xl">
+<!-- Booking Widget -->
+<section class="bg-primary text-on-primary rounded-xl p-lg card-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full pointer-events-none"></div>
+<h3 class="text-headline-md font-headline-md mb-2">Ready for your next lesson?</h3>
+<p class="text-body-sm text-on-primary/80 mb-6">Book your next slot to keep your momentum going.</p>
+<div class="space-y-3 mb-6">
+<div class="bg-primary-container p-3 rounded flex items-center justify-between">
+<span class="text-label-caps font-label-caps text-on-primary-container">Next Available:</span>
+<span class="font-bold text-primary-fixed">Oct 14, 3:00 PM</span>
+</div>
+</div>
+<button class="w-full bg-secondary text-on-secondary py-3 rounded-lg font-label-caps font-label-caps shadow-md hover:bg-secondary/90 transition-colors">
+                            Quick Book Now
+                        </button>
+</section>
+<!-- Skill Progress -->
+<section class="bg-surface rounded-xl p-lg card-shadow">
+<h3 class="text-headline-md font-headline-md text-primary mb-md pb-sm border-b border-outline-variant/20">Skill Mastery</h3>
+<div class="space-y-4">
+<!-- Skill 1 -->
+<div>
+<div class="flex justify-between text-body-sm mb-1">
+<span class="font-medium text-on-surface">Vehicle Controls</span>
+<span class="text-secondary font-bold">90%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 90%;"></div>
+</div>
+</div>
+<!-- Skill 2 -->
+<div>
+<div class="flex justify-between text-body-sm mb-1">
+<span class="font-medium text-on-surface">Steering &amp; Positioning</span>
+<span class="text-secondary font-bold">75%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Skill 3 -->
+<div>
+<div class="flex justify-between text-body-sm mb-1">
+<span class="font-medium text-on-surface">Parking Maneuvers</span>
+<span class="text-primary font-bold">40%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 40%;"></div>
+</div>
+</div>
+<!-- Skill 4 -->
+<div>
+<div class="flex justify-between text-body-sm mb-1">
+<span class="font-medium text-on-surface">Junctions &amp; Roundabouts</span>
+<span class="text-primary font-bold">50%</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+
+<footer class="bg-primary text-on-primary mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-xl px-gutter py-2xl max-w-container-max mx-auto border-b border-primary-fixed-dim/20">
+    <!-- Brand & Contact -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-on-primary text-headline-md icon-fill">directions_car</span>
+            <span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">CARZDRIZ</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-primary/70 max-w-sm">
+            Precision in every turn. Empowering the next generation of safe, confident drivers with professional instructors and modern vehicles.
+        </p>
+        <div class="flex flex-col gap-xs mt-sm">
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">location_on</span>
+                <span class="font-body-sm text-body-sm">123 Driving School Lane, Cityville, ST 12345</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">call</span>
+                <span class="font-body-sm text-body-sm">(555) 123-4567</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">mail</span>
+                <span class="font-body-sm text-body-sm">info@elitedriving.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Quick Links</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About Us</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
+        </div>
+    </div>
+
+    <!-- Legal & Support -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Support</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="dashboard.html">Student Dashboard</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="login.html">Login</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="register.html">Sign Up</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2 lg:col-span-1">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Newsletter</h4>
+        <p class="font-body-sm text-body-sm text-on-primary/70">Subscribe for driving tips and exclusive offers.</p>
+        <form class="flex flex-col gap-sm mt-xs" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Your email address" class="w-full bg-surface text-on-surface placeholder:text-on-surface/60 border-none rounded-lg px-md py-sm font-body-sm focus:ring-2 focus:ring-secondary-fixed outline-none" required>
+            <button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider py-sm rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bottom Bar -->
+<div class="px-gutter py-md max-w-container-max mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-sm">
+    <span class="font-body-sm text-body-sm text-on-primary/50">© 2026 CARZDRIZ. All rights reserved.</span>
+    
+    <!-- Social Icons using SVG for actual brands instead of just material icons -->
+    <div class="flex gap-md opacity-80">
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Facebook">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Twitter">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Instagram">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+    </div>
+</div>
+</footer>
+</body></html>

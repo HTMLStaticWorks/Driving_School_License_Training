@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Driving Lesson Packages - CARZDRIZ</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                      "inverse-surface": "var(--color-inverse-surface)",
+                      "background": "var(--color-background)",
+                      "secondary-container": "var(--color-secondary-container)",
+                      "surface-container-highest": "var(--color-surface-container-highest)",
+                      "on-tertiary-fixed": "var(--color-on-tertiary-fixed)",
+                      "primary-fixed-dim": "var(--color-primary-fixed-dim)",
+                      "on-tertiary-container": "var(--color-on-tertiary-container)",
+                      "error-container": "var(--color-error-container)",
+                      "primary-fixed": "var(--color-primary-fixed)",
+                      "surface-container": "var(--color-surface-container)",
+                      "tertiary": "var(--color-tertiary)",
+                      "surface-variant": "var(--color-surface-variant)",
+                      "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)",
+                      "outline-variant": "var(--color-outline-variant)",
+                      "secondary": "var(--color-secondary)",
+                      "tertiary-container": "var(--color-tertiary-container)",
+                      "on-surface-variant": "var(--color-on-surface-variant)",
+                      "on-primary": "var(--color-on-primary)",
+                      "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)",
+                      "primary-container": "var(--color-primary-container)",
+                      "inverse-on-surface": "var(--color-inverse-on-surface)",
+                      "on-error": "var(--color-on-error)",
+                      "surface-container-lowest": "var(--color-surface-container-lowest)",
+                      "surface": "var(--color-surface)",
+                      "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)",
+                      "primary": "var(--color-primary)",
+                      "secondary-fixed-dim": "var(--color-secondary-fixed-dim)",
+                      "outline": "var(--color-outline)",
+                      "on-surface": "var(--color-on-surface)",
+                      "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)",
+                      "on-secondary": "var(--color-on-secondary)",
+                      "inverse-primary": "var(--color-inverse-primary)",
+                      "on-primary-container": "var(--color-on-primary-container)",
+                      "on-tertiary": "var(--color-on-tertiary)",
+                      "error": "var(--color-error)",
+                      "on-primary-fixed": "var(--color-on-primary-fixed)",
+                      "surface-tint": "var(--color-surface-tint)",
+                      "surface-container-high": "var(--color-surface-container-high)",
+                      "surface-bright": "var(--color-surface-bright)",
+                      "secondary-fixed": "var(--color-secondary-fixed)",
+                      "surface-dim": "var(--color-surface-dim)",
+                      "on-error-container": "var(--color-on-error-container)",
+                      "surface-container-low": "var(--color-surface-container-low)",
+                      "on-background": "var(--color-on-background)",
+                      "on-secondary-container": "var(--color-on-secondary-container)",
+                      "on-secondary-fixed": "var(--color-on-secondary-fixed)",
+                      "tertiary-fixed": "var(--color-tertiary-fixed)",
+                      "brand-teal": "var(--color-brand-teal)",
+                      "brand-orange": "var(--color-brand-orange)"
+},
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "unit": "4px",
+                "lg": "24px",
+                "xs": "4px",
+                "md": "16px",
+                "sm": "8px",
+                "container-max": "1280px",
+                "xl": "48px",
+                "2xl": "80px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Poppins"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Poppins"
+                ],
+                "headline-lg-mobile": [
+                        "Poppins"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Poppins"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "28px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "56px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+:root {
+  --color-inverse-surface: #2f3032;
+  --color-background: #faf9fb;
+  --color-secondary-container: #7af5f5;
+  --color-surface-container-highest: #e3e2e4;
+  --color-on-tertiary-fixed: #291800;
+  --color-primary-fixed-dim: #b0c9e8;
+  --color-on-tertiary-container: #ad8a5a;
+  --color-error-container: #ffdad6;
+  --color-primary-fixed: #d1e4ff;
+  --color-surface-container: #efedf0;
+  --color-tertiary: #201100;
+  --color-surface-variant: #e3e2e4;
+  --color-on-tertiary-fixed-variant: #5d4119;
+  --color-outline-variant: #c3c6ce;
+  --color-secondary: #006a6a;
+  --color-tertiary-container: #3b2400;
+  --color-on-surface-variant: #43474d;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed-variant: #314863;
+  --color-primary-container: #102a43;
+  --color-inverse-on-surface: #f2f0f3;
+  --color-on-error: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface: #faf9fb;
+  --color-tertiary-fixed-dim: #e8c08c;
+  --color-primary: #00152a;
+  --color-secondary-fixed-dim: #5bd9d8;
+  --color-outline: #74777e;
+  --color-on-surface: #1b1c1e;
+  --color-on-secondary-fixed-variant: #004f4f;
+  --color-on-secondary: #ffffff;
+  --color-inverse-primary: #b0c9e8;
+  --color-on-primary-container: #7a92b0;
+  --color-on-tertiary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-on-primary-fixed: #011d35;
+  --color-surface-tint: #49607c;
+  --color-surface-container-high: #e9e8ea;
+  --color-surface-bright: #faf9fb;
+  --color-secondary-fixed: #7af5f5;
+  --color-surface-dim: #dbd9dc;
+  --color-on-error-container: #93000a;
+  --color-surface-container-low: #f4f3f5;
+  --color-on-background: #1b1c1e;
+  --color-on-secondary-container: #007070;
+  --color-on-secondary-fixed: #002020;
+  --color-tertiary-fixed: #ffddb4;
+  --color-brand-teal: #00A6A6;
+  --color-brand-orange: #FF7A3D;
+}
+.dark {
+  --color-inverse-surface: #cdcecf;
+  --color-background: #121212;
+  --color-secondary-container: #00695c;
+  --color-surface-container-highest: #1c1b1c;
+  --color-on-tertiary-fixed: #f8e4c7;
+  --color-primary-fixed-dim: #1c3049;
+  --color-on-tertiary-container: #9c805a;
+  --color-error-container: #370a06;
+  --color-primary-fixed: #061a37;
+  --color-surface-container: #1f1c20;
+  --color-tertiary: #f8e1c7;
+  --color-surface-variant: #2a2a2a;
+  --color-on-tertiary-fixed-variant: #dfc8a8;
+  --color-outline-variant: #32343a;
+  --color-secondary: #80cbc4;
+  --color-tertiary-container: #f9e6c9;
+  --color-on-surface-variant: #b0b0b0;
+  --color-on-primary: #0d47a1;
+  --color-on-primary-fixed-variant: #a0b3c9;
+  --color-primary-container: #1976d2;
+  --color-inverse-on-surface: #1f1b21;
+  --color-on-error: #1e1e1e;
+  --color-surface-container-lowest: #1e1e1e;
+  --color-surface: #1e1e1e;
+  --color-tertiary-fixed-dim: #694920;
+  --color-primary: #90caf9;
+  --color-secondary-fixed-dim: #329796;
+  --color-outline: #82848a;
+  --color-on-surface: #e0e0e0;
+  --color-on-secondary-fixed-variant: #b7f7f7;
+  --color-on-secondary: #004d40;
+  --color-inverse-primary: #1c3049;
+  --color-on-primary-container: #bbdefb;
+  --color-on-tertiary: #1e1e1e;
+  --color-error: #d45555;
+  --color-on-primary-fixed: #cfe5f8;
+  --color-surface-tint: #889ab0;
+  --color-surface-container-high: #1e1d1f;
+  --color-surface-bright: #1e1923;
+  --color-secondary-fixed: #167878;
+  --color-surface-dim: #242325;
+  --color-on-error-container: #f07a82;
+  --color-surface-container-low: #1e1c20;
+  --color-on-background: #e0e0e0;
+  --color-on-secondary-container: #b2dfdb;
+  --color-on-secondary-fixed: #c7f8f8;
+  --color-tertiary-fixed: #432807;
+  --color-brand-teal: #69eeee;
+  --color-brand-orange: #ae4413;
+}
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .slide-in-right.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scale-in.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="transition-colors duration-300 bg-background text-on-surface font-body-md antialiased selection:bg-secondary/30 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="sticky w-full top-0 z-50 bg-surface border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-gutter max-w-container-max mx-auto h-20 transition-all duration-300">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-headline-md icon-fill">directions_car</span>
+<span class="text-headline-md font-headline-md font-bold text-primary tracking-tight">CARZDRIZ</span>
+</div>
+<div class="hidden xl:flex items-center gap-lg">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="home2.html">Home 2</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+<a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="lesson.html">Lesson</a>
+</div>
+<div class="flex items-center gap-md">
+<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="hidden xl:flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-wider">
+RTL
+</button>
+<button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" aria-label="Toggle Dark Mode" class="hidden xl:flex items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button id="mobile-menu-btn" aria-label="Open Menu" class="flex xl:hidden items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a class="inline-flex items-center justify-center font-label-caps text-label-caps bg-primary text-on-primary px-lg py-sm rounded-lg shadow-sm hover:shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all uppercase tracking-wider" href="register.html">Sign Up</a>
+</div>
+</nav>
+<!-- Page Header -->
+<header class="pt-2xl pb-xl px-gutter bg-surface-container-low text-center">
+<div class="max-w-container-max mx-auto">
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary mb-md">Driving Lesson Packages</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">Choose the perfect path to your driver's license with our structured, professional training packages designed for every skill level.</p>
+</div>
+</header>
+<!-- Main Content -->
+<main class="py-2xl px-gutter max-w-container-max mx-auto">
+<!-- Packages Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg mb-2xl">
+<!-- Starter Package -->
+<div class="bg-surface rounded-xl p-lg border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow flex flex-col animate-on-scroll">
+<div class="mb-md">
+<span class="inline-block px-sm py-xs bg-surface-container-high text-on-surface-variant rounded-DEFAULT text-label-caps font-label-caps mb-sm">Beginner</span>
+<h3 class="text-headline-md font-headline-md text-primary">Starter</h3>
+<p class="text-display-lg font-display-lg text-primary mt-sm">$299</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Perfect for your first time behind the wheel.</p>
+</div>
+<div class="h-[1px] w-full bg-secondary/10 mb-md"></div>
+<ul class="flex-grow space-y-md mb-lg">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface">5 Lessons (1 hr each)</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface">Basic Vehicle Control</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface">Instructor Feedback</span>
+</li>
+</ul>
+<button class="w-full border-2 border-secondary text-secondary hover:bg-secondary/5 font-label-caps text-label-caps py-sm rounded-DEFAULT transition-colors">Learn More</button>
+</div>
+<!-- Confidence Package -->
+<div class="bg-surface rounded-xl p-lg border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow flex flex-col animate-on-scroll" style="transition-delay: 100ms;">
+<div class="mb-md">
+<span class="inline-block px-sm py-xs bg-surface-container-high text-on-surface-variant rounded-DEFAULT text-label-caps font-label-caps mb-sm">Intermediate</span>
+<h3 class="text-headline-md font-headline-md text-primary">Confidence</h3>
+<p class="text-display-lg font-display-lg text-primary mt-sm">$549</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Build essential road skills and awareness.</p>
+</div>
+<div class="h-[1px] w-full bg-secondary/10 mb-md"></div>
+<ul class="flex-grow space-y-md mb-lg">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface">10 Lessons (1 hr each)</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface">City &amp; Highway Driving</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface">Progress Tracking</span>
+</li>
+</ul>
+<button class="w-full border-2 border-secondary text-secondary hover:bg-secondary/5 font-label-caps text-label-caps py-sm rounded-DEFAULT transition-colors">Learn More</button>
+</div>
+<!-- Test Ready Package (Recommended) -->
+<div class="bg-surface rounded-xl p-lg border-2 border-[#FF5722] shadow-md hover:shadow-lg transition-shadow flex flex-col relative transform md:-translate-y-2 animate-on-scroll" style="transition-delay: 200ms;">
+<div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#FF5722] text-on-primary px-md py-xs rounded-full text-label-caps font-label-caps shadow-sm">Recommended</div>
+<div class="mb-md mt-sm">
+<span class="inline-block px-sm py-xs bg-[#FF5722]/10 text-[#FF5722] rounded-DEFAULT text-label-caps font-label-caps mb-sm">License Ready</span>
+<h3 class="text-headline-md font-headline-md text-primary">Test Ready</h3>
+<p class="text-display-lg font-display-lg text-primary mt-sm">$999</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Comprehensive prep to pass your test first time.</p>
+</div>
+<div class="h-[1px] w-full bg-[#FF5722]/20 mb-md"></div>
+<ul class="flex-grow space-y-md mb-lg">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-[#FF5722] text-[20px] icon-fill">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface font-medium">20 Lessons (1 hr each)</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-[#FF5722] text-[20px] icon-fill">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface font-medium">1 Mock Driving Test</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-[#FF5722] text-[20px] icon-fill">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface font-medium">Detailed Progress Tracking</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-[#FF5722] text-[20px] icon-fill">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface font-medium">Use of Car for Final Test</span>
+</li>
+</ul>
+<button class="w-full bg-[#FF5722] text-on-primary hover:bg-[#FF5722]/90 font-label-caps text-label-caps py-sm rounded-DEFAULT transition-colors shadow-sm">Book Now</button>
+</div>
+<!-- Intensive Package -->
+<div class="bg-surface rounded-xl p-lg border border-outline-variant/30 shadow-sm hover:shadow-md transition-shadow flex flex-col animate-on-scroll" style="transition-delay: 300ms;">
+<div class="mb-md">
+<span class="inline-block px-sm py-xs bg-surface-container-high text-on-surface-variant rounded-DEFAULT text-label-caps font-label-caps mb-sm">Advanced</span>
+<h3 class="text-headline-md font-headline-md text-primary">Intensive</h3>
+<p class="text-display-lg font-display-lg text-primary mt-sm">$1,499</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Accelerated learning for rapid licensing.</p>
+</div>
+<div class="h-[1px] w-full bg-secondary/10 mb-md"></div>
+<ul class="flex-grow space-y-md mb-lg">
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface">30 Lessons (Over 2-3 weeks)</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface">2 Mock Driving Tests</span>
+</li>
+<li class="flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="text-body-sm font-body-sm text-on-surface">Priority Booking Status</span>
+</li>
+</ul>
+<button class="w-full border-2 border-secondary text-secondary hover:bg-secondary/5 font-label-caps text-label-caps py-sm rounded-DEFAULT transition-colors">Learn More</button>
+</div>
+</section>
+<!-- Package Comparison Table -->
+<section class="mb-2xl slide-in-right">
+<h2 class="text-headline-md font-headline-md text-primary mb-lg text-center">Compare Packages</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse bg-surface rounded-xl overflow-hidden shadow-sm border border-outline-variant/30">
+<thead class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps border-b border-outline-variant/30">
+<tr>
+<th class="p-md border-r border-outline-variant/30">Feature</th>
+<th class="p-md text-center border-r border-outline-variant/30">Starter</th>
+<th class="p-md text-center border-r border-outline-variant/30">Confidence</th>
+<th class="p-md text-center bg-[#FF5722]/5 text-[#FF5722] border-r border-[#FF5722]/20">Test Ready</th>
+<th class="p-md text-center">Intensive</th>
+</tr>
+</thead>
+<tbody class="text-body-sm font-body-sm text-on-surface">
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest transition-colors">
+<td class="p-md font-medium border-r border-outline-variant/30">Number of Lessons</td>
+<td class="p-md text-center border-r border-outline-variant/30">5 (1 hr each)</td>
+<td class="p-md text-center border-r border-outline-variant/30">10 (1 hr each)</td>
+<td class="p-md text-center font-bold text-[#FF5722] bg-[#FF5722]/5 border-r border-[#FF5722]/20">20 (1 hr each)</td>
+<td class="p-md text-center">30 (Over 2-3 weeks)</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest transition-colors">
+<td class="p-md font-medium border-r border-outline-variant/30">Highway Training</td>
+<td class="p-md text-center border-r border-outline-variant/30"><span class="material-symbols-outlined text-outline-variant">close</span></td>
+<td class="p-md text-center border-r border-outline-variant/30"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="p-md text-center bg-[#FF5722]/5 border-r border-[#FF5722]/20"><span class="material-symbols-outlined text-[#FF5722]">check</span></td>
+<td class="p-md text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest transition-colors">
+<td class="p-md font-medium border-r border-outline-variant/30">Mock Tests</td>
+<td class="p-md text-center border-r border-outline-variant/30"><span class="material-symbols-outlined text-outline-variant">close</span></td>
+<td class="p-md text-center border-r border-outline-variant/30"><span class="material-symbols-outlined text-outline-variant">close</span></td>
+<td class="p-md text-center font-bold text-[#FF5722] bg-[#FF5722]/5 border-r border-[#FF5722]/20">1 Included</td>
+<td class="p-md text-center">2 Included</td>
+</tr>
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-lowest transition-colors">
+<td class="p-md font-medium border-r border-outline-variant/30">Insurance Discount Eligible</td>
+<td class="p-md text-center border-r border-outline-variant/30"><span class="material-symbols-outlined text-outline-variant">close</span></td>
+<td class="p-md text-center border-r border-outline-variant/30"><span class="material-symbols-outlined text-secondary">check</span></td>
+<td class="p-md text-center bg-[#FF5722]/5 border-r border-[#FF5722]/20"><span class="material-symbols-outlined text-[#FF5722]">check</span></td>
+<td class="p-md text-center"><span class="material-symbols-outlined text-secondary">check</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="p-md font-medium border-r border-outline-variant/30">Car Rental for Exam</td>
+<td class="p-md text-center border-r border-outline-variant/30">Add-on available</td>
+<td class="p-md text-center border-r border-outline-variant/30">Add-on available</td>
+<td class="p-md text-center font-bold text-[#FF5722] bg-[#FF5722]/5 border-r border-[#FF5722]/20">Included</td>
+<td class="p-md text-center">Included</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Success Stories -->
+<section class="mb-2xl animate-on-scroll">
+<h2 class="text-headline-md font-headline-md text-primary mb-lg text-center">Student Success Stories</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Testimonial 1 -->
+<div class="bg-surface rounded-xl p-lg border border-outline-variant/30 shadow-sm hover-lift flex flex-col">
+<div class="flex items-center gap-md mb-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
+<img alt="Student photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmF_1H_ynMpks3e8fZaAaLsEM5uA2nJ4Wz-db49TTeLcLVzBMhpo4RciOAwdlucvUoVeTUbbwsZ77uoQKN3dfNQ4xn62xJB9tGSxISNBsyXwZuYqXQdJvamdVwTwHpM2W16GFM_HY71S5IejISmFvaPqvOQJzBDu06FSAtFCyVTDU7S_WV28FgSa6o9xhWBylUMQ1g_2rcKsv-kXou6Ebj0HGfUgB8iF5khhaMwHvyQCw2FWU8854x"/>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Sarah Jenkins</h4>
+<span class="text-label-caps font-label-caps text-on-surface-variant">Test Ready Package</span>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface italic">"The mock test included in the Test Ready package completely calmed my nerves. I passed on my first try with zero faults! My instructor was incredibly patient."</p>
+<div class="mt-auto pt-md flex text-secondary">
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface rounded-xl p-lg border border-outline-variant/30 shadow-sm hover-lift flex flex-col">
+<div class="flex items-center gap-md mb-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
+<img alt="Student photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGAEqVQTi_-L27BMRPyJs25tbzTtmC8JBMbhrTheUik5IOcvaQegqhPzKR8QQRzV-m7P5hAcx5I-evdacMxjvJcbniS1gsRJHnpZQzmgqJ9MJSAL7uka1D35N4288zNRHRay2Pp8yuVSHyeGJMRnAZoW-uELpgDLkYwDUI6u_e23-fNcncO7qDWXWwCNXrncXUK-1nPivQZI6HZl4W0T9yPpZ4OwSIyzq-Nbqu7cAXhyEhgGcSMjDm"/>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Marcus Wright</h4>
+<span class="text-label-caps font-label-caps text-on-surface-variant">Intensive Package</span>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface italic">"I needed my license quickly for a new job. The intensive course was tough but exactly what I needed. Two weeks later, I'm fully licensed and on the road."</p>
+<div class="mt-auto pt-md flex text-secondary">
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface rounded-xl p-lg border border-outline-variant/30 shadow-sm hover-lift flex flex-col">
+<div class="flex items-center gap-md mb-md">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container-high shrink-0">
+<img alt="Student photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEPNDl0ot5McVRnyTgu7obQGh98a-9pq7gGP3QpRb6DwU97OwjYWRx1O5ncDv2c0kp_-7DwSyrVDec7BC14R8xjKF1nwv8_v_Z4Gjgt8ij-HJHjLgi8tdGAvD2N0SgBmGt0VZp64fgdB6sVGedUrrk1Sl3KnBmJ-sWeO253X6F6nsjanb-xVIraobLldnikY6oeUxXdiydiNQoBm2gveWlDlOx4dtmV9TtVmPftFCdH6QXPh6Hg1Kr"/>
+</div>
+<div>
+<h4 class="font-semibold text-primary">Elena Rodriguez</h4>
+<span class="text-label-caps font-label-caps text-on-surface-variant">Confidence Package</span>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface italic">"I was terrified of highway driving. The structured progression in this package helped me build the confidence I lacked. I actually enjoy driving now!"</p>
+<div class="mt-auto pt-md flex text-secondary">
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+<span class="material-symbols-outlined icon-fill">star</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-3xl mx-auto mt-2xl animate-on-scroll">
+<h2 class="text-headline-md font-headline-md text-primary mb-lg text-center">Frequently Asked Questions</h2>
+<div class="space-y-md">
+<!-- FAQ Item 1 -->
+<div class="bg-surface rounded-lg border border-outline-variant/30 p-md">
+<button class="faq-btn w-full flex justify-between items-center text-left focus:outline-none">
+<span class="text-body-lg font-body-lg font-semibold text-primary">How do I book my first lesson?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+<div class="mt-sm text-body-md font-body-md text-on-surface-variant">
+                        Once you select and purchase a package, you will receive an email with a link to our online booking portal where you can schedule lessons at your convenience.
+                    </div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface rounded-lg border border-outline-variant/30 p-md">
+<button class="faq-btn w-full flex justify-between items-center text-left focus:outline-none">
+<span class="text-body-lg font-body-lg font-semibold text-primary">What is your cancellation policy?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+<div class="mt-sm text-body-md font-body-md text-on-surface-variant">
+                        We require 48 hours notice for cancellations. Lessons cancelled with less than 48 hours notice may be forfeited from your package balance.
+                    </div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Banner -->
+<section class="mt-2xl mb-xl bg-primary text-on-primary rounded-xl p-xl text-center shadow-lg animate-on-scroll">
+<h2 class="text-headline-lg font-headline-lg mb-sm">Not sure which package is right for you?</h2>
+<p class="text-body-lg font-body-lg text-on-primary/80 mb-lg max-w-2xl mx-auto">Take our quick assessment quiz or speak directly with one of our instructors to find your perfect fit.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-md">
+<button class="bg-secondary text-on-primary px-lg py-sm rounded-DEFAULT font-label-caps text-label-caps hover:bg-secondary/90 transition-colors shadow-sm">Take our Level Quiz</button>
+<button class="bg-transparent border-2 border-on-primary text-on-primary px-lg py-sm rounded-DEFAULT font-label-caps text-label-caps hover:bg-on-primary/10 transition-colors">Request a Call Back</button>
+</div>
+</section>
+<!-- The Apex Guarantee Section -->
+<section class="mt-2xl mb-xl">
+<h2 class="text-headline-md font-headline-md text-primary mb-lg text-center">The Apex Guarantee: What's Included in Every Package</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<div class="bg-primary text-on-primary rounded-xl p-lg text-center hover-lift animate-on-scroll shadow-sm">
+<span class="material-symbols-outlined text-4xl text-secondary mb-md">school</span>
+<h3 class="text-body-lg font-body-lg font-semibold mb-sm">Professional Instructors</h3>
+</div>
+<div class="bg-primary text-on-primary rounded-xl p-lg text-center hover-lift animate-on-scroll shadow-sm" style="transition-delay: 100ms;">
+<span class="material-symbols-outlined text-4xl text-secondary mb-md">directions_car</span>
+<h3 class="text-body-lg font-body-lg font-semibold mb-sm">Modern Dual-Control Cars</h3>
+</div>
+<div class="bg-primary text-on-primary rounded-xl p-lg text-center hover-lift animate-on-scroll shadow-sm" style="transition-delay: 200ms;">
+<span class="material-symbols-outlined text-4xl text-secondary mb-md">shield</span>
+<h3 class="text-body-lg font-body-lg font-semibold mb-sm">Student Insurance</h3>
+</div>
+<div class="bg-primary text-on-primary rounded-xl p-lg text-center hover-lift animate-on-scroll shadow-sm" style="transition-delay: 300ms;">
+<span class="material-symbols-outlined text-4xl text-secondary mb-md">trending_up</span>
+<h3 class="text-body-lg font-body-lg font-semibold mb-sm">Digital Progress Tracking</h3>
+</div>
+</div>
+</section>
+<!-- Final Conversion Banner -->
+<section class="mt-2xl mb-2xl bg-primary text-on-primary rounded-xl p-xl text-center shadow-lg relative overflow-hidden scale-in">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-secondary via-primary to-primary"></div>
+<div class="relative z-10">
+<h2 class="text-display-lg font-display-lg mb-sm">Start Your Journey Today</h2>
+<p class="text-body-lg font-body-lg text-on-primary/80 mb-lg max-w-2xl mx-auto">Join thousands of successful drivers who earned their license with Apex.</p>
+<button class="bg-[#ff6b35] text-white px-xl py-md rounded-lg font-label-caps text-label-caps hover:bg-[#e65c2a] transition-colors shadow-md text-lg">Book Your First Lesson</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-xl px-gutter py-2xl max-w-container-max mx-auto border-b border-primary-fixed-dim/20">
+    <!-- Brand & Contact -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-on-primary text-headline-md icon-fill">directions_car</span>
+            <span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">CARZDRIZ</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-primary/70 max-w-sm">
+            Precision in every turn. Empowering the next generation of safe, confident drivers with professional instructors and modern vehicles.
+        </p>
+        <div class="flex flex-col gap-xs mt-sm">
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">location_on</span>
+                <span class="font-body-sm text-body-sm">123 Driving School Lane, Cityville, ST 12345</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">call</span>
+                <span class="font-body-sm text-body-sm">(555) 123-4567</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">mail</span>
+                <span class="font-body-sm text-body-sm">info@elitedriving.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Quick Links</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About Us</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+            <a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
+        </div>
+    </div>
+
+    <!-- Legal & Support -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Support</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="dashboard.html">Student Dashboard</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="login.html">Login</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="register.html">Sign Up</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2 lg:col-span-1">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Newsletter</h4>
+        <p class="font-body-sm text-body-sm text-on-primary/70">Subscribe for driving tips and exclusive offers.</p>
+        <form class="flex flex-col gap-sm mt-xs" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Your email address" class="w-full bg-surface text-on-surface placeholder:text-on-surface/60 border-none rounded-lg px-md py-sm font-body-sm focus:ring-2 focus:ring-secondary-fixed outline-none" required>
+            <button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider py-sm rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bottom Bar -->
+<div class="px-gutter py-md max-w-container-max mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-sm">
+    <span class="font-body-sm text-body-sm text-on-primary/50">© 2026 CARZDRIZ. All rights reserved.</span>
+    
+    <!-- Social Icons using SVG for actual brands instead of just material icons -->
+    <div class="flex gap-md opacity-80">
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Facebook">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Twitter">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Instagram">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+    </div>
+</div>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: stop observing once animated
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        document.querySelectorAll('.animate-on-scroll, .slide-in-right, .scale-in').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+</script>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-surface-dim/80 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+<!-- Mobile Menu Sidebar -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 max-w-sm bg-surface z-[70] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+    <div class="p-lg flex justify-between items-center border-b border-outline-variant/30">
+        <span class="text-headline-sm font-headline-sm font-bold text-primary">Menu</span>
+        <button id="close-mobile-menu" class="text-on-surface-variant hover:text-primary p-sm rounded-full hover:bg-surface-container transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col py-md overflow-y-auto">
+        <a href="index.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Home</a>
+        <a href="home2.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Home 2</a>
+        <a href="about.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">About</a>
+        <a href="services.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Services</a>
+        <a href="instructors.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Instructors</a>
+        <a href="lesson.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Lesson</a>
+        <div class="h-px w-full bg-outline-variant/30 my-sm"></div>
+        <a href="register.html" class="px-lg py-md text-primary font-bold hover:bg-primary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Sign Up</a>
+        <a href="login.html" class="px-lg py-md text-secondary hover:bg-secondary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Login</a>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMenu() {
+            if (!mobileMenu) return;
+            mobileMenuOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.remove('opacity-0');
+                mobileMenu.classList.remove('translate-x-full');
+            }, 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeMenu() {
+            if (!mobileMenu) return;
+            mobileMenuOverlay.classList.add('opacity-0');
+            mobileMenu.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', openMenu);
+        }
+        if (closeMobileMenuBtn) {
+            closeMobileMenuBtn.addEventListener('click', closeMenu);
+        }
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMenu);
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.material-symbols-outlined');
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                    content.style.maxHeight = '0px';
+                    icon.textContent = 'expand_more';
+                    icon.classList.remove('rotate-180');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.textContent = 'expand_less';
+                    icon.classList.add('rotate-180');
+                }
+            });
+        });
+    });
+</script>
+
+</body></html>

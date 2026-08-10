@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Apex Driving Academy - Register</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "var(--color-inverse-surface)",
+                        "background": "var(--color-background)",
+                        "secondary-container": "var(--color-secondary-container)",
+                        "surface-container-highest": "var(--color-surface-container-highest)",
+                        "on-tertiary-fixed": "var(--color-on-tertiary-fixed)",
+                        "primary-fixed-dim": "var(--color-primary-fixed-dim)",
+                        "on-tertiary-container": "var(--color-on-tertiary-container)",
+                        "error-container": "var(--color-error-container)",
+                        "primary-fixed": "var(--color-primary-fixed)",
+                        "surface-container": "var(--color-surface-container)",
+                        "tertiary": "var(--color-tertiary)",
+                        "surface-variant": "var(--color-surface-variant)",
+                        "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)",
+                        "outline-variant": "var(--color-outline-variant)",
+                        "secondary": "var(--color-secondary)",
+                        "tertiary-container": "var(--color-tertiary-container)",
+                        "on-surface-variant": "var(--color-on-surface-variant)",
+                        "on-primary": "var(--color-on-primary)",
+                        "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)",
+                        "primary-container": "var(--color-primary-container)",
+                        "inverse-on-surface": "var(--color-inverse-on-surface)",
+                        "on-error": "var(--color-on-error)",
+                        "surface-container-lowest": "var(--color-surface-container-lowest)",
+                        "surface": "var(--color-surface)",
+                        "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)",
+                        "primary": "var(--color-primary)",
+                        "secondary-fixed-dim": "var(--color-secondary-fixed-dim)",
+                        "outline": "var(--color-outline)",
+                        "on-surface": "var(--color-on-surface)",
+                        "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)",
+                        "on-secondary": "var(--color-on-secondary)",
+                        "inverse-primary": "var(--color-inverse-primary)",
+                        "on-primary-container": "var(--color-on-primary-container)",
+                        "on-tertiary": "var(--color-on-tertiary)",
+                        "error": "var(--color-error)",
+                        "on-primary-fixed": "var(--color-on-primary-fixed)",
+                        "surface-tint": "var(--color-surface-tint)",
+                        "surface-container-high": "var(--color-surface-container-high)",
+                        "surface-bright": "var(--color-surface-bright)",
+                        "secondary-fixed": "var(--color-secondary-fixed)",
+                        "surface-dim": "var(--color-surface-dim)",
+                        "on-error-container": "var(--color-on-error-container)",
+                        "surface-container-low": "var(--color-surface-container-low)",
+                        "on-background": "var(--color-on-background)",
+                        "on-secondary-container": "var(--color-on-secondary-container)",
+                        "on-secondary-fixed": "var(--color-on-secondary-fixed)",
+                        "tertiary-fixed": "var(--color-tertiary-fixed)",
+                        "brand-teal": "var(--color-brand-teal)",
+                        "brand-orange": "var(--color-brand-orange)"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "2xl": "80px",
+                        "xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Poppins", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "headline-lg": ["Poppins", "sans-serif"],
+                        "label-caps": ["Inter", "sans-serif"],
+                        "headline-lg-mobile": ["Poppins", "sans-serif"],
+                        "body-sm": ["Inter", "sans-serif"],
+                        "display-lg": ["Poppins", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    },
+                    "boxShadow": {
+                        "level1": "0 4px 20px rgba(16, 42, 67, 0.05)",
+                        "level2": "0 8px 30px rgba(16, 42, 67, 0.12)"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --color-inverse-surface: #2f3032;
+            --color-background: #faf9fb;
+            --color-secondary-container: #7af5f5;
+            --color-surface-container-highest: #e3e2e4;
+            --color-on-tertiary-fixed: #291800;
+            --color-primary-fixed-dim: #b0c9e8;
+            --color-on-tertiary-container: #ad8a5a;
+            --color-error-container: #ffdad6;
+            --color-primary-fixed: #d1e4ff;
+            --color-surface-container: #efedf0;
+            --color-tertiary: #201100;
+            --color-surface-variant: #e3e2e4;
+            --color-on-tertiary-fixed-variant: #5d4119;
+            --color-outline-variant: #c3c6ce;
+            --color-secondary: #006a6a;
+            --color-tertiary-container: #3b2400;
+            --color-on-surface-variant: #43474d;
+            --color-on-primary: #ffffff;
+            --color-on-primary-fixed-variant: #314863;
+            --color-primary-container: #102a43;
+            --color-inverse-on-surface: #f2f0f3;
+            --color-on-error: #ffffff;
+            --color-surface-container-lowest: #ffffff;
+            --color-surface: #faf9fb;
+            --color-tertiary-fixed-dim: #e8c08c;
+            --color-primary: #00152a;
+            --color-secondary-fixed-dim: #5bd9d8;
+            --color-outline: #74777e;
+            --color-on-surface: #1b1c1e;
+            --color-on-secondary-fixed-variant: #004f4f;
+            --color-on-secondary: #ffffff;
+            --color-inverse-primary: #b0c9e8;
+            --color-on-primary-container: #7a92b0;
+            --color-on-tertiary: #ffffff;
+            --color-error: #ba1a1a;
+            --color-on-primary-fixed: #011d35;
+            --color-surface-tint: #49607c;
+            --color-surface-container-high: #e9e8ea;
+            --color-surface-bright: #faf9fb;
+            --color-secondary-fixed: #7af5f5;
+            --color-surface-dim: #dbd9dc;
+            --color-on-error-container: #93000a;
+            --color-surface-container-low: #f4f3f5;
+            --color-on-background: #1b1c1e;
+            --color-on-secondary-container: #007070;
+            --color-on-secondary-fixed: #002020;
+            --color-tertiary-fixed: #ffddb4;
+            --color-brand-teal: #00A6A6;
+            --color-brand-orange: #FF7A3D;
+        }
+
+        .dark {
+            --color-inverse-surface: #cdcecf;
+            --color-background: #121212;
+            --color-secondary-container: #00695c;
+            --color-surface-container-highest: #1c1b1c;
+            --color-on-tertiary-fixed: #f8e4c7;
+            --color-primary-fixed-dim: #1c3049;
+            --color-on-tertiary-container: #9c805a;
+            --color-error-container: #370a06;
+            --color-primary-fixed: #061a37;
+            --color-surface-container: #1f1c20;
+            --color-tertiary: #f8e1c7;
+            --color-surface-variant: #2a2a2a;
+            --color-on-tertiary-fixed-variant: #dfc8a8;
+            --color-outline-variant: #32343a;
+            --color-secondary: #80cbc4;
+            --color-tertiary-container: #f9e6c9;
+            --color-on-surface-variant: #b0b0b0;
+            --color-on-primary: #0d47a1;
+            --color-on-primary-fixed-variant: #a0b3c9;
+            --color-primary-container: #1976d2;
+            --color-inverse-on-surface: #1f1b21;
+            --color-on-error: #1e1e1e;
+            --color-surface-container-lowest: #1e1e1e;
+            --color-surface: #1e1e1e;
+            --color-tertiary-fixed-dim: #694920;
+            --color-primary: #90caf9;
+            --color-secondary-fixed-dim: #329796;
+            --color-outline: #82848a;
+            --color-on-surface: #e0e0e0;
+            --color-on-secondary-fixed-variant: #b7f7f7;
+            --color-on-secondary: #004d40;
+            --color-inverse-primary: #1c3049;
+            --color-on-primary-container: #bbdefb;
+            --color-on-tertiary: #1e1e1e;
+            --color-error: #d45555;
+            --color-on-primary-fixed: #cfe5f8;
+            --color-surface-tint: #889ab0;
+            --color-surface-container-high: #1e1d1f;
+            --color-surface-bright: #1e1923;
+            --color-secondary-fixed: #167878;
+            --color-surface-dim: #242325;
+            --color-on-error-container: #f07a82;
+            --color-surface-container-low: #1e1c20;
+            --color-on-background: #e0e0e0;
+            --color-on-secondary-container: #b2dfdb;
+            --color-on-secondary-fixed: #c7f8f8;
+            --color-tertiary-fixed: #432807;
+            --color-brand-teal: #69eeee;
+            --color-brand-orange: #ae4413;
+        }
+
+        .stagger-anim {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.5s ease-out forwards;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .anim-delay-1 {
+            animation-delay: 0.1s;
+        }
+
+        .anim-delay-2 {
+            animation-delay: 0.2s;
+        }
+
+        .anim-delay-3 {
+            animation-delay: 0.3s;
+        }
+
+        .anim-delay-4 {
+            animation-delay: 0.4s;
+        }
+
+        .anim-delay-5 {
+            animation-delay: 0.5s;
+        }
+
+        .anim-delay-6 {
+            animation-delay: 0.6s;
+        }
+
+        .strength-meter-fill {
+            transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+    </style>
+</head>
+
+<body
+    class="transition-colors duration-300 bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased">
+    <!-- Split Screen Layout -->
+    <div class="flex flex-1 flex-col w-full h-screen overflow-hidden relative">
+        <!-- Theme & RTL Toggles -->
+        <div class="absolute top-4 right-4 flex items-center gap-sm z-50">
+            <button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-wider p-sm">
+                RTL
+            </button>
+            <button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" aria-label="Toggle Dark Mode" class="flex items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+                <span class="material-symbols-outlined">dark_mode</span>
+            </button>
+        </div>
+        <!-- Left Side: Image / Branding (Hidden on mobile) -->
+        <!-- Right Side: Registration Form -->
+        <div class="flex-1 flex flex-col justify-center px-lg py-xl sm:px-2xl bg-surface relative overflow-y-auto">
+            <div class="w-full max-w-[480px] mx-auto">
+                <!-- Logo -->
+                <div class="mb-xl text-center stagger-anim">
+                    <a href="index.html" class="hover:opacity-80 transition-opacity flex flex-col items-center">
+                        <div class="w-16 h-16 rounded-xl bg-secondary flex items-center justify-center text-on-secondary shadow-md mb-sm">
+                            <span class="material-symbols-outlined icon-fill text-[32px]">directions_car</span>
+                        </div>
+                        <h2 class="text-3xl md:text-4xl text-primary font-bold tracking-tight">CARZDRIZ</h2>
+                    </a>
+                </div>
+                <!-- Header -->
+                <div class="mb-lg stagger-anim anim-delay-1 text-center">
+                    <h2
+                        class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-sm">
+                        Create Account</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Register to start your premium driver
+                        training.</p>
+                </div>
+                <!-- Form -->
+                <form class="space-y-md w-full">
+                    <!-- Full Name -->
+                    <div class="stagger-anim anim-delay-2">
+                        <label class="block font-body-sm text-body-sm text-on-surface mb-xs" for="fullName">Full
+                            Name</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">person</span>
+                            <input
+                                class="w-full pl-xl pr-sm py-sm bg-surface-container-lowest border border-[#D9E2EC] rounded focus:border-secondary focus:border-2 focus:ring-0 font-body-md text-body-md text-on-surface transition-colors"
+                                id="fullName" name="fullName" placeholder="John Doe" type="text">
+                        </div>
+                    </div>
+                    <!-- Email Address -->
+                    <div class="stagger-anim anim-delay-3">
+                        <label class="block font-body-sm text-body-sm text-on-surface mb-xs" for="email">Email
+                            Address</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">mail</span>
+                            <input
+                                class="w-full pl-xl pr-sm py-sm bg-surface-container-lowest border border-[#D9E2EC] rounded focus:border-secondary focus:border-2 focus:ring-0 font-body-md text-body-md text-on-surface transition-colors"
+                                id="email" name="email" placeholder="john@example.com" type="email">
+                        </div>
+                    </div>
+                    <!-- Phone Number -->
+                    <div class="stagger-anim anim-delay-4">
+                        <label class="block font-body-sm text-body-sm text-on-surface mb-xs" for="phone">Phone
+                            Number</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">phone</span>
+                            <input
+                                class="w-full pl-xl pr-sm py-sm bg-surface-container-lowest border border-[#D9E2EC] rounded focus:border-secondary focus:border-2 focus:ring-0 font-body-md text-body-md text-on-surface transition-colors"
+                                id="phone" name="phone" placeholder="(555) 000-0000" type="tel">
+                        </div>
+                    </div>
+                    <!-- Password -->
+                    <div class="stagger-anim anim-delay-5">
+                        <label class="block font-body-sm text-body-sm text-on-surface mb-xs" for="password">Create
+                            Password</label>
+                        <div class="relative mb-xs">
+                            <span
+                                class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">lock</span>
+                            <input
+                                class="w-full pl-xl pr-xl py-sm bg-surface-container-lowest border border-[#D9E2EC] rounded focus:border-secondary focus:border-2 focus:ring-0 font-body-md text-body-md text-on-surface transition-colors"
+                                id="password" name="password" placeholder="••••••••" type="password">
+                            <button
+                                class="absolute right-sm top-1/2 -translate-y-1/2 text-outline hover:text-on-surface"
+                                onclick="togglePassword('password')" type="button">
+                                <span class="material-symbols-outlined text-[20px]" id="password-icon">visibility</span>
+                            </button>
+                        </div>
+                        <!-- Password Strength Meter -->
+                        <div class="w-full h-1 bg-surface-variant rounded-full overflow-hidden mt-2">
+                            <div class="h-full w-0 bg-error strength-meter-fill" id="strength-bar"></div>
+                        </div>
+                        <p class="font-body-sm text-xs text-on-surface-variant mt-1" id="strength-text">Too weak</p>
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="stagger-anim anim-delay-6">
+                        <label class="block font-body-sm text-body-sm text-on-surface mb-xs"
+                            for="confirmPassword">Confirm Password</label>
+                        <div class="relative">
+                            <span
+                                class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-outline">lock</span>
+                            <input
+                                class="w-full pl-xl pr-xl py-sm bg-surface-container-lowest border border-[#D9E2EC] rounded focus:border-secondary focus:border-2 focus:ring-0 font-body-md text-body-md text-on-surface transition-colors"
+                                id="confirmPassword" name="confirmPassword" placeholder="••••••••" type="password">
+                        </div>
+                    </div>
+                    <!-- Terms Checkbox -->
+                    <div class="flex items-start stagger-anim anim-delay-6 mt-md">
+                        <div class="flex items-center h-5">
+                            <input
+                                class="h-4 w-4 rounded border-outline text-secondary focus:ring-secondary focus:ring-2"
+                                id="terms" name="terms" type="checkbox">
+                        </div>
+                        <div class="ml-3 text-sm">
+                            <label class="font-body-sm text-body-sm text-on-surface-variant" for="terms">
+                                I accept the <a
+                                    class="font-semibold text-primary hover:text-secondary transition-colors underline"
+                                    href="#">Terms of Service</a> and <a
+                                    class="font-semibold text-primary hover:text-secondary transition-colors underline"
+                                    href="#">Privacy Policy</a>.
+                            </label>
+                        </div>
+                    </div>
+                    <!-- Submit Button -->
+                    <div class="pt-sm stagger-anim anim-delay-6">
+                        <button
+                            class="w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg bg-[#ff6b35] text-white font-body-sm text-body-sm font-semibold shadow-sm hover:shadow-md hover:bg-[#e65c2a] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ff6b35] active:scale-[0.98]"
+                            type="submit">
+                            Create Account
+                        </button>
+                    </div>
+                </form>
+                <!-- Login Link -->
+                <div class="mt-lg text-center stagger-anim anim-delay-6">
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Already have an account?
+                        <a class="font-semibold text-secondary hover:text-primary transition-colors" href="login.html">Log in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(inputId + '-icon');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = 'visibility_off';
+            } else {
+                input.type = 'password';
+                icon.textContent = 'visibility';
+            }
+        }
+        // Simple Password Strength Demo
+        const passwordInput = document.getElementById('password');
+        const strengthBar = document.getElementById('strength-bar');
+        const strengthText = document.getElementById('strength-text');
+        passwordInput.addEventListener('input', function () {
+            const val = this.value;
+            let strength = 0;
+            if (val.length > 0) strength += 1;
+            if (val.length >= 8) strength += 1;
+            if (/[A-Z]/.test(val)) strength += 1;
+            if (/[0-9]/.test(val)) strength += 1;
+            if (/[^A-Za-z0-9]/.test(val)) strength += 1;
+            if (val.length === 0) {
+                strengthBar.style.width = '0%';
+                strengthText.textContent = '';
+            } else if (strength <= 2) {
+                strengthBar.style.width = '33%';
+                strengthBar.className = 'h-full bg-error strength-meter-fill';
+                strengthText.textContent = 'Weak';
+                strengthText.className = 'font-body-sm text-xs text-error mt-1';
+            } else if (strength <= 4) {
+                strengthBar.style.width = '66%';
+                strengthBar.className = 'h-full bg-[#f59e0b] strength-meter-fill'; // Amber for medium
+                strengthText.textContent = 'Good';
+                strengthText.className = 'font-body-sm text-xs text-[#f59e0b] mt-1';
+            } else {
+                strengthBar.style.width = '100%';
+                strengthBar.className = 'h-full bg-secondary strength-meter-fill';
+                strengthText.textContent = 'Strong';
+                strengthText.className = 'font-body-sm text-xs text-secondary mt-1';
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,688 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Login - Apex Driving Academy</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                      "inverse-surface": "var(--color-inverse-surface)",
+                      "background": "var(--color-background)",
+                      "secondary-container": "var(--color-secondary-container)",
+                      "surface-container-highest": "var(--color-surface-container-highest)",
+                      "on-tertiary-fixed": "var(--color-on-tertiary-fixed)",
+                      "primary-fixed-dim": "var(--color-primary-fixed-dim)",
+                      "on-tertiary-container": "var(--color-on-tertiary-container)",
+                      "error-container": "var(--color-error-container)",
+                      "primary-fixed": "var(--color-primary-fixed)",
+                      "surface-container": "var(--color-surface-container)",
+                      "tertiary": "var(--color-tertiary)",
+                      "surface-variant": "var(--color-surface-variant)",
+                      "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)",
+                      "outline-variant": "var(--color-outline-variant)",
+                      "secondary": "var(--color-secondary)",
+                      "tertiary-container": "var(--color-tertiary-container)",
+                      "on-surface-variant": "var(--color-on-surface-variant)",
+                      "on-primary": "var(--color-on-primary)",
+                      "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)",
+                      "primary-container": "var(--color-primary-container)",
+                      "inverse-on-surface": "var(--color-inverse-on-surface)",
+                      "on-error": "var(--color-on-error)",
+                      "surface-container-lowest": "var(--color-surface-container-lowest)",
+                      "surface": "var(--color-surface)",
+                      "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)",
+                      "primary": "var(--color-primary)",
+                      "secondary-fixed-dim": "var(--color-secondary-fixed-dim)",
+                      "outline": "var(--color-outline)",
+                      "on-surface": "var(--color-on-surface)",
+                      "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)",
+                      "on-secondary": "var(--color-on-secondary)",
+                      "inverse-primary": "var(--color-inverse-primary)",
+                      "on-primary-container": "var(--color-on-primary-container)",
+                      "on-tertiary": "var(--color-on-tertiary)",
+                      "error": "var(--color-error)",
+                      "on-primary-fixed": "var(--color-on-primary-fixed)",
+                      "surface-tint": "var(--color-surface-tint)",
+                      "surface-container-high": "var(--color-surface-container-high)",
+                      "surface-bright": "var(--color-surface-bright)",
+                      "secondary-fixed": "var(--color-secondary-fixed)",
+                      "surface-dim": "var(--color-surface-dim)",
+                      "on-error-container": "var(--color-on-error-container)",
+                      "surface-container-low": "var(--color-surface-container-low)",
+                      "on-background": "var(--color-on-background)",
+                      "on-secondary-container": "var(--color-on-secondary-container)",
+                      "on-secondary-fixed": "var(--color-on-secondary-fixed)",
+                      "tertiary-fixed": "var(--color-tertiary-fixed)",
+                      "brand-teal": "var(--color-brand-teal)",
+                      "brand-orange": "var(--color-brand-orange)"
+},
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "2xl": "80px",
+                        "xl": "48px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Poppins"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Poppins"],
+                        "label-caps": ["Inter"],
+                        "headline-lg-mobile": ["Poppins"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+:root {
+  --color-inverse-surface: #2f3032;
+  --color-background: #faf9fb;
+  --color-secondary-container: #7af5f5;
+  --color-surface-container-highest: #e3e2e4;
+  --color-on-tertiary-fixed: #291800;
+  --color-primary-fixed-dim: #b0c9e8;
+  --color-on-tertiary-container: #ad8a5a;
+  --color-error-container: #ffdad6;
+  --color-primary-fixed: #d1e4ff;
+  --color-surface-container: #efedf0;
+  --color-tertiary: #201100;
+  --color-surface-variant: #e3e2e4;
+  --color-on-tertiary-fixed-variant: #5d4119;
+  --color-outline-variant: #c3c6ce;
+  --color-secondary: #006a6a;
+  --color-tertiary-container: #3b2400;
+  --color-on-surface-variant: #43474d;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed-variant: #314863;
+  --color-primary-container: #102a43;
+  --color-inverse-on-surface: #f2f0f3;
+  --color-on-error: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface: #faf9fb;
+  --color-tertiary-fixed-dim: #e8c08c;
+  --color-primary: #00152a;
+  --color-secondary-fixed-dim: #5bd9d8;
+  --color-outline: #74777e;
+  --color-on-surface: #1b1c1e;
+  --color-on-secondary-fixed-variant: #004f4f;
+  --color-on-secondary: #ffffff;
+  --color-inverse-primary: #b0c9e8;
+  --color-on-primary-container: #7a92b0;
+  --color-on-tertiary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-on-primary-fixed: #011d35;
+  --color-surface-tint: #49607c;
+  --color-surface-container-high: #e9e8ea;
+  --color-surface-bright: #faf9fb;
+  --color-secondary-fixed: #7af5f5;
+  --color-surface-dim: #dbd9dc;
+  --color-on-error-container: #93000a;
+  --color-surface-container-low: #f4f3f5;
+  --color-on-background: #1b1c1e;
+  --color-on-secondary-container: #007070;
+  --color-on-secondary-fixed: #002020;
+  --color-tertiary-fixed: #ffddb4;
+  --color-brand-teal: #00A6A6;
+  --color-brand-orange: #FF7A3D;
+}
+.dark {
+  --color-inverse-surface: #cdcecf;
+  --color-background: #121212;
+  --color-secondary-container: #00695c;
+  --color-surface-container-highest: #1c1b1c;
+  --color-on-tertiary-fixed: #f8e4c7;
+  --color-primary-fixed-dim: #1c3049;
+  --color-on-tertiary-container: #9c805a;
+  --color-error-container: #370a06;
+  --color-primary-fixed: #061a37;
+  --color-surface-container: #1f1c20;
+  --color-tertiary: #f8e1c7;
+  --color-surface-variant: #2a2a2a;
+  --color-on-tertiary-fixed-variant: #dfc8a8;
+  --color-outline-variant: #32343a;
+  --color-secondary: #80cbc4;
+  --color-tertiary-container: #f9e6c9;
+  --color-on-surface-variant: #b0b0b0;
+  --color-on-primary: #0d47a1;
+  --color-on-primary-fixed-variant: #a0b3c9;
+  --color-primary-container: #1976d2;
+  --color-inverse-on-surface: #1f1b21;
+  --color-on-error: #1e1e1e;
+  --color-surface-container-lowest: #1e1e1e;
+  --color-surface: #1e1e1e;
+  --color-tertiary-fixed-dim: #694920;
+  --color-primary: #90caf9;
+  --color-secondary-fixed-dim: #329796;
+  --color-outline: #82848a;
+  --color-on-surface: #e0e0e0;
+  --color-on-secondary-fixed-variant: #b7f7f7;
+  --color-on-secondary: #004d40;
+  --color-inverse-primary: #1c3049;
+  --color-on-primary-container: #bbdefb;
+  --color-on-tertiary: #1e1e1e;
+  --color-error: #d45555;
+  --color-on-primary-fixed: #cfe5f8;
+  --color-surface-tint: #889ab0;
+  --color-surface-container-high: #1e1d1f;
+  --color-surface-bright: #1e1923;
+  --color-secondary-fixed: #167878;
+  --color-surface-dim: #242325;
+  --color-on-error-container: #f07a82;
+  --color-surface-container-low: #1e1c20;
+  --color-on-background: #e0e0e0;
+  --color-on-secondary-container: #b2dfdb;
+  --color-on-secondary-fixed: #c7f8f8;
+  --color-tertiary-fixed: #432807;
+  --color-brand-teal: #69eeee;
+  --color-brand-orange: #ae4413;
+}
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .form-input-focus:focus-within {
+            border-color: var(--color-secondary);
+            border-width: 2px;
+        }
+        .floating-label-input:focus-within label,
+        .floating-label-input input:not(:placeholder-shown) + label {
+            transform: translateY(-50%) scale(0.85);
+            top: 0;
+            background-color: var(--color-surface);
+            padding: 0 4px;
+            color: var(--color-secondary);
+        }
+    </style>
+</head>
+<body class="transition-colors duration-300 bg-surface text-on-surface font-body-md min-h-screen flex flex-col selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<nav class="sticky w-full top-0 z-50 bg-surface border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-gutter max-w-container-max mx-auto h-20 transition-all duration-300">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-headline-md icon-fill">directions_car</span>
+<span class="text-headline-md font-headline-md font-bold text-primary tracking-tight">CARZDRIZ</span>
+</div>
+<div class="hidden xl:flex items-center gap-lg">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="home2.html">Home 2</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+<a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson</a>
+</div>
+<div class="flex items-center gap-md">
+<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="hidden xl:flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-wider">
+RTL
+</button>
+<button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" aria-label="Toggle Dark Mode" class="hidden xl:flex items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button id="mobile-menu-btn" aria-label="Open Menu" class="flex xl:hidden items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a class="inline-flex items-center justify-center font-label-caps text-label-caps bg-primary text-on-primary px-lg py-sm rounded-lg shadow-sm hover:shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all uppercase tracking-wider" href="register.html">Sign Up</a>
+</div>
+</nav>
+
+<main class="flex-1 flex flex-col w-full">
+    <!-- Hero Section -->
+    <section class="bg-surface-container-lowest py-2xl px-gutter relative overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-secondary/5 rounded-l-full -z-10 translate-x-1/4"></div>
+        <div class="max-w-container-max mx-auto text-center mt-xl">
+            <h1 class="font-display-lg text-display-lg text-primary mb-md scroll-reveal visible">Meet Our Expert Instructors</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto scroll-reveal delay-100 visible">
+                Learn from the best. Our DVSA-certified instructors bring years of experience, patience, and a proven track record to help you master the road with confidence.
+            </p>
+        </div>
+    </section>
+
+    <!-- Instructors Grid -->
+    <section class="py-2xl px-gutter bg-surface">
+        <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
+            
+            <!-- Instructor Card 1 -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col group border border-outline-variant/30 scroll-reveal visible">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600" alt="David Miller" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 right-4 bg-surface px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-brand-orange text-[16px] icon-fill">star</span>
+                        <span class="font-label-caps text-label-caps text-on-surface font-bold">4.9</span>
+                    </div>
+                </div>
+                <div class="p-lg flex flex-col flex-1">
+                    <div class="flex justify-between items-start mb-sm">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-primary">David Miller</h3>
+                            <p class="font-body-sm text-body-sm text-secondary font-medium uppercase tracking-wider">Senior Instructor</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-md">
+                        <span class="bg-primary/5 border border-primary/20 text-primary px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">Manual</span>
+                        <span class="bg-primary/5 border border-primary/20 text-primary px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">15+ Yrs Exp</span>
+                    </div>
+                    
+                    <p class="font-body-sm text-body-sm text-on-surface-variant flex-1 mb-lg">
+                        Former driving examiner with an exceptionally high pass rate. Known for a calm, methodical teaching style that puts nervous beginners instantly at ease.
+                    </p>
+                    
+                    <button class="w-full py-2 bg-primary text-on-primary rounded-lg font-label-caps text-label-caps uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm flex items-center justify-center gap-2">
+                        Book with David
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Instructor Card 2 -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col group border border-outline-variant/30 scroll-reveal delay-100 visible">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600" alt="Sarah Jenkins" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 right-4 bg-surface px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-brand-orange text-[16px] icon-fill">star</span>
+                        <span class="font-label-caps text-label-caps text-on-surface font-bold">5.0</span>
+                    </div>
+                </div>
+                <div class="p-lg flex flex-col flex-1">
+                    <div class="flex justify-between items-start mb-sm">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-primary">Sarah Jenkins</h3>
+                            <p class="font-body-sm text-body-sm text-secondary font-medium uppercase tracking-wider">Automatic Specialist</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-md">
+                        <span class="bg-secondary/10 border border-secondary/30 text-secondary-fixed px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">Automatic</span>
+                        <span class="bg-primary/5 border border-primary/20 text-primary px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">Intensive Courses</span>
+                    </div>
+                    
+                    <p class="font-body-sm text-body-sm text-on-surface-variant flex-1 mb-lg">
+                        Specializes in intensive courses and automatic transmission. Sarah's energetic and positive approach makes learning to drive a fun and memorable experience.
+                    </p>
+                    
+                    <button class="w-full py-2 bg-primary text-on-primary rounded-lg font-label-caps text-label-caps uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm flex items-center justify-center gap-2">
+                        Book with Sarah
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Instructor Card 3 -->
+            <div class="bg-surface-container-lowest rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col group border border-outline-variant/30 scroll-reveal delay-200 visible">
+                <div class="h-64 overflow-hidden relative">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600" alt="Michael Chen" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute top-4 right-4 bg-surface px-3 py-1 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-brand-orange text-[16px] icon-fill">star</span>
+                        <span class="font-label-caps text-label-caps text-on-surface font-bold">4.8</span>
+                    </div>
+                </div>
+                <div class="p-lg flex flex-col flex-1">
+                    <div class="flex justify-between items-start mb-sm">
+                        <div>
+                            <h3 class="font-headline-md text-headline-md text-primary">Michael Chen</h3>
+                            <p class="font-body-sm text-body-sm text-secondary font-medium uppercase tracking-wider">Advanced Driving Coach</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-2 mb-md">
+                        <span class="bg-primary/5 border border-primary/20 text-primary px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">Manual</span>
+                        <span class="bg-primary/5 border border-primary/20 text-primary px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">Pass Plus</span>
+                        <span class="bg-primary/5 border border-primary/20 text-primary px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">Bilingual</span>
+                    </div>
+                    
+                    <p class="font-body-sm text-body-sm text-on-surface-variant flex-1 mb-lg">
+                        Expert in advanced driving techniques and Pass Plus courses. Michael helps newly qualified drivers tackle complex city driving and motorways safely.
+                    </p>
+                    
+                    <button class="w-full py-2 bg-primary text-on-primary rounded-lg font-label-caps text-label-caps uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm flex items-center justify-center gap-2">
+                        Book with Michael
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Student Testimonials Section -->
+    <section class="py-2xl px-gutter bg-surface-container-lowest">
+        <div class="max-w-container-max mx-auto text-center mb-xl">
+            <h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Student Success Stories</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Hear what our recently passed students have to say about learning with our expert instructors.</p>
+        </div>
+        <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-lg">
+            
+            <!-- Testimonial 1 -->
+            <div class="bg-surface p-xl rounded-2xl border border-outline-variant/30 shadow-sm flex flex-col items-center text-center">
+                <div class="flex text-brand-orange mb-md">
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface italic mb-lg flex-1">
+                    "David was incredibly patient with me. I was terrified of driving, but his calm approach helped me pass first time. Highly recommended!"
+                </p>
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80" alt="Emma M." class="w-12 h-12 rounded-full object-cover mb-xs shadow-sm">
+                <p class="font-body-sm font-bold text-primary">Emma M.</p>
+                <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider">Passed with David</p>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="bg-surface p-xl rounded-2xl border border-outline-variant/30 shadow-sm flex flex-col items-center text-center">
+                <div class="flex text-brand-orange mb-md">
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface italic mb-lg flex-1">
+                    "Sarah's intensive course was exactly what I needed. She explained everything clearly and made the lessons fun. Couldn't have done it without her!"
+                </p>
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="James T." class="w-12 h-12 rounded-full object-cover mb-xs shadow-sm">
+                <p class="font-body-sm font-bold text-primary">James T.</p>
+                <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider">Passed with Sarah</p>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="bg-surface p-xl rounded-2xl border border-outline-variant/30 shadow-sm flex flex-col items-center text-center">
+                <div class="flex text-brand-orange mb-md">
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                    <span class="material-symbols-outlined icon-fill">star</span>
+                </div>
+                <p class="font-body-md text-body-md text-on-surface italic mb-lg flex-1">
+                    "Michael is an amazing instructor. His Pass Plus course completely changed how I drive on the motorway. Feel so much safer now."
+                </p>
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Aisha K." class="w-12 h-12 rounded-full object-cover mb-xs shadow-sm">
+                <p class="font-body-sm font-bold text-primary">Aisha K.</p>
+                <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider">Passed with Michael</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-2xl px-gutter bg-surface">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-xl">
+                <h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Instructor FAQs</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">Got questions about learning with our instructors? Find the answers below.</p>
+            </div>
+            
+            <div class="flex flex-col gap-sm">
+                <!-- FAQ Item 1 -->
+                <div class="border border-outline-variant/40 rounded-xl overflow-hidden bg-surface-container-lowest">
+                    <button class="faq-btn w-full px-lg py-md flex justify-between items-center text-left hover:bg-surface-container-low transition-colors">
+                        <span class="font-body-md font-semibold text-primary">Can I request a specific instructor?</span>
+                        <span class="material-symbols-outlined text-secondary transition-transform duration-300">add</span>
+                    </button>
+                    <div class="faq-content bg-surface-container-lowest" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+                        <p class="p-lg pt-0 text-on-surface-variant font-body-sm">
+                            Absolutely! You can choose your preferred instructor when booking your lessons. We recommend checking their availability early, as our popular instructors often have waitlists.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-outline-variant/40 rounded-xl overflow-hidden bg-surface-container-lowest">
+                    <button class="faq-btn w-full px-lg py-md flex justify-between items-center text-left hover:bg-surface-container-low transition-colors">
+                        <span class="font-body-md font-semibold text-primary">Are all your instructors fully qualified?</span>
+                        <span class="material-symbols-outlined text-secondary transition-transform duration-300">add</span>
+                    </button>
+                    <div class="faq-content bg-surface-container-lowest" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+                        <p class="p-lg pt-0 text-on-surface-variant font-body-sm">
+                            Yes, 100% of our instructors are fully qualified Approved Driving Instructors (ADIs) registered with the DVSA. We do not use trainee instructors (PDIs).
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="border border-outline-variant/40 rounded-xl overflow-hidden bg-surface-container-lowest">
+                    <button class="faq-btn w-full px-lg py-md flex justify-between items-center text-left hover:bg-surface-container-low transition-colors">
+                        <span class="font-body-md font-semibold text-primary">What if I want to switch instructors?</span>
+                        <span class="material-symbols-outlined text-secondary transition-transform duration-300">add</span>
+                    </button>
+                    <div class="faq-content bg-surface-container-lowest" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;">
+                        <p class="p-lg pt-0 text-on-surface-variant font-body-sm">
+                            We want you to feel completely comfortable while learning. If you feel your learning style isn't matching up with your instructor, just contact our office and we'll happily switch you to another instructor, no questions asked.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us / CTA Banner -->
+    <section class="bg-primary text-on-primary py-xl px-gutter relative overflow-hidden my-2xl max-w-container-max mx-auto rounded-2xl">
+        <!-- Abstract gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-primary-container/80 to-transparent -z-10"></div>
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center z-10">
+            <div class="text-center md:text-left flex flex-col items-center md:items-start">
+                <h2 class="font-headline-lg text-headline-lg text-on-primary mb-md">Start Your Journey Today</h2>
+                <p class="font-body-md text-body-md text-on-primary/80 mb-lg max-w-lg">
+                    Whether you're getting behind the wheel for the first time or looking for an advanced refresher, our instructors are ready to guide you to success.
+                </p>
+                <ul class="flex flex-col items-center md:items-start gap-sm mb-xl text-on-primary/90 text-left">
+                    <li class="flex items-center gap-2 font-body-sm">
+                        <span class="material-symbols-outlined text-secondary-fixed">check_circle</span> DVSA Approved Instructors
+                    </li>
+                    <li class="flex items-center gap-2 font-body-sm">
+                        <span class="material-symbols-outlined text-secondary-fixed">check_circle</span> Modern Dual-Control Vehicles
+                    </li>
+                    <li class="flex items-center gap-2 font-body-sm">
+                        <span class="material-symbols-outlined text-secondary-fixed">check_circle</span> Flexible Scheduling
+                    </li>
+                </ul>
+                <a href="register.html" class="inline-flex items-center justify-center font-label-caps text-label-caps bg-secondary text-on-secondary px-xl py-3 rounded-lg shadow-sm hover:shadow-md hover:bg-secondary-container hover:text-on-secondary-container transition-all uppercase tracking-wider gap-2">
+                    Book Your First Lesson
+                    <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                </a>
+            </div>
+            <div class="hidden md:flex justify-end items-center">
+                <!-- Using a decorative image or illustration here -->
+                <div class="relative w-72 h-72 rounded-full border-4 border-secondary/30 flex items-center justify-center p-8 bg-surface/5 backdrop-blur-sm">
+                     <span class="material-symbols-outlined text-[120px] text-secondary-fixed">workspace_premium</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+
+<footer class="bg-primary text-on-primary mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-xl px-gutter py-2xl max-w-container-max mx-auto border-b border-primary-fixed-dim/20">
+    <!-- Brand & Contact -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-on-primary text-headline-md icon-fill">directions_car</span>
+            <span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">CARZDRIZ</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-primary/70 max-w-sm">
+            Precision in every turn. Empowering the next generation of safe, confident drivers with professional instructors and modern vehicles.
+        </p>
+        <div class="flex flex-col gap-xs mt-sm">
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">location_on</span>
+                <span class="font-body-sm text-body-sm">123 Driving School Lane, Cityville, ST 12345</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">call</span>
+                <span class="font-body-sm text-body-sm">(555) 123-4567</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">mail</span>
+                <span class="font-body-sm text-body-sm">info@elitedriving.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Quick Links</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About Us</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+            <a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
+        </div>
+    </div>
+
+    <!-- Legal & Support -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Support</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="dashboard.html">Student Dashboard</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="login.html">Login</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="register.html">Sign Up</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2 lg:col-span-1">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Newsletter</h4>
+        <p class="font-body-sm text-body-sm text-on-primary/70">Subscribe for driving tips and exclusive offers.</p>
+        <form class="flex flex-col gap-sm mt-xs" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Your email address" class="w-full bg-surface text-on-surface placeholder:text-on-surface/60 border-none rounded-lg px-md py-sm font-body-sm focus:ring-2 focus:ring-secondary-fixed outline-none" required>
+            <button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider py-sm rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bottom Bar -->
+<div class="px-gutter py-md max-w-container-max mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-sm">
+    <span class="font-body-sm text-body-sm text-on-primary/50">© 2026 CARZDRIZ. All rights reserved.</span>
+    
+    <!-- Social Icons using SVG for actual brands instead of just material icons -->
+    <div class="flex gap-md opacity-80">
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Facebook">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Twitter">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Instagram">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+    </div>
+</div>
+</footer>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-surface-dim/80 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+<!-- Mobile Menu Sidebar -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 max-w-sm bg-surface z-[70] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+    <div class="p-lg flex justify-between items-center border-b border-outline-variant/30">
+        <span class="text-headline-sm font-headline-sm font-bold text-primary">Menu</span>
+        <button id="close-mobile-menu" class="text-on-surface-variant hover:text-primary p-sm rounded-full hover:bg-surface-container transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col py-md overflow-y-auto">
+        <a href="index.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Home</a>
+        <a href="home2.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Home 2</a>
+        <a href="about.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">About</a>
+        <a href="services.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Services</a>
+        <a href="instructors.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Instructors</a>
+        <a href="lesson.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Lesson</a>
+        <div class="h-px w-full bg-outline-variant/30 my-sm"></div>
+        <a href="register.html" class="px-lg py-md text-primary font-bold hover:bg-primary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Sign Up</a>
+        <a href="login.html" class="px-lg py-md text-secondary hover:bg-secondary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Login</a>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMenu() {
+            if (!mobileMenu) return;
+            mobileMenuOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.remove('opacity-0');
+                mobileMenu.classList.remove('translate-x-full');
+            }, 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeMenu() {
+            if (!mobileMenu) return;
+            mobileMenuOverlay.classList.add('opacity-0');
+            mobileMenu.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', openMenu);
+        }
+        if (closeMobileMenuBtn) {
+            closeMobileMenuBtn.addEventListener('click', closeMenu);
+        }
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMenu);
+        }
+    });
+</script>
+
+</body></html>

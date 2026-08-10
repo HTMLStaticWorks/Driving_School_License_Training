@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - CARZDRIZ</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                      "inverse-surface": "var(--color-inverse-surface)",
+                      "background": "var(--color-background)",
+                      "secondary-container": "var(--color-secondary-container)",
+                      "surface-container-highest": "var(--color-surface-container-highest)",
+                      "on-tertiary-fixed": "var(--color-on-tertiary-fixed)",
+                      "primary-fixed-dim": "var(--color-primary-fixed-dim)",
+                      "on-tertiary-container": "var(--color-on-tertiary-container)",
+                      "error-container": "var(--color-error-container)",
+                      "primary-fixed": "var(--color-primary-fixed)",
+                      "surface-container": "var(--color-surface-container)",
+                      "tertiary": "var(--color-tertiary)",
+                      "surface-variant": "var(--color-surface-variant)",
+                      "on-tertiary-fixed-variant": "var(--color-on-tertiary-fixed-variant)",
+                      "outline-variant": "var(--color-outline-variant)",
+                      "secondary": "var(--color-secondary)",
+                      "tertiary-container": "var(--color-tertiary-container)",
+                      "on-surface-variant": "var(--color-on-surface-variant)",
+                      "on-primary": "var(--color-on-primary)",
+                      "on-primary-fixed-variant": "var(--color-on-primary-fixed-variant)",
+                      "primary-container": "var(--color-primary-container)",
+                      "inverse-on-surface": "var(--color-inverse-on-surface)",
+                      "on-error": "var(--color-on-error)",
+                      "surface-container-lowest": "var(--color-surface-container-lowest)",
+                      "surface": "var(--color-surface)",
+                      "tertiary-fixed-dim": "var(--color-tertiary-fixed-dim)",
+                      "primary": "var(--color-primary)",
+                      "secondary-fixed-dim": "var(--color-secondary-fixed-dim)",
+                      "outline": "var(--color-outline)",
+                      "on-surface": "var(--color-on-surface)",
+                      "on-secondary-fixed-variant": "var(--color-on-secondary-fixed-variant)",
+                      "on-secondary": "var(--color-on-secondary)",
+                      "inverse-primary": "var(--color-inverse-primary)",
+                      "on-primary-container": "var(--color-on-primary-container)",
+                      "on-tertiary": "var(--color-on-tertiary)",
+                      "error": "var(--color-error)",
+                      "on-primary-fixed": "var(--color-on-primary-fixed)",
+                      "surface-tint": "var(--color-surface-tint)",
+                      "surface-container-high": "var(--color-surface-container-high)",
+                      "surface-bright": "var(--color-surface-bright)",
+                      "secondary-fixed": "var(--color-secondary-fixed)",
+                      "surface-dim": "var(--color-surface-dim)",
+                      "on-error-container": "var(--color-on-error-container)",
+                      "surface-container-low": "var(--color-surface-container-low)",
+                      "on-background": "var(--color-on-background)",
+                      "on-secondary-container": "var(--color-on-secondary-container)",
+                      "on-secondary-fixed": "var(--color-on-secondary-fixed)",
+                      "tertiary-fixed": "var(--color-tertiary-fixed)",
+                      "brand-teal": "var(--color-brand-teal)",
+                      "brand-orange": "var(--color-brand-orange)"
+},
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "2xl": "80px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "48px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Poppins"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Poppins"],
+                        "display-lg": ["Poppins"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+:root {
+  --color-inverse-surface: #2f3032;
+  --color-background: #faf9fb;
+  --color-secondary-container: #7af5f5;
+  --color-surface-container-highest: #e3e2e4;
+  --color-on-tertiary-fixed: #291800;
+  --color-primary-fixed-dim: #b0c9e8;
+  --color-on-tertiary-container: #ad8a5a;
+  --color-error-container: #ffdad6;
+  --color-primary-fixed: #d1e4ff;
+  --color-surface-container: #efedf0;
+  --color-tertiary: #201100;
+  --color-surface-variant: #e3e2e4;
+  --color-on-tertiary-fixed-variant: #5d4119;
+  --color-outline-variant: #c3c6ce;
+  --color-secondary: #006a6a;
+  --color-tertiary-container: #3b2400;
+  --color-on-surface-variant: #43474d;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed-variant: #314863;
+  --color-primary-container: #102a43;
+  --color-inverse-on-surface: #f2f0f3;
+  --color-on-error: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface: #faf9fb;
+  --color-tertiary-fixed-dim: #e8c08c;
+  --color-primary: #00152a;
+  --color-secondary-fixed-dim: #5bd9d8;
+  --color-outline: #74777e;
+  --color-on-surface: #1b1c1e;
+  --color-on-secondary-fixed-variant: #004f4f;
+  --color-on-secondary: #ffffff;
+  --color-inverse-primary: #b0c9e8;
+  --color-on-primary-container: #7a92b0;
+  --color-on-tertiary: #ffffff;
+  --color-error: #ba1a1a;
+  --color-on-primary-fixed: #011d35;
+  --color-surface-tint: #49607c;
+  --color-surface-container-high: #e9e8ea;
+  --color-surface-bright: #faf9fb;
+  --color-secondary-fixed: #7af5f5;
+  --color-surface-dim: #dbd9dc;
+  --color-on-error-container: #93000a;
+  --color-surface-container-low: #f4f3f5;
+  --color-on-background: #1b1c1e;
+  --color-on-secondary-container: #007070;
+  --color-on-secondary-fixed: #002020;
+  --color-tertiary-fixed: #ffddb4;
+  --color-brand-teal: #00A6A6;
+  --color-brand-orange: #FF7A3D;
+}
+.dark {
+  --color-inverse-surface: #cdcecf;
+  --color-background: #121212;
+  --color-secondary-container: #00695c;
+  --color-surface-container-highest: #1c1b1c;
+  --color-on-tertiary-fixed: #f8e4c7;
+  --color-primary-fixed-dim: #1c3049;
+  --color-on-tertiary-container: #9c805a;
+  --color-error-container: #370a06;
+  --color-primary-fixed: #061a37;
+  --color-surface-container: #1f1c20;
+  --color-tertiary: #f8e1c7;
+  --color-surface-variant: #2a2a2a;
+  --color-on-tertiary-fixed-variant: #dfc8a8;
+  --color-outline-variant: #32343a;
+  --color-secondary: #80cbc4;
+  --color-tertiary-container: #f9e6c9;
+  --color-on-surface-variant: #b0b0b0;
+  --color-on-primary: #0d47a1;
+  --color-on-primary-fixed-variant: #a0b3c9;
+  --color-primary-container: #1976d2;
+  --color-inverse-on-surface: #1f1b21;
+  --color-on-error: #1e1e1e;
+  --color-surface-container-lowest: #1e1e1e;
+  --color-surface: #1e1e1e;
+  --color-tertiary-fixed-dim: #694920;
+  --color-primary: #90caf9;
+  --color-secondary-fixed-dim: #329796;
+  --color-outline: #82848a;
+  --color-on-surface: #e0e0e0;
+  --color-on-secondary-fixed-variant: #b7f7f7;
+  --color-on-secondary: #004d40;
+  --color-inverse-primary: #1c3049;
+  --color-on-primary-container: #bbdefb;
+  --color-on-tertiary: #1e1e1e;
+  --color-error: #d45555;
+  --color-on-primary-fixed: #cfe5f8;
+  --color-surface-tint: #889ab0;
+  --color-surface-container-high: #1e1d1f;
+  --color-surface-bright: #1e1923;
+  --color-secondary-fixed: #167878;
+  --color-surface-dim: #242325;
+  --color-on-error-container: #f07a82;
+  --color-surface-container-low: #1e1c20;
+  --color-on-background: #e0e0e0;
+  --color-on-secondary-container: #b2dfdb;
+  --color-on-secondary-fixed: #c7f8f8;
+  --color-tertiary-fixed: #432807;
+  --color-brand-teal: #69eeee;
+  --color-brand-orange: #ae4413;
+}
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Premium card subtle shadow */
+        .premium-shadow {
+            box-shadow: 0 4px 20px rgba(16, 42, 67, 0.05);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .premium-shadow:hover {
+            box-shadow: 0 12px 30px rgba(16, 42, 67, 0.12);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="transition-colors duration-300 bg-surface text-on-surface font-body-md text-body-md antialiased overflow-x-hidden flex flex-col min-h-screen">
+<!-- TopNavBar JSON Component -->
+<nav class="sticky w-full top-0 z-50 bg-surface border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-gutter max-w-container-max mx-auto h-20 transition-all duration-300">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-headline-md icon-fill">directions_car</span>
+<span class="text-headline-md font-headline-md font-bold text-primary tracking-tight">CARZDRIZ</span>
+</div>
+<div class="hidden xl:flex items-center gap-lg">
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="home2.html">Home 2</a>
+<a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="about.html">About</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson</a>
+</div>
+<div class="flex items-center gap-md">
+<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="hidden xl:flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-wider">
+RTL
+</button>
+<button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" aria-label="Toggle Dark Mode" class="hidden xl:flex items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button id="mobile-menu-btn" aria-label="Open Menu" class="flex xl:hidden items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<a class="inline-flex items-center justify-center font-label-caps text-label-caps bg-primary text-on-primary px-lg py-sm rounded-lg shadow-sm hover:shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all uppercase tracking-wider" href="register.html">Sign Up</a>
+</div>
+</nav>
+<!-- 1. Hero Section -->
+<section class="relative min-h-[870px] flex items-center pt-2xl pb-2xl overflow-hidden">
+<!-- Background Image with Overlay -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A professional driving instructor and a focused student inside a modern, high-tech vehicle during a bright sunny day. The scene is captured from the passenger side, showing the dashboard and clear road ahead. The lighting is crisp and natural, emphasizing a modern corporate aesthetic with subtle midnight navy and teal accents in the car's interior. The mood is confident, safe, and educational." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAs7g2bVjlaNuY9Jd5K1xwNFwXcTfmMguV6-2lI6HyUE1-_lv0ta18Fcd2txSzgWRMmR_YTbjOeSAEkANlFfm4vC9XR-XLtN5_JcpVzckVJ8K77icoNfMttNeejJYGcpf5lnjszMNypSPGs-uZmEP-3-nDFi75cTp3X0Sccm3eHNwaUdmyyGeUa8y9fCTRozpPWwx8TAV95En0sx262-bCBLYNDCeIRerjlV5ep-ygNLLqv1Zc77FkE')"></div>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 to-surface/20"></div>
+</div>
+<div class="relative z-10 w-full px-gutter max-w-container-max mx-auto">
+<div class="max-w-2xl scroll-reveal text-center md:text-left flex flex-col items-center md:items-start mx-auto md:mx-0">
+<div class="inline-flex items-center gap-sm bg-surface-container-high px-md py-xs rounded-full mb-lg border border-outline-variant/50">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="verified">verified</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant tracking-wider">Est. 2010 • Excellence in Education</span>
+</div>
+<h1 class="text-display-lg font-display-lg text-primary mb-md leading-tight">
+                    Building Confidence, <br/><span class="text-secondary relative">One Turn at a Time.
+                        <svg class="absolute w-full h-3 -bottom-1 left-0 text-secondary/20" fill="none" preserveaspectratio="none" viewbox="0 0 200 12"><path d="M0 10 Q 50 0, 100 10 T 200 10" fill="none" stroke="currentColor" stroke-width="4"></path></svg>
+</span>
+</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-xl max-w-xl">
+                    For over a decade, CARZDRIZ has transformed nervous beginners into master navigators of the road. We combine technical precision with a supportive environment to ensure safety is instinctual.
+                </p>
+<div class="flex flex-wrap gap-md justify-center md:justify-start w-full sm:w-auto">
+<a class="bg-primary text-on-primary px-xl py-md rounded text-body-md font-body-md font-medium hover:bg-primary-container transition-colors shadow-sm" href="#">
+                        Explore Our Programs
+                    </a>
+<a class="border-2 border-secondary text-secondary px-xl py-md rounded text-body-md font-body-md font-medium hover:bg-secondary/5 transition-colors flex items-center gap-sm" href="#">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                        Watch Our Story
+                    </a>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Our Story Section (Timeline) -->
+<section class="py-2xl bg-surface-container-lowest relative">
+<div class="w-full px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-xl scroll-reveal flex flex-col items-center">
+<h2 class="text-headline-lg font-headline-lg text-primary mb-sm">The Journey So Far</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">From a single training vehicle to the region's leading automotive education center, our path has been driven by a singular focus: safer roads.</p>
+</div>
+<div class="relative max-w-4xl mx-auto py-lg">
+<!-- Vertical Line -->
+<div class="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-[2px] bg-secondary/20 -translate-x-1/2"></div>
+<!-- Timeline Item 1 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center justify-between mb-xl scroll-reveal">
+<div class="hidden md:block w-[45%] text-right pr-xl">
+<h3 class="text-headline-md font-headline-md text-primary">Foundation</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-sm">Founded with a mission to elevate driver training standards beyond basic licensing requirements.</p>
+</div>
+<div class="absolute left-[28px] md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-surface border-4 border-secondary text-secondary z-10">
+<span class="font-label-caps text-label-caps font-bold">2010</span>
+</div>
+<div class="w-full md:w-[45%] pl-[80px] md:pl-xl pt-1 md:pt-0">
+<div class="md:hidden mb-sm">
+<h3 class="text-headline-md font-headline-md text-primary">Foundation</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-xs">Founded with a mission to elevate driver training standards beyond basic licensing requirements.</p>
+</div>
+<img class="w-full h-48 object-cover rounded-lg premium-shadow" data-alt="A vintage, pristine white training car parked in front of a modest brick office building under bright morning sunlight. The scene reflects the humble yet professional beginnings of a driving school in 2010. The color palette is natural with subtle teal accents on the building signage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgOGUMOa9ql85KGgJjez7DIS_z_XkAjVo6HfpNHZwqN7hSx5Vv3VttuN_47R435U73fHpTU4szjxNsUY-yP64RCNpcOnZqCfuA8KGGruI2f8fXlqJMB7oyb3f8oej2sjtCGeNw77ZWzaNETDqkHTxGZIO6E_IaG_9r5I6qBTz46equegn6to7kiewKQ5uUVlq1ZzDUs5Axde4Das6pJ0VlBP6cFLEAR3RI_i7rXXOWT8YMxTe5vPeR"/>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex flex-col md:flex-row-reverse items-start md:items-center justify-between mb-xl scroll-reveal delay-100">
+<div class="hidden md:block w-[45%] text-left pl-xl">
+<h3 class="text-headline-md font-headline-md text-primary">Fleet Expansion</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-sm">Introduced dual-control hybrid vehicles, integrating eco-conscious driving into our core curriculum.</p>
+</div>
+<div class="absolute left-[28px] md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-surface border-4 border-secondary text-secondary z-10">
+<span class="font-label-caps text-label-caps font-bold">2015</span>
+</div>
+<div class="w-full md:w-[45%] pl-[80px] md:pr-xl md:pl-0 pt-1 md:pt-0">
+<div class="md:hidden mb-sm">
+<h3 class="text-headline-md font-headline-md text-primary">Fleet Expansion</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-xs">Introduced dual-control hybrid vehicles, integrating eco-conscious driving into our core curriculum.</p>
+</div>
+<img class="w-full h-48 object-cover rounded-lg premium-shadow" data-alt="A perfectly aligned row of modern, dark navy blue and white hybrid training vehicles in a spotless parking lot. The cars feature subtle teal 'Student Driver' decals. The lighting is crisp and architectural, emphasizing the sleek lines of the vehicles and the professional scale of the academy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5cSlnU1QgYIcGcYMkuVdjiRlinGMGw1lFyt4_FLaEunikIZTKguH669Sy7HqxcL-D_wcgrvC_htKP68FmbAWmuPNSBGQNaMfWalks8Gf37DMADl83tqxJXIr4yQgykWZTl1Y51W6cuwxsyc68Kes9RVIO8adDlqidwx86AMNpVa7Tgy7MmbPTB0-8ttPqISkEPa1frrKobIt-RsxUOV8Zo8-tw5qiZ1LWemMLerzAP04VhWcGX0H1"/>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex flex-col md:flex-row items-start md:items-center justify-between scroll-reveal delay-200">
+<div class="hidden md:block w-[45%] text-right pr-xl">
+<h3 class="text-headline-md font-headline-md text-primary">Advanced Simulation</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-sm">Launched our state-of-the-art simulation center, allowing students to practice high-risk scenarios safely.</p>
+</div>
+<div class="absolute left-[28px] md:left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 rounded-full bg-secondary text-on-secondary z-10 shadow-md">
+<span class="font-label-caps text-label-caps font-bold">2023</span>
+</div>
+<div class="w-full md:w-[45%] pl-[80px] md:pl-xl pt-1 md:pt-0">
+<div class="md:hidden mb-sm">
+<h3 class="text-headline-md font-headline-md text-primary">Advanced Simulation</h3>
+<p class="text-body-md font-body-md text-on-surface-variant mt-xs">Launched our state-of-the-art simulation center, allowing students to practice high-risk scenarios safely.</p>
+</div>
+<img class="w-full h-48 object-cover rounded-lg premium-shadow" data-alt="A high-tech driving simulation room with multiple wide-screen displays showing virtual city streets. A student sits in a realistic car cockpit setup, bathed in cool, modern blue and teal light from the screens. The environment feels cutting-edge, safe, and highly professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAcvONDLP744LM_VithlkEUntB2_fYg3Zw1sTLOSYGk4PyhILHmzdzP9LCMfgxceEpUdCQOYn90D4ISi4wiYMLR4z4_XQFwHfpQ4cDiQQ1Oy2SZb4DyiJrCFSCZ_EncWGgXZ6jokZJQ33nM3APseGoHXH_xa1lWSN9GjiIe-Ex0aaG8_hjytQ5a3eWfz6tizH1Rwi-Cnwu-3TZyZ_XDsayYDzx3kB5IgTw36qFD9WsuFuzF9YrZjUE"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Our Mission Section -->
+<section class="py-2xl bg-surface relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-surface-container-low rounded-l-[100px] -z-10 hidden lg:block"></div>
+<div class="w-full px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col lg:flex-row items-center gap-xl">
+<div class="w-full lg:w-1/2 scroll-reveal">
+<div class="relative">
+<img class="w-full h-auto aspect-square lg:aspect-[4/5] object-cover rounded-xl shadow-lg z-10 relative" data-alt="A close-up shot of a confident student driver's hands gripping a modern leather steering wheel. The dashboard instruments are slightly out of focus in the background, glowing softly. The natural light filtering through the windshield highlights the premium interior materials. The image conveys control, focus, and mastery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7a7E9_jZYxx1a5xECp3L1Ihs68bKY_aPwPYtxTmd3qqS-yGfYCFwMbu9pCLWkCWV4Sk7q96fgsDFWsJWoJOX9d57MaXGu7IAijVVN3jtnBjYSNvjA9drTlJinUWAj1Lgu_l1xlZKN7FJ8Ydo03X02X2IkRvTNPNhWFuPSVejE0yUBEx5vWcpzRP9gktkQBXolmTxkqQUc8nRZTRIeN_kH9iKCHM-xOAKQC2p54Ij3x7Z0d3Zo_uIt"/>
+<!-- Accent box -->
+<div class="absolute -bottom-6 -right-6 w-2/3 h-2/3 bg-secondary/10 rounded-xl -z-10 border border-secondary/20"></div>
+<!-- Floating Stat Card -->
+<div class="absolute bottom-md left-md md:-left-lg bg-surface p-md rounded-lg premium-shadow flex items-center gap-md border border-outline-variant/20 z-20">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<div>
+<p class="text-headline-md font-headline-md text-primary leading-none">15k+</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Graduates</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2 scroll-reveal delay-100 lg:pl-xl text-center lg:text-left flex flex-col items-center lg:items-start">
+<span class="text-secondary font-label-caps text-label-caps uppercase tracking-widest mb-sm block">Our Mission</span>
+<h2 class="text-headline-lg font-headline-lg text-primary mb-md">Empowering a Lifetime of Safe Driving.</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-lg">
+                        We don't just teach you how to pass a test; we engineer safe driving habits that last a lifetime. Our curriculum is designed around the psychology of driving, building technical skill alongside situational awareness and emotional control.
+                    </p>
+<ul class="space-y-md mt-lg text-left">
+<li class="flex items-start gap-md">
+<div class="mt-1 w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="check">check</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-semibold text-primary">Defensive Driving Core</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-xs">Anticipating hazards before they become emergencies is woven into every lesson.</p>
+</div>
+</li>
+<li class="flex items-start gap-md border-t border-secondary/10 pt-md">
+<div class="mt-1 w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="check">check</span>
+</div>
+<div>
+<h4 class="text-body-md font-body-md font-semibold text-primary">Stress-Free Environment</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-xs">Our instructors are trained in coaching techniques that reduce anxiety and maximize retention.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Why Students Choose Us -->
+<section class="py-2xl bg-surface-container-lowest border-y border-outline-variant/20">
+<div class="w-full px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-xl scroll-reveal">
+<span class="text-secondary font-label-caps text-label-caps uppercase tracking-widest mb-sm block">The Elite Standard</span>
+<h2 class="text-headline-lg font-headline-lg text-primary">Why Students Choose Us</h2>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Card 1 -->
+<div class="bg-surface rounded-xl p-lg premium-shadow border border-outline-variant/20 scroll-reveal flex flex-col h-full relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500"></div>
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center mb-md">
+<span class="material-symbols-outlined" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<h3 class="text-body-lg font-body-lg font-semibold text-primary mb-sm">Certified Experts</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex-grow">Our instructors hold advanced defensive driving certifications and undergo rigorous continuous training.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface rounded-xl p-lg premium-shadow border border-outline-variant/20 scroll-reveal delay-100 flex flex-col h-full relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500"></div>
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center mb-md">
+<span class="material-symbols-outlined" data-icon="commute">commute</span>
+</div>
+<h3 class="text-body-lg font-body-lg font-semibold text-primary mb-sm">Modern Fleet</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant flex-grow">Train in latest-model vehicles equipped with advanced safety features and dual controls.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface rounded-xl p-lg premium-shadow border border-outline-variant/20 scroll-reveal delay-200 flex flex-col h-full relative overflow-hidden group lg:col-span-2">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500"></div>
+<div class="flex flex-col md:flex-row gap-lg items-start h-full">
+<div class="flex-shrink-0">
+<div class="w-12 h-12 rounded-lg bg-primary text-on-primary flex items-center justify-center mb-md">
+<span class="material-symbols-outlined" data-icon="route">route</span>
+</div>
+<h3 class="text-body-lg font-body-lg font-semibold text-primary mb-sm">Tailored Curriculum</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant max-w-sm">Every learner is unique. We adapt our teaching methods to your learning style, ensuring progress at your own pace while covering comprehensive road scenarios from quiet suburbs to complex highways.</p>
+</div>
+<div class="hidden md:block w-full h-full min-h-[120px] rounded-lg overflow-hidden border border-outline-variant/20">
+<div class="w-full h-full bg-cover bg-center" data-alt="A stylized, top-down view of an intricate intersection model used for teaching. Small, detailed toy cars are positioned to demonstrate right-of-way rules. The model sits on a clean, modern desk in a well-lit classroom setting. The color palette features stark whites, deep navy, and subtle teal highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDzU16m_6HGgRVQD3BdzEWhC1ivlrsawmK2wLdTifnxAtVTN5E7vUg9lkaUDD9PQbbwMjfqx2Ej2O-GfjHTBk9EfRx23Nfh1ftila9JRfJyq6UeLzuGUCH0LbfQ0jDoRqSju2g5h_Z9k_csBzRUxA-etBk8DEZXyq95YCNPDGHV21nnUB4J3BbP7mHh3I3W9-hnGvw9dE9gmDq4OlykqzkP92tOlL3nIW1-RJJVAxtLCFarX8zV5WLZ')"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Safety First -->
+<section class="py-2xl bg-surface text-on-surface relative overflow-hidden">
+<!-- Abstract Background pattern -->
+<div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, black 1px, transparent 0); background-size: 32px 32px;"></div>
+<div class="w-full px-gutter max-w-container-max mx-auto relative z-10">
+<div class="flex flex-col md:flex-row items-center gap-xl">
+<div class="w-full md:w-1/2 scroll-reveal text-center md:text-left flex flex-col items-center md:items-start">
+<h2 class="text-display-lg font-display-lg mb-md text-primary">Zero Compromise on <span class="text-secondary">Safety.</span></h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant mb-lg">
+                        Our facilities and vehicles undergo meticulous daily inspections. We exceed state mandates in safety protocols, ensuring that your learning environment is mathematically secure.
+                    </p>
+<div class="grid grid-cols-2 gap-md mt-lg">
+<div class="border-l-2 border-secondary pl-md">
+<p class="text-headline-md font-headline-md text-secondary">100%</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Dual-Control Equipped</p>
+</div>
+<div class="border-l-2 border-secondary pl-md">
+<p class="text-headline-md font-headline-md text-secondary">Daily</p>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Diagnostic Checks</p>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 scroll-reveal delay-200">
+<div class="relative rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/30">
+<img class="w-full h-auto aspect-video object-cover" data-alt="A meticulously clean, brightly lit automotive maintenance bay at the academy. A technician in a neat uniform is conducting a diagnostic check on one of the navy blue training vehicles. The environment is highly organized, professional, and clinical, emphasizing the strict safety and maintenance standards of the school." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXkfa8iIhCtfKTfiq83nNd2riw-_xO53mdbjT7Qxa0ybgDlK85OUczKo6JK-yma3qZA8CgNzbhHsnW9ZXHDPEWfqKCYS1Jlaxd5JFq6dfFLcIYfqveXwT5AWpzll0NGrjlDfuhefam6TSvdbdPWboMROTsb_9c6Te9wXh075UUsNHCfDNZq1hVg7nTvCBR6jWVxq8u_3nlbv_WVattmPBLdIuPJ9wnNOOrDkYw38xPKBG88_w63yzn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-lg">
+<div class="flex items-center gap-sm text-on-primary">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="shield">shield</span>
+<span class="font-label-caps text-label-caps tracking-wide">Rigorous Standards Applied</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer JSON Component -->
+<footer class="bg-primary text-on-primary mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-xl px-gutter py-2xl max-w-container-max mx-auto border-b border-primary-fixed-dim/20">
+    <!-- Brand & Contact -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2">
+        <div class="flex items-center gap-sm">
+            <span class="material-symbols-outlined text-on-primary text-headline-md icon-fill">directions_car</span>
+            <span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">CARZDRIZ</span>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-primary/70 max-w-sm">
+            Precision in every turn. Empowering the next generation of safe, confident drivers with professional instructors and modern vehicles.
+        </p>
+        <div class="flex flex-col gap-xs mt-sm">
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">location_on</span>
+                <span class="font-body-sm text-body-sm">123 Driving School Lane, Cityville, ST 12345</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">call</span>
+                <span class="font-body-sm text-body-sm">(555) 123-4567</span>
+            </div>
+            <div class="flex items-center gap-sm text-on-primary/80">
+                <span class="material-symbols-outlined text-[18px]">mail</span>
+                <span class="font-body-sm text-body-sm">info@elitedriving.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Quick Links</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
+            <a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="about.html">About Us</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
+        </div>
+    </div>
+
+    <!-- Legal & Support -->
+    <div class="flex flex-col gap-md">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Support</h4>
+        <div class="flex flex-col gap-sm">
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="dashboard.html">Student Dashboard</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="login.html">Login</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="register.html">Sign Up</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="flex flex-col gap-md col-span-1 md:col-span-2 lg:col-span-1">
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Newsletter</h4>
+        <p class="font-body-sm text-body-sm text-on-primary/70">Subscribe for driving tips and exclusive offers.</p>
+        <form class="flex flex-col gap-sm mt-xs" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Your email address" class="w-full bg-surface text-on-surface placeholder:text-on-surface/60 border-none rounded-lg px-md py-sm font-body-sm focus:ring-2 focus:ring-secondary-fixed outline-none" required>
+            <button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider py-sm rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Subscribe</button>
+        </form>
+    </div>
+</div>
+
+<!-- Bottom Bar -->
+<div class="px-gutter py-md max-w-container-max mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-sm">
+    <span class="font-body-sm text-body-sm text-on-primary/50">© 2026 CARZDRIZ. All rights reserved.</span>
+    
+    <!-- Social Icons using SVG for actual brands instead of just material icons -->
+    <div class="flex gap-md opacity-80">
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Facebook">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Twitter">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+        </a>
+        <a href="#" class="hover:text-secondary-fixed hover:opacity-100 transition-all text-on-primary" aria-label="Instagram">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+    </div>
+</div>
+</footer>
+<!-- Scroll Animation Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.scroll-reveal').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu-overlay" class="fixed inset-0 bg-surface-dim/80 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+<!-- Mobile Menu Sidebar -->
+<div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 max-w-sm bg-surface z-[70] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+    <div class="p-lg flex justify-between items-center border-b border-outline-variant/30">
+        <span class="text-headline-sm font-headline-sm font-bold text-primary">Menu</span>
+        <button id="close-mobile-menu" class="text-on-surface-variant hover:text-primary p-sm rounded-full hover:bg-surface-container transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+    <div class="flex flex-col py-md overflow-y-auto">
+        <a href="index.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Home</a>
+        <a href="home2.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Home 2</a>
+        <a href="about.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">About</a>
+        <a href="services.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Services</a>
+        <a href="instructors.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Instructors</a>
+        <a href="lesson.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Lesson</a>
+        <div class="h-px w-full bg-outline-variant/30 my-sm"></div>
+        <a href="register.html" class="px-lg py-md text-primary font-bold hover:bg-primary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Sign Up</a>
+        <a href="login.html" class="px-lg py-md text-secondary hover:bg-secondary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Login</a>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMobileMenuBtn = document.getElementById('close-mobile-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMenu() {
+            if (!mobileMenu) return;
+            mobileMenuOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.remove('opacity-0');
+                mobileMenu.classList.remove('translate-x-full');
+            }, 10);
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeMenu() {
+            if (!mobileMenu) return;
+            mobileMenuOverlay.classList.add('opacity-0');
+            mobileMenu.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', openMenu);
+        }
+        if (closeMobileMenuBtn) {
+            closeMobileMenuBtn.addEventListener('click', closeMenu);
+        }
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.addEventListener('click', closeMenu);
+        }
+    });
+</script>
+
+</body></html>
