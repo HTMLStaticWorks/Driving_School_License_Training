@@ -10,6 +10,7 @@
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-md">
 <button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="hidden md:flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-wider">

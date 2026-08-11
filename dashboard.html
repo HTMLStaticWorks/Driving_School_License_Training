@@ -7,6 +7,9 @@
     } else {
         document.documentElement.classList.remove('dark')
     }
+    if (localStorage.dir) {
+        document.documentElement.dir = localStorage.dir;
+    }
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -250,15 +253,15 @@
   --color-secondary: #80cbc4;
   --color-tertiary-container: #f9e6c9;
   --color-on-surface-variant: #b0b0b0;
-  --color-on-primary: #0d47a1;
+  --color-on-primary: #ffffff;
   --color-on-primary-fixed-variant: #a0b3c9;
-  --color-primary-container: #1976d2;
+  --color-primary-container: #0d47a1;
   --color-inverse-on-surface: #1f1b21;
   --color-on-error: #1e1e1e;
   --color-surface-container-lowest: #1e1e1e;
   --color-surface: #1e1e1e;
   --color-tertiary-fixed-dim: #694920;
-  --color-primary: #90caf9;
+  --color-primary: #1976d2;
   --color-secondary-fixed-dim: #329796;
   --color-outline: #82848a;
   --color-on-surface: #e0e0e0;
@@ -521,7 +524,7 @@
 <section class="bg-primary text-on-primary rounded-xl p-lg card-shadow relative overflow-hidden">
 <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-full pointer-events-none"></div>
 <h3 class="text-headline-md font-headline-md mb-2">Ready for your next lesson?</h3>
-<p class="text-body-sm text-on-primary/80 mb-6">Book your next slot to keep your momentum going.</p>
+<p class="text-body-sm text-on-primary opacity-80 mb-6">Book your next slot to keep your momentum going.</p>
 <div class="space-y-3 mb-6">
 <div class="bg-primary-container p-3 rounded flex items-center justify-between">
 <span class="text-label-caps font-label-caps text-on-primary-container">Next Available:</span>
@@ -591,19 +594,19 @@
             <span class="material-symbols-outlined text-on-primary text-headline-md icon-fill">directions_car</span>
             <span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">CARZDRIZ</span>
         </div>
-        <p class="font-body-sm text-body-sm text-on-primary/70 max-w-sm">
+        <p class="font-body-sm text-body-sm text-on-primary opacity-70 max-w-sm">
             Precision in every turn. Empowering the next generation of safe, confident drivers with professional instructors and modern vehicles.
         </p>
         <div class="flex flex-col gap-xs mt-sm">
-            <div class="flex items-center gap-sm text-on-primary/80">
+            <div class="flex items-center gap-sm text-on-primary opacity-80">
                 <span class="material-symbols-outlined text-[18px]">location_on</span>
                 <span class="font-body-sm text-body-sm">123 Driving School Lane, Cityville, ST 12345</span>
             </div>
-            <div class="flex items-center gap-sm text-on-primary/80">
+            <div class="flex items-center gap-sm text-on-primary opacity-80">
                 <span class="material-symbols-outlined text-[18px]">call</span>
                 <span class="font-body-sm text-body-sm">(555) 123-4567</span>
             </div>
-            <div class="flex items-center gap-sm text-on-primary/80">
+            <div class="flex items-center gap-sm text-on-primary opacity-80">
                 <span class="material-symbols-outlined text-[18px]">mail</span>
                 <span class="font-body-sm text-body-sm">info@elitedriving.com</span>
             </div>
@@ -614,11 +617,12 @@
     <div class="flex flex-col gap-md">
         <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Quick Links</h4>
         <div class="flex flex-col gap-sm">
-            <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
-            <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About Us</a>
-            <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
-            <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
-            <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About Us</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="contact.html">Contact</a>
         </div>
     </div>
 
@@ -626,18 +630,18 @@
     <div class="flex flex-col gap-md">
         <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Support</h4>
         <div class="flex flex-col gap-sm">
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="dashboard.html">Student Dashboard</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="login.html">Login</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="register.html">Sign Up</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="dashboard.html">Student Dashboard</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="login.html">Login</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="register.html">Sign Up</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
         </div>
     </div>
 
     <!-- Newsletter -->
     <div class="flex flex-col gap-md col-span-1 md:col-span-2 lg:col-span-1">
         <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Newsletter</h4>
-        <p class="font-body-sm text-body-sm text-on-primary/70">Subscribe for driving tips and exclusive offers.</p>
+        <p class="font-body-sm text-body-sm text-on-primary opacity-70">Subscribe for driving tips and exclusive offers.</p>
         <form class="flex flex-col gap-sm mt-xs" onsubmit="event.preventDefault();">
             <input type="email" placeholder="Your email address" class="w-full bg-surface text-on-surface placeholder:text-on-surface/60 border-none rounded-lg px-md py-sm font-body-sm focus:ring-2 focus:ring-secondary-fixed outline-none" required>
             <button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider py-sm rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Subscribe</button>
@@ -647,7 +651,7 @@
 
 <!-- Bottom Bar -->
 <div class="px-gutter py-md max-w-container-max mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-sm">
-    <span class="font-body-sm text-body-sm text-on-primary/50">© 2026 CARZDRIZ. All rights reserved.</span>
+    <span class="font-body-sm text-body-sm text-on-primary opacity-50">© 2026 CARZDRIZ. All rights reserved.</span>
     
     <!-- Social Icons using SVG for actual brands instead of just material icons -->
     <div class="flex gap-md opacity-80">

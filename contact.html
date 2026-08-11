@@ -13,24 +13,20 @@
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Services - CARZDRIZ</title>
+<title>Contact Us - CARZDRIZ</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
-<!-- Google Fonts -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Poppins:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Tailwind Config -->
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
                       "inverse-surface": "var(--color-inverse-surface)",
                       "background": "var(--color-background)",
                       "secondary-container": "var(--color-secondary-container)",
@@ -81,46 +77,46 @@
                       "brand-teal": "var(--color-brand-teal)",
                       "brand-orange": "var(--color-brand-orange)"
 },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "container-max": "1280px",
-                    "gutter": "24px",
-                    "sm": "8px",
-                    "unit": "4px",
-                    "2xl": "80px",
-                    "xs": "4px",
-                    "lg": "24px",
-                    "xl": "48px",
-                    "md": "16px"
-            },
-            "fontFamily": {
-                    "headline-lg-mobile": ["Poppins"],
-                    "label-caps": ["Inter"],
-                    "body-md": ["Inter"],
-                    "headline-lg": ["Poppins"],
-                    "display-lg": ["Poppins"],
-                    "body-lg": ["Inter"],
-                    "body-sm": ["Inter"],
-                    "headline-md": ["Poppins"]
-            },
-            "fontSize": {
-                    "headline-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "display-lg": ["56px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                    "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "sm": "8px",
+                        "unit": "4px",
+                        "2xl": "80px",
+                        "xs": "4px",
+                        "lg": "24px",
+                        "xl": "48px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Poppins"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Poppins"],
+                        "display-lg": ["Poppins"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "display-lg": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
             }
-          }
         }
-      }
     </script>
 <style>
 :root {
@@ -226,51 +222,39 @@
   --color-brand-orange: #ae4413;
 }
 
-        /* Custom Elevation / Shadows based on guidelines */
-        .elevation-1 {
-            box-shadow: 0 4px 20px rgba(16, 42, 67, 0.05);
-        }
-        .elevation-2 {
-            box-shadow: 0 4px 20px rgba(16, 42, 67, 0.12);
-        }
-        
-        /* Material Symbols Setup */
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined';
-            font-weight: normal;
-            font-style: normal;
-            font-size: 24px;
-            line-height: 1;
-            letter-spacing: normal;
-            text-transform: none;
-            display: inline-block;
-            white-space: nowrap;
-            word-wrap: normal;
-            direction: ltr;
-            -webkit-font-feature-settings: 'liga';
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Entrance Animations */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .scroll-reveal.visible {
+        .scroll-reveal.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
-        /* Staggered delays for grids */
         .delay-100 { transition-delay: 100ms; }
         .delay-200 { transition-delay: 200ms; }
         .delay-300 { transition-delay: 300ms; }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Premium card subtle shadow */
+        .premium-shadow {
+            box-shadow: 0 4px 20px rgba(16, 42, 67, 0.05);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+        .premium-shadow:hover {
+            box-shadow: 0 12px 30px rgba(16, 42, 67, 0.12);
+            transform: translateY(-4px);
+        }
     </style>
 </head>
-<body class="transition-colors duration-300 bg-surface text-on-surface font-body-md antialiased overflow-x-hidden flex flex-col min-h-screen">
-<!-- TopNavBar (Rendered from JSON) -->
-<!-- Assuming "Lessons" is the active tab for a Services page -->
+<body class="transition-colors duration-300 bg-surface text-on-surface font-body-md text-body-md antialiased overflow-x-hidden flex flex-col min-h-screen">
+<!-- TopNavBar JSON Component -->
 <nav class="sticky w-full top-0 z-50 bg-surface border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-gutter max-w-container-max mx-auto h-20 transition-all duration-300">
 <div class="flex items-center gap-sm">
 <span class="material-symbols-outlined text-primary text-headline-md icon-fill">directions_car</span>
@@ -280,10 +264,11 @@
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="home2.html">Home 2</a>
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About</a>
-<a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="services.html">Services</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson</a>
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="contact.html">Contact</a>
+<a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-md">
 <button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; localStorage.dir = document.documentElement.dir;" aria-label="Toggle RTL" class="hidden xl:flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-wider">
@@ -298,232 +283,89 @@ RTL
 <a class="hidden xl:inline-flex items-center justify-center font-label-caps text-label-caps bg-primary text-on-primary px-lg py-sm rounded-lg shadow-sm hover:shadow-md hover:bg-primary-container hover:text-on-primary-container transition-all uppercase tracking-wider" href="register.html">Sign Up</a>
 </div>
 </nav>
-<main>
-<!-- 1. Header Section -->
-<section class="relative pt-2xl pb-2xl md:pt-[120px] md:pb-[100px] overflow-hidden">
-<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-12 gap-xl items-center">
-<div class="md:col-span-6 z-10 scroll-reveal text-center md:text-left flex flex-col items-center md:items-start mx-auto md:mx-0">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 mb-6">
-<span class="w-2 h-2 rounded-full bg-secondary"></span>
-<span class="text-label-caps font-label-caps text-secondary uppercase tracking-widest">Premium Instruction</span>
-</div>
-<h1 class="text-headline-lg-mobile font-headline-lg-mobile md:text-display-lg md:font-display-lg text-primary mb-md">
-                        Master the Road with Precision &amp; Confidence.
-                    </h1>
-<p class="text-body-lg font-body-lg text-on-surface-variant mb-xl max-w-lg">
-                        Our comprehensive training programs combine rigorous safety standards with expert instruction to shape the safest drivers on the road.
-                    </p>
-<div class="flex flex-wrap gap-md justify-center md:justify-start w-full sm:w-auto">
-<a class="bg-primary text-on-primary text-label-caps font-label-caps px-lg py-md rounded-DEFAULT hover:bg-primary-container transition-colors duration-200 elevation-1 hover:elevation-2" href="#book">
-                            Explore Courses
-                        </a>
-<a class="bg-transparent border-2 border-secondary text-secondary text-label-caps font-label-caps px-lg py-md rounded-DEFAULT hover:bg-secondary/5 transition-colors duration-200 flex items-center gap-2" href="#experience">
-                            Our Methodology
-                            <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
-</a>
-</div>
-</div>
-<div class="md:col-span-6 relative h-[400px] md:h-[600px] rounded-xl overflow-hidden elevation-2 scroll-reveal delay-200">
-<img class="w-full h-full object-cover" data-alt="A highly detailed, professional photograph of a modern, sleek driver training vehicle on a pristine test track during golden hour. The image features a bright, clean, light-mode aesthetic with a palette focused on crisp whites, deep navy blues, and subtle road teal accents. The lighting is soft yet analytical, emphasizing the precision and safety of the driving academy environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDitkbdrpkS7QySGt64Fd93-X5J6O4sEcUgIpsFxWGo-zBaohgJvVxVQEnYFxqjfrWzQ8gOU_VTzk-9tGV3I449oe7IWJN4aGDFtPnl7e7j-RTANWlwtWyBGWTsx5BRt-z_9WtNTpxqBW5N6HntRcvxscI5_vMsc9OB8eX2w2XTviJo2ibHAYhjBaek66vkIiryUAWvcT3Wz-7pHejGjuSE87YvML_MRoejkHpj6Wccge1GftCFaMS"/>
-<!-- Decorative abstract element -->
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent mix-blend-multiply"></div>
-</div>
-</div>
+
+<!-- 1. Hero Section -->
+<section class="relative min-h-[50vh] flex items-center pt-2xl pb-xl overflow-hidden bg-surface-container-low">
+    <div class="relative z-10 w-full px-gutter max-w-container-max mx-auto text-center scroll-reveal">
+        <h1 class="text-display-lg font-display-lg text-primary mb-sm leading-tight">
+            Get in <span class="text-secondary">Touch</span>
+        </h1>
+        <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
+            Have questions about our driving lessons, schedules, or pricing? We're here to help you get on the road safely.
+        </p>
+    </div>
 </section>
-<!-- 2. Core Training Grid -->
-<section class="py-2xl bg-surface-container-low" id="courses">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="text-center mb-xl scroll-reveal">
-<h2 class="text-headline-lg-mobile font-headline-lg-mobile md:text-headline-lg md:font-headline-lg text-primary mb-sm">Core Training Programs</h2>
-<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto">Foundational courses designed to build structural competence and instinctual safety habits behind the wheel.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
-<!-- Beginner -->
-<div class="bg-surface-container-lowest rounded-xl elevation-1 hover:elevation-2 transition-all duration-300 overflow-hidden flex flex-col group scroll-reveal delay-100">
-<div class="h-48 relative overflow-hidden bg-secondary/5">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up, high-quality shot of a driving instructor's hands guiding a young student's hands on a steering wheel inside a modern car. Bright, airy interior lighting emphasizing safety, trust, and a professional educational environment. Color palette includes crisp whites, light greys, and navy blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFDtf5P7lIMxNw_mkT2Cy8voO5ixBADYEi5v_r1ayBOCXwHTwT77Mv-94AhxjSQpJ279F3M9G7mZBrI-UpzsMyPSWM39rPlvFWZmqYnV3-tntpif9BfZMhnq2U1r69jROJIIjV87CixvS0-Y91qLkF_7iWpVtS5rgS8nU4C5D29El9JM58r_C2t_7E9Y9UcrpS838ukq6f-pjvVvvPZ2P38LZfRMOTy9Mo-cTP49Ng0T88FuJQWx0W"/>
-</div>
-<div class="p-md flex-grow flex flex-col">
-<div class="flex justify-between items-start mb-sm">
-<h3 class="text-headline-md font-headline-md text-primary">Beginner Foundation</h3>
-<span class="bg-secondary/10 text-secondary text-label-caps font-label-caps px-2 py-1 rounded-DEFAULT">Level 1</span>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant mb-md flex-grow">Comprehensive A-Z training for new drivers. Focuses on vehicle control, spatial awareness, and fundamental traffic laws.</p>
-<div class="border-t border-outline-variant/30 pt-sm mt-auto">
-<a class="text-secondary font-label-caps text-label-caps hover:text-primary transition-colors flex items-center gap-1 group-hover:gap-2" href="#">
-                                    View Syllabus <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Refresher -->
-<div class="bg-surface-container-lowest rounded-xl elevation-1 hover:elevation-2 transition-all duration-300 overflow-hidden flex flex-col group scroll-reveal delay-200">
-<div class="h-48 relative overflow-hidden bg-secondary/5">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional photograph showing a confident adult driver looking at the rearview mirror in a modern vehicle. The scene is shot with crisp, clear daylight, highlighting a sleek corporate automotive aesthetic. Colors feature slate greys, deep navy, and hints of vibrant teal to suggest renewal and precision." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy10gASEIq_cQO8boKALgnNSZMiqRlfpmJ3zuXQKXOF7IrxPJ03FsQqdnpb1twT1dv45OBemAhF5sipKOirqFliPL-TAGwF9mvSRwGA6LtuzbDytP0D_sGA77opwCFebXrmShl74FLfZsenrLaaI1Hhup91NO1F43lW0oalYW_kvA7pjsdjGOomPvtePZ5XVORYT8DofJZhl1e3oxtG9WUtqOyAXWEDXDg-D2__61eQiKn27lXRZ7p"/>
-</div>
-<div class="p-md flex-grow flex flex-col">
-<div class="flex justify-between items-start mb-sm">
-<h3 class="text-headline-md font-headline-md text-primary">Skills Refresher</h3>
-<span class="bg-secondary/10 text-secondary text-label-caps font-label-caps px-2 py-1 rounded-DEFAULT">Level 2</span>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant mb-md flex-grow">Tailored sessions for licensed drivers looking to update their knowledge, overcome specific anxieties, or adjust to new vehicle technologies.</p>
-<div class="border-t border-outline-variant/30 pt-sm mt-auto">
-<a class="text-secondary font-label-caps text-label-caps hover:text-primary transition-colors flex items-center gap-1 group-hover:gap-2" href="#">
-                                    View Syllabus <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Test Prep -->
-<div class="bg-surface-container-lowest rounded-xl elevation-1 hover:elevation-2 transition-all duration-300 overflow-hidden flex flex-col group scroll-reveal delay-300">
-<div class="h-48 relative overflow-hidden bg-secondary/5">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A highly detailed shot of a driving examiner's clipboard with a checklist, resting on the dashboard of a car. The background shows an out-of-focus DMV testing route. The lighting is bright and analytical, emphasizing readiness and structural evaluation. Overall aesthetic is clean, professional, and light-mode compatible." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBscV7yZpLOME5yVTqvvnNHBN2dCda4FxwqgJxnm-JOySMB9xi5K_OOVcxSxVT-UX2UwFNMv9VvnBKly4dVzoosob0OxSx_RIvaOeZfYdnCeQ9TN29uauuPWdV6ZnFhgFmN3R3YlhU1mAPYylfqSrJr3m6wrOEilmgkMcAJ6BJvuEHMQ36wcgBSM3aczY6bQPPASPq-4JAR0XroQfu9c1fKT1hTr13ACp72Dvp4Tzs-7AjOp-9Y-3YL"/>
-</div>
-<div class="p-md flex-grow flex flex-col">
-<div class="flex justify-between items-start mb-sm">
-<h3 class="text-headline-md font-headline-md text-primary">License Test Prep</h3>
-<span class="bg-secondary/10 text-secondary text-label-caps font-label-caps px-2 py-1 rounded-DEFAULT">Exam</span>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant mb-md flex-grow">Intensive mock exams and targeted practice focused entirely on passing the state practical driving examination.</p>
-<div class="border-t border-outline-variant/30 pt-sm mt-auto">
-<a class="text-secondary font-label-caps text-label-caps hover:text-primary transition-colors flex items-center gap-1 group-hover:gap-2" href="#">
-                                    View Syllabus <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
+
+<!-- 2. Contact Information & Form -->
+<section class="py-2xl bg-surface relative overflow-hidden">
+    <div class="w-full px-gutter max-w-container-max mx-auto">
+        <div class="flex flex-col lg:flex-row gap-xl">
+            <!-- Contact Info -->
+            <div class="w-full lg:w-1/3 scroll-reveal flex flex-col gap-lg">
+                <div class="bg-surface-container-lowest p-lg rounded-xl premium-shadow border border-outline-variant/20 flex flex-col gap-sm">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-xs">
+                        <span class="material-symbols-outlined text-[24px]">location_on</span>
+                    </div>
+                    <h3 class="text-headline-md font-headline-md text-primary">Visit Us</h3>
+                    <p class="text-body-md font-body-md text-on-surface-variant">123 Driving School Lane<br>Cityville, ST 12345</p>
+                </div>
+                
+                <div class="bg-surface-container-lowest p-lg rounded-xl premium-shadow border border-outline-variant/20 flex flex-col gap-sm">
+                    <div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center text-secondary mb-xs">
+                        <span class="material-symbols-outlined text-[24px]">call</span>
+                    </div>
+                    <h3 class="text-headline-md font-headline-md text-primary">Call Us</h3>
+                    <p class="text-body-md font-body-md text-on-surface-variant">Main: (555) 123-4567<br>Support: (555) 987-6543</p>
+                </div>
+                
+                <div class="bg-surface-container-lowest p-lg rounded-xl premium-shadow border border-outline-variant/20 flex flex-col gap-sm">
+                    <div class="w-12 h-12 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary mb-xs">
+                        <span class="material-symbols-outlined text-[24px]">mail</span>
+                    </div>
+                    <h3 class="text-headline-md font-headline-md text-primary">Email Us</h3>
+                    <p class="text-body-md font-body-md text-on-surface-variant">info@elitedriving.com<br>support@elitedriving.com</p>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="w-full lg:w-2/3 scroll-reveal delay-100">
+                <div class="bg-surface-container-lowest p-xl rounded-xl premium-shadow border border-outline-variant/20">
+                    <h2 class="text-headline-lg font-headline-lg text-primary mb-sm">Send us a Message</h2>
+                    <p class="text-body-md font-body-md text-on-surface-variant mb-lg">Fill out the form below and our team will get back to you within 24 hours.</p>
+                    
+                    <form class="flex flex-col gap-lg" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                            <div class="flex flex-col gap-xs">
+                                <label for="name" class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider">Full Name</label>
+                                <input type="text" id="name" class="bg-surface text-on-surface border border-outline-variant/50 rounded-lg px-md py-sm focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all" placeholder="John Doe" required>
+                            </div>
+                            <div class="flex flex-col gap-xs">
+                                <label for="email" class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider">Email Address</label>
+                                <input type="email" id="email" class="bg-surface text-on-surface border border-outline-variant/50 rounded-lg px-md py-sm focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col gap-xs">
+                            <label for="subject" class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider">Subject</label>
+                            <input type="text" id="subject" class="bg-surface text-on-surface border border-outline-variant/50 rounded-lg px-md py-sm focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all" placeholder="How can we help you?" required>
+                        </div>
+                        
+                        <div class="flex flex-col gap-xs">
+                            <label for="message" class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider">Message</label>
+                            <textarea id="message" rows="5" class="bg-surface text-on-surface border border-outline-variant/50 rounded-lg px-md py-sm focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all resize-y" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-wider py-md px-xl rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm self-start mt-sm">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- 3. Specialized Courses -->
-<section class="py-2xl bg-surface">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="mb-xl md:w-2/3 scroll-reveal text-center md:text-left mx-auto md:mx-0 flex flex-col items-center md:items-start">
-<h2 class="text-headline-lg-mobile font-headline-lg-mobile md:text-headline-lg md:font-headline-lg text-primary mb-sm">Specialized Modules</h2>
-<p class="text-body-md font-body-md text-on-surface-variant">Master complex environments and specific maneuvers with our targeted add-on modules.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-lg auto-rows-[250px]">
-<!-- Highway -->
-<div class="md:col-span-8 bg-surface-container-lowest rounded-xl elevation-1 overflow-hidden relative group scroll-reveal">
-<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A striking, wide-angle photograph taken from inside a car merging onto a busy multi-lane highway during daytime. The image captures the dynamic energy of fast-moving traffic while maintaining a clear, focused, and professional aesthetic. Bright skies, crisp road markings, and a modern corporate color palette dominant in blues and greys." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsQ9nXeH-9LCP-tAh7nNSUp3mls8itqxJKjbQPZs26OAeCbKlNsUrRW6BNTAQxFtpm8TF30jHy8Hc7wHbXHKTkvHjSrTnDnrvn7fK-bkvpJPPpt8HQ1Uzb6tUtaDjJkjmetTeVnNEXIPFBJJLpJFERFuHrJDscwG0ugkrvwg4N78MEMul21DwbNtaSCQsSd_xi0Yal---LIDm6JnjH2Wu2cOwQoDG6cFSB32CnCnITr7fIEbSUUylB"/>
-<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
-<div class="absolute inset-0 p-lg flex flex-col justify-center w-full md:w-2/3">
-<span class="material-symbols-outlined text-secondary text-[32px] mb-sm">add_road</span>
-<h3 class="text-headline-md font-headline-md text-primary mb-xs">Highway &amp; Merge Tactics</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-md">Develop confidence at high speeds. Focus on safe merging, lane discipline, and defensive strategies around heavy goods vehicles.</p>
-</div>
-</div>
-<!-- Night -->
-<div class="md:col-span-4 bg-primary rounded-xl elevation-1 overflow-hidden relative group scroll-reveal delay-100">
-<img class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="A sophisticated, high-contrast photograph of a car's dashboard and steering wheel illuminated at night. Outside the windshield, city streetlights blur in a bokeh effect. The mood is calm and focused. Despite the night setting, the image aligns with the professional brand identity using deep navy blues and sharp, clear instrument lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUj49OfmXaeeyZD0lnFJSHDRI4idWNJPcoXLQhU4EW01m827l809W17sNFzgS12uC5VIvirOlIBnXAopZTqe90POTIqP0oK5MLzf0DslRAIWQpTCdWRkwX9eY0kQwXwwld3rddValMDgSJ4S6D56D5sEBF6LJ__adL3gk15Rmx0bltCQQWKyZZLTAKV7Pb77HARFcOrnAg13mfJtWgaf64UIV7Xo93E86Eih2sq2AWmNcU7b8Ua123"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent"></div>
-<div class="absolute inset-0 p-lg flex flex-col justify-end">
-<span class="material-symbols-outlined text-secondary-container text-[32px] mb-sm">bedtime</span>
-<h3 class="text-headline-md font-headline-md text-on-primary mb-xs">Night Navigation</h3>
-<p class="text-body-sm font-body-sm text-on-primary opacity-80">Techniques for reduced visibility, managing glare, and adjusting reaction times for nocturnal driving.</p>
-</div>
-</div>
-<!-- Parking -->
-<div class="md:col-span-12 bg-surface-container-lowest border border-outline-variant/20 rounded-xl elevation-1 flex flex-col md:flex-row items-center p-lg gap-lg scroll-reveal">
-<div class="w-full md:w-1/3 h-48 md:h-full relative rounded-lg overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="A clean, overhead or high-angle professional shot of a white training vehicle perfectly executing a parallel park between two cones. The asphalt is pristine with sharp white painted lines. The lighting is even and bright, emphasizing spatial precision and control typical of an elite driving academy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGz5-moRhWH7ak_gFLM2TB7vn0WkZBlRFOA8OmDSsijGRHLckJAU6QyNwrZiqT02tSF-J2G9XVrlAgiHmyfUSmNIJMdSBkCAIiP_rNRcePPc_PV4qRC772VUZUPX1Qp8Ux3bFnNZmqZHcaI6T4aCSSxSIUxaRvtBHZ9Jz1ONpnv4F25oE1N6xkxtcZ_nImA18Ql0-EzV86F_8PBd80qKhPjybaPW__McvA6KrcraG6Us_t_0xH-AIV"/>
-</div>
-<div class="w-full md:w-2/3">
-<span class="material-symbols-outlined text-secondary text-[32px] mb-sm">local_parking</span>
-<h3 class="text-headline-md font-headline-md text-primary mb-xs">Precision Parking Clinic</h3>
-<p class="text-body-md font-body-md text-on-surface-variant mb-md max-w-2xl">Eliminate parking anxiety. This clinic isolates reverse, parallel, and tight-space maneuvering using geometric reference points and advanced spatial awareness techniques.</p>
-<a class="text-primary font-label-caps text-label-caps border-b border-primary pb-xs hover:text-secondary hover:border-secondary transition-colors" href="#">Add to Package</a>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 4. The Training Experience (Timeline) -->
-<section class="py-2xl bg-surface-container-low border-y border-outline-variant/10" id="experience">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="text-center mb-xl scroll-reveal">
-<h2 class="text-headline-lg-mobile font-headline-lg-mobile md:text-headline-lg md:font-headline-lg text-primary mb-sm">The Elite Journey</h2>
-<p class="text-body-md font-body-md text-on-surface-variant max-w-2xl mx-auto">A structured path from classroom theory to confident independence.</p>
-</div>
-<div class="relative max-w-4xl mx-auto">
-<!-- Vertical Line (Desktop) -->
-<div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-outline-variant/30"></div>
-<!-- Step 1 -->
-<div class="relative flex flex-col md:flex-row justify-between items-center mb-xl group scroll-reveal">
-<div class="md:w-5/12 flex justify-end md:text-right mb-sm md:mb-0 order-2 md:order-1 px-4">
-<div>
-<h4 class="text-headline-md font-headline-md text-primary mb-xs">1. Evaluation</h4>
-<p class="text-body-sm font-body-sm text-on-surface-variant">We assess your current knowledge, comfort level, and specific goals to tailor the syllabus.</p>
-</div>
-</div>
-<div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-surface border-2 border-secondary flex items-center justify-center z-10 order-1 md:order-2 mb-sm md:mb-0 shadow-sm group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-secondary text-[20px]">assignment</span>
-</div>
-<div class="md:w-5/12 order-3"></div>
-</div>
-<!-- Step 2 -->
-<div class="relative flex flex-col md:flex-row justify-between items-center mb-xl group scroll-reveal delay-100">
-<div class="md:w-5/12 order-2 md:order-1"></div>
-<div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-surface border-2 border-secondary flex items-center justify-center z-10 order-1 md:order-2 mb-sm md:mb-0 shadow-sm group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-secondary text-[20px]">school</span>
-</div>
-<div class="md:w-5/12 flex justify-start md:text-left mb-sm md:mb-0 order-3 px-4">
-<div>
-<h4 class="text-headline-md font-headline-md text-primary mb-xs">2. Closed Course</h4>
-<p class="text-body-sm font-body-sm text-on-surface-variant">Master vehicle mechanics and basic maneuvers in a safe, traffic-free environment.</p>
-</div>
-</div>
-</div>
-<!-- Step 3 -->
-<div class="relative flex flex-col md:flex-row justify-between items-center mb-xl group scroll-reveal delay-200">
-<div class="md:w-5/12 flex justify-end md:text-right mb-sm md:mb-0 order-2 md:order-1 px-4">
-<div>
-<h4 class="text-headline-md font-headline-md text-primary mb-xs">3. Urban Navigation</h4>
-<p class="text-body-sm font-body-sm text-on-surface-variant">Transition to city streets, focusing on intersections, hazard perception, and defensive habits.</p>
-</div>
-</div>
-<div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-surface border-2 border-secondary flex items-center justify-center z-10 order-1 md:order-2 mb-sm md:mb-0 shadow-sm group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-secondary text-[20px]">location_city</span>
-</div>
-<div class="md:w-5/12 order-3"></div>
-</div>
-<!-- Step 4 -->
-<div class="relative flex flex-col md:flex-row justify-between items-center group scroll-reveal delay-300">
-<div class="md:w-5/12 order-2 md:order-1"></div>
-<div class="md:absolute md:left-1/2 md:transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-primary flex items-center justify-center z-10 order-1 md:order-2 mb-sm md:mb-0 shadow-sm group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-on-primary text-[20px]">workspace_premium</span>
-</div>
-<div class="md:w-5/12 flex justify-start md:text-left order-3 px-4">
-<div>
-<h4 class="text-headline-md font-headline-md text-primary mb-xs">4. Certification</h4>
-<p class="text-body-sm font-body-sm text-on-surface-variant">Mock exams and final polishing to ensure you exceed testing standards.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- 5. CTA Section -->
-<section class="py-2xl relative overflow-hidden bg-surface-container text-on-surface" id="book">
-<!-- Background Texture -->
-<div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0); background-size: 32px 32px;"></div>
-<div class="max-w-container-max mx-auto px-gutter relative z-10 text-center scroll-reveal">
-<h2 class="text-headline-lg-mobile font-headline-lg-mobile md:text-display-lg md:font-display-lg text-primary mb-md">Ready to take the wheel?</h2>
-<p class="text-body-lg font-body-lg text-on-surface-variant max-w-xl mx-auto mb-xl">
-                    Join the ranks of safe, confident drivers. Check our availability and book your initial consultation today.
-                </p>
-<div class="flex flex-col sm:flex-row justify-center gap-md items-center">
-<a class="bg-secondary text-on-secondary text-label-caps font-label-caps px-xl py-md rounded-DEFAULT hover:bg-secondary-fixed-dim transition-colors duration-200 elevation-1 hover:elevation-2 w-full sm:w-auto" href="#">
-                        Book Your First Lesson
-                    </a>
-<a class="text-primary border-2 border-primary text-center text-label-caps font-label-caps px-xl py-md rounded-DEFAULT hover:bg-primary/10 transition-all duration-200 w-full sm:w-auto" href="#">
-                        View Pricing Details
-                    </a>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer (Rendered from JSON) -->
+
+<!-- Footer JSON Component -->
 <footer class="bg-primary text-on-primary mt-auto">
 <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-xl px-gutter py-2xl max-w-container-max mx-auto border-b border-primary-fixed-dim/20">
     <!-- Brand & Contact -->
@@ -556,8 +398,8 @@ RTL
         <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Quick Links</h4>
         <div class="flex flex-col gap-sm">
             <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
-            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About Us</a>
-            <a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="services.html">Services</a>
+            <a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="about.html">About Us</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
             <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
             <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
             <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="contact.html">Contact</a>
@@ -605,7 +447,7 @@ RTL
     </div>
 </div>
 </footer>
-<!-- Intersection Observer for Scroll Animations -->
+<!-- Scroll Animation Script -->
 <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
@@ -617,8 +459,8 @@ RTL
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target); // Run once
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);

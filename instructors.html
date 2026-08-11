@@ -5,6 +5,9 @@
     } else {
         document.documentElement.classList.remove('dark')
     }
+    if (localStorage.dir) {
+        document.documentElement.dir = localStorage.dir;
+    }
 </script>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -183,15 +186,15 @@
   --color-secondary: #80cbc4;
   --color-tertiary-container: #f9e6c9;
   --color-on-surface-variant: #b0b0b0;
-  --color-on-primary: #0d47a1;
+  --color-on-primary: #ffffff;
   --color-on-primary-fixed-variant: #a0b3c9;
-  --color-primary-container: #1976d2;
+  --color-primary-container: #0d47a1;
   --color-inverse-on-surface: #1f1b21;
   --color-on-error: #1e1e1e;
   --color-surface-container-lowest: #1e1e1e;
   --color-surface: #1e1e1e;
   --color-tertiary-fixed-dim: #694920;
-  --color-primary: #90caf9;
+  --color-primary: #1976d2;
   --color-secondary-fixed-dim: #329796;
   --color-outline: #82848a;
   --color-on-surface: #e0e0e0;
@@ -255,9 +258,10 @@
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
 <a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="contact.html">Contact</a>
 </div>
 <div class="flex items-center gap-md">
-<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" aria-label="Toggle RTL" class="hidden xl:flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-wider">
+<button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; localStorage.dir = document.documentElement.dir;" aria-label="Toggle RTL" class="hidden xl:flex items-center text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors uppercase tracking-wider">
 RTL
 </button>
 <button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" aria-label="Toggle Dark Mode" class="hidden xl:flex items-center text-on-surface-variant hover:text-primary transition-colors p-sm rounded-full hover:bg-surface-container">
@@ -338,7 +342,7 @@ RTL
                     </div>
                     
                     <div class="flex flex-wrap gap-2 mb-md">
-                        <span class="bg-secondary/10 border border-secondary/30 text-secondary-fixed px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">Automatic</span>
+                        <span class="bg-secondary/10 border border-secondary/30 text-secondary px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">Automatic</span>
                         <span class="bg-primary/5 border border-primary/20 text-primary px-2 py-1 rounded-md font-label-caps text-[10px] uppercase font-semibold tracking-wider">Intensive Courses</span>
                     </div>
                     
@@ -512,10 +516,10 @@ RTL
         <div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center z-10">
             <div class="text-center md:text-left flex flex-col items-center md:items-start">
                 <h2 class="font-headline-lg text-headline-lg text-on-primary mb-md">Start Your Journey Today</h2>
-                <p class="font-body-md text-body-md text-on-primary/80 mb-lg max-w-lg">
+                <p class="font-body-md text-body-md text-on-primary opacity-80 mb-lg max-w-lg">
                     Whether you're getting behind the wheel for the first time or looking for an advanced refresher, our instructors are ready to guide you to success.
                 </p>
-                <ul class="flex flex-col items-center md:items-start gap-sm mb-xl text-on-primary/90 text-left">
+                <ul class="flex flex-col items-center md:items-start gap-sm mb-xl text-on-primary opacity-90 text-left">
                     <li class="flex items-center gap-2 font-body-sm">
                         <span class="material-symbols-outlined text-secondary-fixed">check_circle</span> DVSA Approved Instructors
                     </li>
@@ -551,19 +555,19 @@ RTL
             <span class="material-symbols-outlined text-on-primary text-headline-md icon-fill">directions_car</span>
             <span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">CARZDRIZ</span>
         </div>
-        <p class="font-body-sm text-body-sm text-on-primary/70 max-w-sm">
+        <p class="font-body-sm text-body-sm text-on-primary opacity-70 max-w-sm">
             Precision in every turn. Empowering the next generation of safe, confident drivers with professional instructors and modern vehicles.
         </p>
         <div class="flex flex-col gap-xs mt-sm">
-            <div class="flex items-center gap-sm text-on-primary/80">
+            <div class="flex items-center gap-sm text-on-primary opacity-80">
                 <span class="material-symbols-outlined text-[18px]">location_on</span>
                 <span class="font-body-sm text-body-sm">123 Driving School Lane, Cityville, ST 12345</span>
             </div>
-            <div class="flex items-center gap-sm text-on-primary/80">
+            <div class="flex items-center gap-sm text-on-primary opacity-80">
                 <span class="material-symbols-outlined text-[18px]">call</span>
                 <span class="font-body-sm text-body-sm">(555) 123-4567</span>
             </div>
-            <div class="flex items-center gap-sm text-on-primary/80">
+            <div class="flex items-center gap-sm text-on-primary opacity-80">
                 <span class="material-symbols-outlined text-[18px]">mail</span>
                 <span class="font-body-sm text-body-sm">info@elitedriving.com</span>
             </div>
@@ -574,11 +578,12 @@ RTL
     <div class="flex flex-col gap-md">
         <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Quick Links</h4>
         <div class="flex flex-col gap-sm">
-            <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
-            <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About Us</a>
-            <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="about.html">About Us</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="services.html">Services</a>
             <a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="instructors.html">Instructors</a>
-            <a class="text-on-primary/70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="lesson.html">Lesson Packages</a>
+            <a class="text-on-primary opacity-70 font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="contact.html">Contact</a>
         </div>
     </div>
 
@@ -586,18 +591,18 @@ RTL
     <div class="flex flex-col gap-md">
         <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Support</h4>
         <div class="flex flex-col gap-sm">
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="dashboard.html">Student Dashboard</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="login.html">Login</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="register.html">Sign Up</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="dashboard.html">Student Dashboard</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="login.html">Login</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="register.html">Sign Up</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-sm text-body-sm text-on-primary opacity-70 hover:text-secondary-fixed transition-colors" href="#">Terms of Service</a>
         </div>
     </div>
 
     <!-- Newsletter -->
     <div class="flex flex-col gap-md col-span-1 md:col-span-2 lg:col-span-1">
         <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed tracking-widest">Newsletter</h4>
-        <p class="font-body-sm text-body-sm text-on-primary/70">Subscribe for driving tips and exclusive offers.</p>
+        <p class="font-body-sm text-body-sm text-on-primary opacity-70">Subscribe for driving tips and exclusive offers.</p>
         <form class="flex flex-col gap-sm mt-xs" onsubmit="event.preventDefault();">
             <input type="email" placeholder="Your email address" class="w-full bg-surface text-on-surface placeholder:text-on-surface/60 border-none rounded-lg px-md py-sm font-body-sm focus:ring-2 focus:ring-secondary-fixed outline-none" required>
             <button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider py-sm rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Subscribe</button>
@@ -607,7 +612,7 @@ RTL
 
 <!-- Bottom Bar -->
 <div class="px-gutter py-md max-w-container-max mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-sm">
-    <span class="font-body-sm text-body-sm text-on-primary/50">© 2026 CARZDRIZ. All rights reserved.</span>
+    <span class="font-body-sm text-body-sm text-on-primary opacity-50">© 2026 CARZDRIZ. All rights reserved.</span>
     
     <!-- Social Icons using SVG for actual brands instead of just material icons -->
     <div class="flex gap-md opacity-80">
@@ -641,11 +646,12 @@ RTL
         <a href="services.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Services</a>
         <a href="instructors.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Instructors</a>
         <a href="lesson.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Lesson</a>
+        <a href="contact.html" class="px-lg py-md text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider">Contact</a>
         <div class="h-px w-full bg-outline-variant/30 my-sm"></div>
         <a href="register.html" class="px-lg py-md text-primary font-bold hover:bg-primary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Sign Up</a>
         <a href="login.html" class="px-lg py-md text-secondary hover:bg-secondary/5 transition-colors font-label-caps text-[14px] uppercase tracking-wider">Login</a>
         <div class="h-px w-full bg-outline-variant/30 my-sm"></div>
-        <button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" class="px-lg py-md flex items-center gap-sm text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider text-left w-full">
+        <button onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl'; localStorage.dir = document.documentElement.dir;" class="px-lg py-md flex items-center gap-sm text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider text-left w-full">
             <span class="material-symbols-outlined text-[18px] mr-2">swap_horiz</span> RTL Mode
         </button>
         <button onclick="document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';" class="px-lg py-md flex items-center gap-sm text-on-surface hover:bg-surface-container transition-colors font-label-caps text-[14px] uppercase tracking-wider text-left w-full">
@@ -689,6 +695,23 @@ RTL
         if (mobileMenuOverlay) {
             mobileMenuOverlay.addEventListener('click', closeMenu);
         }
+
+        // FAQ Accordion Logic
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.material-symbols-outlined');
+                
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                    content.style.maxHeight = '0px';
+                    if (icon) icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    if (icon) icon.style.transform = 'rotate(45deg)';
+                }
+            });
+        });
     });
 </script>
 
