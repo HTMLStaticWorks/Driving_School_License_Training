@@ -1,9 +1,9 @@
-import sys, re, os, glob
+import glob
+import re
 
-target_dir = r'd:\project 2\Driving School & Licence Training'
-os.chdir(target_dir)
+html_files = sorted(glob.glob('*.html'))
 
-new_footer = """<footer class="bg-primary dark:bg-[#090F1B] text-on-primary dark:text-on-surface mt-auto border-t border-primary-fixed-dim/20 dark:border-outline-variant/20 transition-colors duration-300">
+new_footer_html = '''<footer class="bg-primary dark:bg-[#090F1B] text-on-primary dark:text-on-surface mt-auto border-t border-primary-fixed-dim/20 dark:border-outline-variant/20 transition-colors duration-300">
 <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-xl px-gutter py-2xl max-w-container-max mx-auto border-b border-primary-fixed-dim/20 dark:border-outline-variant/20">
     <!-- Brand & Contact -->
     <div class="flex flex-col gap-md col-span-1 md:col-span-2">
@@ -94,29 +94,17 @@ new_footer = """<footer class="bg-primary dark:bg-[#090F1B] text-on-primary dark
         </a>
     </div>
 </div>
-</footer>"""
+</footer>'''
 
-for f in glob.glob('*.html'):
-    with open(f, 'r', encoding='utf-8') as file:
-        content = file.read()
-    
+for file_path in html_files:
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
     match = re.search(r'<footer.*?>.*?</footer>', content, re.DOTALL | re.IGNORECASE)
-    
     if match:
-        content = content[:match.start()] + new_footer + content[match.end():]
-        print(f'Replaced footer in {f}')
-    else:
-        if '<body' in content:
-            body_match = re.search(r'</body>', content, re.IGNORECASE)
-            if body_match:
-                content = content[:body_match.start()] + '\n' + new_footer + '\n' + content[body_match.start():]
-                print(f'Added footer to {f}')
-            else:
-                content = content + '\n' + new_footer
-                print(f'Added footer at end of {f}')
-                
-    if 'min-h-screen' not in content and 'class="' in content:
-        content = re.sub(r'<body class="([^"]+)"', r'<body class="\1 flex flex-col min-h-screen"', content, count=1, flags=re.IGNORECASE)
-        
-    with open(f, 'w', encoding='utf-8') as file:
-        file.write(content)
+        content = content[:match.start()] + new_footer_html + content[match.end():]
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write(content)
+        print(f"Updated footer in {file_path}")
+
+print("Footer dark mode color contrast fix complete.")

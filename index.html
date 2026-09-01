@@ -13,8 +13,8 @@
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CARZDRIZ</title>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚗</text></svg>">
+<title>CARZDRIZ - Driving School & Licence Training</title>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <!-- Google Fonts: Poppins (Display/Headline) & Inter (Body/Labels) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -235,10 +235,20 @@
 <body class="transition-colors duration-300 bg-surface text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container flex flex-col min-h-screen">
 <!-- TopNavBar -->
 <nav class="sticky w-full top-0 z-50 bg-surface border-b border-outline-variant/30 shadow-sm flex justify-between items-center px-gutter max-w-container-max mx-auto h-20 transition-all duration-300">
-<div class="flex items-center gap-sm">
-<span class="material-symbols-outlined text-primary text-headline-md icon-fill">directions_car</span>
-<span class="text-headline-md font-headline-md font-bold text-primary tracking-tight">CARZDRIZ</span>
-</div>
+<a href="index.html" class="flex items-center gap-3 group focus:outline-none shrink-0" aria-label="CARZDRIZ Home">
+    <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-primary via-secondary to-brand-teal p-[2px] shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
+        <div class="w-full h-full bg-surface dark:bg-surface-container-highest rounded-[10px] flex items-center justify-center overflow-hidden p-1">
+            <img src="images/logo-icon.svg" alt="CARZDRIZ Logo" class="w-full h-full object-contain">
+        </div>
+    </div>
+    <div class="flex flex-col leading-none">
+        <div class="flex items-center text-2xl font-black font-display tracking-tight">
+            <span class="text-primary dark:text-on-surface">CARZ</span>
+            <span class="text-brand-orange">DRIZ</span>
+        </div>
+        <span class="text-[9px] font-bold uppercase tracking-[0.22em] text-on-surface-variant/80 mt-0.5">Driving Academy</span>
+    </div>
+</a>
 <div class="hidden xl:flex items-center gap-lg">
 <a class="text-secondary font-label-caps text-label-caps font-bold border-b-2 border-secondary pb-1 transition-colors duration-200 uppercase" href="index.html">Home</a>
 <a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-200 uppercase" href="home2.html">Home 2</a>
@@ -263,31 +273,70 @@ RTL
 </nav>
 <main>
 <!-- Hero Section -->
-<section class="px-gutter py-2xl max-w-container-max mx-auto overflow-hidden">
+<section class="px-gutter py-2xl max-w-container-max mx-auto overflow-hidden relative">
 <div class="grid md:grid-cols-2 gap-xl items-center">
 <div class="flex flex-col gap-lg z-10 text-center md:text-left items-center md:items-start">
-<div class="inline-flex items-center gap-sm bg-secondary-container/20 text-on-secondary-container px-md py-xs rounded-full w-fit border border-secondary-container/30 mx-auto md:mx-0">
-<span class="material-symbols-outlined text-[16px] icon-fill">verified</span>
-<span class="font-label-caps text-label-caps uppercase">#1 Rated Driving School</span>
+<div class="flex flex-wrap gap-2 justify-center md:justify-start">
+    <div class="inline-flex items-center gap-sm bg-secondary-container/20 text-on-secondary-container dark:text-brand-teal px-md py-xs rounded-full border border-secondary-container/30">
+        <span class="material-symbols-outlined text-[16px] text-brand-orange icon-fill">verified</span>
+        <span class="font-label-caps text-label-caps uppercase tracking-wider font-bold">DMV & DVSA Approved Driving School</span>
+    </div>
+    <div class="inline-flex items-center gap-xs bg-primary/5 dark:bg-surface-container-high text-primary dark:text-on-surface px-md py-xs rounded-full border border-outline-variant/30">
+        <span class="material-symbols-outlined text-[16px] text-secondary">directions_car</span>
+        <span class="font-label-caps text-label-caps uppercase tracking-wider">Dual-Control Safety Fleet</span>
+    </div>
 </div>
-<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary leading-tight">
-                        Learn to Drive. <br/><span class="text-secondary">Drive With Confidence.</span>
+<h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg text-primary dark:text-on-surface leading-tight">
+    Master the Road. <br/><span class="text-secondary dark:text-brand-teal">Pass Your Test.</span> <br/><span class="text-brand-orange">Get Your Driver's License.</span>
 </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto md:mx-0">
-                        Professional driving lessons designed to help you become a confident, responsible, and test-ready driver. Master the road ahead with expert guidance.
-                    </p>
+    Certified 1-on-1 driving instruction, dual-controlled training vehicles, hazard perception prep, and express driver licensing programs tailored for all experience levels.
+</p>
 <div class="flex flex-col sm:flex-row flex-wrap gap-md pt-sm justify-center md:justify-start w-full sm:w-auto">
-<a class="inline-flex items-center justify-center text-center font-label-caps text-label-caps bg-primary text-on-primary border-2 border-transparent px-lg py-md rounded-lg shadow-sm hover:shadow-md hover:-translate-y-[1px] transition-all uppercase tracking-wider w-full sm:w-auto min-h-[48px] whitespace-nowrap" href="#">
-                            Book a Driving Lesson
-                        </a>
-<a class="inline-flex items-center justify-center text-center font-label-caps text-label-caps text-secondary border-2 border-secondary px-lg py-md rounded-lg hover:bg-secondary/5 transition-colors uppercase tracking-wider w-full sm:w-auto min-h-[48px] whitespace-nowrap" href="#">
-                            View Lesson Packages
-                        </a>
+    <a class="inline-flex items-center justify-center gap-2 font-label-caps text-label-caps bg-brand-orange hover:bg-[#e6692e] text-white border-2 border-transparent px-lg py-md rounded-lg shadow-md hover:shadow-lg hover:-translate-y-[1px] transition-all uppercase tracking-wider w-full sm:w-auto min-h-[48px] whitespace-nowrap font-bold" href="contact.html">
+        <span class="material-symbols-outlined text-[20px]">directions_car</span>
+        Book a Driving Lesson
+    </a>
+    <a class="inline-flex items-center justify-center gap-2 font-label-caps text-label-caps text-secondary dark:text-brand-teal border-2 border-secondary dark:border-brand-teal px-lg py-md rounded-lg hover:bg-secondary/10 transition-colors uppercase tracking-wider w-full sm:w-auto min-h-[48px] whitespace-nowrap font-bold" href="lesson.html">
+        <span class="material-symbols-outlined text-[20px]">badge</span>
+        View License Packages
+    </a>
+</div>
+<!-- Key Trust Badges -->
+<div class="grid grid-cols-3 gap-md pt-md border-t border-outline-variant/30 w-full">
+    <div class="flex flex-col items-center md:items-start">
+        <span class="font-headline-md text-[22px] font-bold text-primary dark:text-on-surface">96%</span>
+        <span class="text-[11px] font-medium text-on-surface-variant uppercase tracking-wide">1st-Time Pass Rate</span>
+    </div>
+    <div class="flex flex-col items-center md:items-start">
+        <span class="font-headline-md text-[22px] font-bold text-secondary dark:text-brand-teal">15,000+</span>
+        <span class="text-[11px] font-medium text-on-surface-variant uppercase tracking-wide">Licensed Graduates</span>
+    </div>
+    <div class="flex flex-col items-center md:items-start">
+        <span class="font-headline-md text-[22px] font-bold text-brand-orange">100%</span>
+        <span class="text-[11px] font-medium text-on-surface-variant uppercase tracking-wide">Certified ADI Team</span>
+    </div>
 </div>
 </div>
-<div class="relative h-[400px] md:h-[600px] rounded-xl overflow-hidden shadow-lg border border-outline-variant/20">
-<div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent z-10 mix-blend-multiply"></div>
-<img class="absolute inset-0 w-full h-full object-cover object-top" data-alt="A professional driving instructor in a modern dual-control car, smiling encouragingly at a young female student driver behind the wheel. The setting is a bright, sunny day on a quiet suburban street. The mood is confident, safe, and educational. The lighting is natural and high-key, highlighting the modern dashboard and the professional midnight navy uniform of the instructor. Clean, premium automotive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtlLmysGiGeVVtk842RbG_rQ8BPeh2LMNrhaeIG1CXxUsGAYJJ_vbflIYbz2clB8tYxzgi7NWgRlAN2WLw8NlLiRI_Cg3HzH5JD_LzZo5iYnwGt7G2-DaeLBhTXXk8sXfUBUaFhJH2U5z8WdBvTDOj3NGsh9wI4Lb-yl-4t5Nwy0OPkRZQx62ufDav7PA-S1ybkQ8zAz-gKi6YBOq-9ZdiK7MY1XOfHEgSc0DR72YIfFpXX9S4IYFM"/>
+<div class="relative h-[440px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/20 group">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/30 via-transparent to-transparent z-10 mix-blend-multiply"></div>
+<img class="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700" data-alt="A professional driving instructor in a modern dual-control car, smiling encouragingly at a young female student driver behind the wheel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtlLmysGiGeVVtk842RbG_rQ8BPeh2LMNrhaeIG1CXxUsGAYJJ_vbflIYbz2clB8tYxzgi7NWgRlAN2WLw8NlLiRI_Cg3HzH5JD_LzZo5iYnwGt7G2-DaeLBhTXXk8sXfUBUaFhJH2U5z8WdBvTDOj3NGsh9wI4Lb-yl-4t5Nwy0OPkRZQx62ufDav7PA-S1ybkQ8zAz-gKi6YBOq-9ZdiK7MY1XOfHEgSc0DR72YIfFpXX9S4IYFM"/>
+
+<!-- Floating Overlay Badge 1 -->
+<div class="absolute bottom-6 left-6 z-20 bg-surface/95 dark:bg-surface-container-highest/95 backdrop-blur-md p-md rounded-xl border border-outline-variant/40 shadow-xl flex items-center gap-md max-w-[280px]">
+    <div class="w-10 h-10 rounded-lg bg-secondary/10 dark:bg-secondary/20 flex items-center justify-center text-secondary dark:text-brand-teal shrink-0">
+        <span class="material-symbols-outlined text-[24px]">workspace_premium</span>
+    </div>
+    <div>
+        <h4 class="font-bold text-body-sm text-primary dark:text-on-surface">Guaranteed Test Ready</h4>
+        <p class="text-[12px] text-on-surface-variant">Full mock examiner route testing</p>
+    </div>
+</div>
+<!-- Floating Overlay Badge 2 -->
+<div class="absolute top-6 right-6 z-20 bg-surface/95 dark:bg-surface-container-highest/95 backdrop-blur-md px-md py-sm rounded-full border border-outline-variant/40 shadow-lg flex items-center gap-sm">
+    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+    <span class="text-[12px] font-bold text-primary dark:text-on-surface">Dual-Control Safety Fleet</span>
+</div>
 </div>
 </div>
 </section>
@@ -312,6 +361,62 @@ RTL
 </div>
 </div>
 </section>
+
+<!-- 4-Step License Roadmap Section -->
+<section class="py-2xl px-gutter max-w-container-max mx-auto bg-surface-container-low/50 dark:bg-surface-container-lowest/30 border-y border-outline-variant/20">
+<div class="text-center mb-xl flex flex-col items-center gap-sm">
+    <span class="font-label-caps text-label-caps uppercase text-brand-orange tracking-widest font-bold">Your Road to Success</span>
+    <h2 class="font-headline-md text-headline-md text-primary dark:text-on-surface">4-Step Driver License Roadmap</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Our structured step-by-step curriculum takes you from a complete beginner to a confident, fully licensed driver.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg relative">
+    <!-- Step 1 -->
+    <div class="bg-surface dark:bg-surface-container-high p-lg rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-all flex flex-col gap-md relative group">
+        <div class="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 text-primary dark:text-brand-teal flex items-center justify-center font-bold font-headline-md text-xl">01</div>
+        <div>
+            <h3 class="font-headline-md text-[18px] text-primary dark:text-on-surface mb-xs">Theory & Permit Prep</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Master rules of the road, road signs, and hazard perception prep to pass your written permit exam.</p>
+        </div>
+        <div class="mt-auto pt-sm border-t border-outline-variant/20 flex items-center gap-2 text-[12px] font-bold text-secondary dark:text-brand-teal">
+            <span class="material-symbols-outlined text-[16px]">menu_book</span> Written Test Readiness
+        </div>
+    </div>
+    <!-- Step 2 -->
+    <div class="bg-surface dark:bg-surface-container-high p-lg rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-all flex flex-col gap-md relative group">
+        <div class="w-12 h-12 rounded-xl bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-brand-teal flex items-center justify-center font-bold font-headline-md text-xl">02</div>
+        <div>
+            <h3 class="font-headline-md text-[18px] text-primary dark:text-on-surface mb-xs">Dual-Control Basics</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Build confidence behind the wheel with 1-on-1 instruction in quiet residential areas using dual controls.</p>
+        </div>
+        <div class="mt-auto pt-sm border-t border-outline-variant/20 flex items-center gap-2 text-[12px] font-bold text-secondary dark:text-brand-teal">
+            <span class="material-symbols-outlined text-[16px]">directions_car</span> Vehicle Control Mastery
+        </div>
+    </div>
+    <!-- Step 3 -->
+    <div class="bg-surface dark:bg-surface-container-high p-lg rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-all flex flex-col gap-md relative group">
+        <div class="w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center font-bold font-headline-md text-xl">03</div>
+        <div>
+            <h3 class="font-headline-md text-[18px] text-primary dark:text-on-surface mb-xs">Traffic & Maneuvers</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Master parallel parking, 3-point turns, roundabout navigation, and urban traffic integration.</p>
+        </div>
+        <div class="mt-auto pt-sm border-t border-outline-variant/20 flex items-center gap-2 text-[12px] font-bold text-brand-orange">
+            <span class="material-symbols-outlined text-[16px]">alt_route</span> Maneuver Precision
+        </div>
+    </div>
+    <!-- Step 4 -->
+    <div class="bg-surface dark:bg-surface-container-high p-lg rounded-xl border border-outline-variant/30 shadow-sm hover:shadow-md transition-all flex flex-col gap-md relative group">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold font-headline-md text-xl">04</div>
+        <div>
+            <h3 class="font-headline-md text-[18px] text-primary dark:text-on-surface mb-xs">Mock Exam & License</h3>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Rehearse actual test routes with a mock examiner, pass your official road test, and get licensed!</p>
+        </div>
+        <div class="mt-auto pt-sm border-t border-outline-variant/20 flex items-center gap-2 text-[12px] font-bold text-emerald-600 dark:text-emerald-400">
+            <span class="material-symbols-outlined text-[16px]">verified</span> Driver License Issued
+        </div>
+    </div>
+</div>
+</section>
+
 <!-- Packages Section (Bento Grid) -->
 <section class="py-2xl px-gutter max-w-container-max mx-auto bg-surface">
 <div class="text-center mb-xl flex flex-col items-center gap-sm">
@@ -379,7 +484,7 @@ RTL
 <section class="bg-surface-container py-2xl px-gutter border-t border-outline-variant/20">
 <div class="max-w-container-max mx-auto">
 <div class="mb-xl flex flex-col items-start gap-sm">
-<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">The Apex Advantage</span>
+<span class="font-label-caps text-label-caps uppercase text-secondary tracking-widest">The CARZDRIZ Advantage</span>
 <h2 class="font-headline-md text-headline-md text-primary">Why Choose Us</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
@@ -429,59 +534,82 @@ RTL
 <!-- Fleet Showcase -->
 <section class="py-2xl px-gutter max-w-container-max mx-auto bg-surface overflow-hidden">
 <div class="text-center mb-xl flex flex-col items-center gap-sm animate-on-scroll">
-<span class="font-label-caps text-label-caps uppercase text-brand-orange tracking-widest text-[#FF7A3D]">Vehicles</span>
-<h2 class="font-headline-md text-headline-md text-primary">Our Modern Training Fleet</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Learn in comfortable, dual-controlled vehicles equipped with the latest safety features.</p>
+<span class="font-label-caps text-label-caps uppercase text-brand-orange tracking-widest font-bold">Dual-Controlled Fleet</span>
+<h2 class="font-headline-md text-headline-md text-primary dark:text-on-surface">Certified Student Training Vehicles</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Learn safely in late-model, dual-controlled student cars equipped with instructor safety pedals, L-plates, and reversing aids.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
 <!-- Car 1 -->
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(16,42,67,0.05)] overflow-hidden flex flex-col animate-on-scroll delay-100">
-<div class="h-48 bg-surface-container-highest relative flex items-center justify-center overflow-hidden">
-<img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80" alt="Performance Hatchback" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+<div class="bg-surface-container-lowest dark:bg-surface-container-high rounded-2xl border border-outline-variant/30 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col group relative">
+<div class="h-52 bg-surface-container-highest relative flex items-center justify-center overflow-hidden">
+<img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=600&q=80" alt="Dual-Control Hatchback Training Car" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<div class="absolute top-3 left-3 bg-red-600 text-white font-black px-2.5 py-1 rounded text-xs tracking-widest shadow-md uppercase">L-Plate Certified</div>
+<div class="absolute bottom-3 right-3 bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-primary dark:text-on-surface border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-brand-orange">verified</span> Dual Controls Installed
+</div>
 </div>
 <div class="p-lg flex flex-col gap-md">
 <div>
-<h3 class="font-headline-md text-[20px] text-primary">Performance Hatchback</h3>
-<p class="font-body-sm text-body-sm text-brand-teal text-[#00A6A6]">Automatic</p>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-headline-md text-[20px] text-primary dark:text-on-surface font-bold">Compact Learner Hatchback</h3>
+<span class="bg-brand-teal/10 text-brand-teal px-sm py-xs rounded text-[11px] font-bold uppercase tracking-wider">Automatic</span>
 </div>
-<ul class="flex flex-col gap-sm">
-<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Dual Control System</li>
-<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> 5-Star Safety Rating</li>
-<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Rearview Camera</li>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ideal for beginners — easy steering, tight turning radius, and clear all-round visibility for parking maneuvers.</p>
+</div>
+<ul class="flex flex-col gap-sm border-t border-outline-variant/20 pt-md">
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px]">check_circle</span> Dual Brake & Accelerator Override</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px]">check_circle</span> Rear Parking Camera & Sensors</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px]">check_circle</span> State DMV & DVSA Test Approved</li>
 </ul>
 </div>
 </div>
+
 <!-- Car 2 -->
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(16,42,67,0.05)] overflow-hidden flex flex-col animate-on-scroll delay-200">
-<div class="h-48 bg-surface-container-highest relative flex items-center justify-center overflow-hidden">
-<img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="Manual Sedan" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+<div class="bg-surface-container-lowest dark:bg-surface-container-high rounded-2xl border border-outline-variant/30 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col group relative">
+<div class="h-52 bg-surface-container-highest relative flex items-center justify-center overflow-hidden">
+<img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=600&q=80" alt="Dual-Control Manual Training Sedan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<div class="absolute top-3 left-3 bg-red-600 text-white font-black px-2.5 py-1 rounded text-xs tracking-widest shadow-md uppercase">L-Plate Certified</div>
+<div class="absolute bottom-3 right-3 bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-primary dark:text-on-surface border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-brand-orange">verified</span> Dual Controls Installed
+</div>
 </div>
 <div class="p-lg flex flex-col gap-md">
 <div>
-<h3 class="font-headline-md text-[20px] text-primary">Manual Sedan</h3>
-<p class="font-body-sm text-body-sm text-brand-teal text-[#00A6A6]">Manual</p>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-headline-md text-[20px] text-primary dark:text-on-surface font-bold">Midsize Training Sedan</h3>
+<span class="bg-secondary/10 text-secondary dark:text-brand-teal px-sm py-xs rounded text-[11px] font-bold uppercase tracking-wider">Manual</span>
 </div>
-<ul class="flex flex-col gap-sm">
-<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Dual Control System</li>
-<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Hill Start Assist</li>
-<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Easy Clutch Control</li>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Perfect for mastering clutch control, gear selection, hill starts, and highway merging for manual driver licensing.</p>
+</div>
+<ul class="flex flex-col gap-sm border-t border-outline-variant/20 pt-md">
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary dark:text-brand-teal text-[18px]">check_circle</span> Dual Brake & Clutch Instructor Pedals</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary dark:text-brand-teal text-[18px]">check_circle</span> Hill-Start Assist Technology</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-secondary dark:text-brand-teal text-[18px]">check_circle</span> Official Test Center Vehicle Rental</li>
 </ul>
 </div>
 </div>
+
 <!-- Car 3 -->
-<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 shadow-[0_4px_20px_rgba(16,42,67,0.05)] overflow-hidden flex flex-col animate-on-scroll delay-300">
-<div class="h-48 bg-surface-container-highest relative flex items-center justify-center overflow-hidden">
-<img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Automatic SUV" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+<div class="bg-surface-container-lowest dark:bg-surface-container-high rounded-2xl border border-outline-variant/30 shadow-md hover:shadow-xl transition-all overflow-hidden flex flex-col group relative">
+<div class="h-52 bg-surface-container-highest relative flex items-center justify-center overflow-hidden">
+<img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="Dual-Control SUV Training Vehicle" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+<div class="absolute top-3 left-3 bg-red-600 text-white font-black px-2.5 py-1 rounded text-xs tracking-widest shadow-md uppercase">L-Plate Certified</div>
+<div class="absolute bottom-3 right-3 bg-surface/90 dark:bg-surface-container-highest/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold text-primary dark:text-on-surface border border-outline-variant/30 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-brand-orange">verified</span> Dual Controls Installed
+</div>
 </div>
 <div class="p-lg flex flex-col gap-md">
 <div>
-<h3 class="font-headline-md text-[20px] text-primary">Automatic SUV</h3>
-<p class="font-body-sm text-body-sm text-brand-teal text-[#00A6A6]">Automatic</p>
+<div class="flex justify-between items-center mb-1">
+<h3 class="font-headline-md text-[20px] text-primary dark:text-on-surface font-bold">High-Visibility Training SUV</h3>
+<span class="bg-brand-teal/10 text-brand-teal px-sm py-xs rounded text-[11px] font-bold uppercase tracking-wider">Automatic</span>
 </div>
-<ul class="flex flex-col gap-sm">
-<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Elevated Seating Position</li>
-<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> Advanced Blind Spot Monitoring</li>
-<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px] text-[#00A6A6]">check</span> 360-Degree Camera</li>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Elevated seating position giving nervous learners maximum road view, 360-degree cameras, and blind-spot detection.</p>
+</div>
+<ul class="flex flex-col gap-sm border-t border-outline-variant/20 pt-md">
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px]">check_circle</span> Dual Instructor Overrides & Safety Mirrors</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px]">check_circle</span> 360-Degree Bird's-Eye Parking Assist</li>
+<li class="flex items-center gap-sm font-body-sm text-body-sm text-on-surface-variant"><span class="material-symbols-outlined text-brand-teal text-[18px]">check_circle</span> Full Student Driver Insurance Coverage</li>
 </ul>
 </div>
 </div>
@@ -593,81 +721,93 @@ RTL
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-primary text-on-primary mt-auto">
-<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-xl px-gutter py-2xl max-w-container-max mx-auto border-b border-primary-fixed-dim/20">
+<footer class="bg-primary dark:bg-[#090F1B] text-on-primary dark:text-on-surface mt-auto border-t border-primary-fixed-dim/20 dark:border-outline-variant/20 transition-colors duration-300">
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-5 gap-xl px-gutter py-2xl max-w-container-max mx-auto border-b border-primary-fixed-dim/20 dark:border-outline-variant/20">
     <!-- Brand & Contact -->
     <div class="flex flex-col gap-md col-span-1 md:col-span-2">
-        <div class="flex items-center gap-sm">
-            <span class="material-symbols-outlined text-on-primary text-headline-md icon-fill">directions_car</span>
-            <span class="text-headline-md font-headline-md font-bold text-on-primary tracking-tight">Elite Driving Academy</span>
-        </div>
-        <p class="font-body-sm text-body-sm text-on-primary/70 max-w-sm">
+        <a href="index.html" class="flex items-center gap-3 group focus:outline-none shrink-0" aria-label="CARZDRIZ Home">
+            <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-secondary-fixed via-brand-teal to-brand-orange p-[2px] shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">
+                <div class="w-full h-full bg-primary-container dark:bg-surface-container-highest rounded-[10px] flex items-center justify-center overflow-hidden p-1">
+                    <img src="images/logo-icon.svg" alt="CARZDRIZ Logo" class="w-full h-full object-contain">
+                </div>
+            </div>
+            <div class="flex flex-col leading-none">
+                <div class="flex items-center text-2xl font-black font-display tracking-tight">
+                    <span class="text-on-primary dark:text-on-surface">CARZ</span>
+                    <span class="text-brand-orange">DRIZ</span>
+                </div>
+                <span class="text-[9px] font-bold uppercase tracking-[0.22em] text-on-primary/70 dark:text-on-surface-variant mt-0.5">Driving Academy</span>
+            </div>
+        </a>
+        <p class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant max-w-sm">
             Precision in every turn. Empowering the next generation of safe, confident drivers with professional instructors and modern vehicles.
         </p>
         <div class="flex flex-col gap-xs mt-sm">
-            <div class="flex items-center gap-sm text-on-primary/80">
-                <span class="material-symbols-outlined text-[18px]">location_on</span>
+            <div class="flex items-center gap-sm text-on-primary/90 dark:text-on-surface-variant">
+                <span class="material-symbols-outlined text-[18px] text-brand-orange">location_on</span>
                 <span class="font-body-sm text-body-sm">123 Driving School Lane, Cityville, ST 12345</span>
             </div>
-            <div class="flex items-center gap-sm text-on-primary/80">
-                <span class="material-symbols-outlined text-[18px]">call</span>
+            <div class="flex items-center gap-sm text-on-primary/90 dark:text-on-surface-variant">
+                <span class="material-symbols-outlined text-[18px] text-brand-orange">call</span>
                 <span class="font-body-sm text-body-sm">(555) 123-4567</span>
             </div>
-            <div class="flex items-center gap-sm text-on-primary/80">
-                <span class="material-symbols-outlined text-[18px]">mail</span>
-                <span class="font-body-sm text-body-sm">info@elitedriving.com</span>
+            <div class="flex items-center gap-sm text-on-primary/90 dark:text-on-surface-variant">
+                <span class="material-symbols-outlined text-[18px] text-brand-orange">mail</span>
+                <span class="font-body-sm text-body-sm">info@carzdriz.com</span>
             </div>
         </div>
     </div>
 
     <!-- Quick Links -->
     <div class="flex flex-col gap-md">
-        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed dark:text-secondary tracking-widest">Quick Links</h4>
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed dark:text-brand-teal tracking-widest font-bold">Quick Links</h4>
         <div class="flex flex-col gap-sm">
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="index.html">Home</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="about.html">About Us</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="services.html">Services</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="instructors.html">Instructors</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="lesson.html">Lesson Packages</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="index.html">Home</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="about.html">About Us</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="services.html">Services</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="instructors.html">Instructors</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="lesson.html">Lesson Packages</a>
         </div>
     </div>
 
     <!-- Legal & Support -->
     <div class="flex flex-col gap-md">
-        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed dark:text-secondary tracking-widest">Support</h4>
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed dark:text-brand-teal tracking-widest font-bold">Support</h4>
         <div class="flex flex-col gap-sm">
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="dashboard.html">Student Dashboard</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="login.html">Login</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="register.html">Sign Up</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="#">Privacy Policy</a>
-            <a class="font-body-sm text-body-sm text-on-primary/70 hover:text-secondary-fixed dark:hover:text-secondary transition-colors" href="#">Terms of Service</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="dashboard.html">Student Dashboard</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="login.html">Login</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="register.html">Sign Up</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="#">Privacy Policy</a>
+            <a class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant hover:text-brand-orange dark:hover:text-brand-orange transition-colors" href="#">Terms of Service</a>
         </div>
     </div>
 
     <!-- Newsletter -->
     <div class="flex flex-col gap-md col-span-1 md:col-span-2 lg:col-span-1">
-        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed dark:text-secondary tracking-widest">Newsletter</h4>
-        <p class="font-body-sm text-body-sm text-on-primary/70">Subscribe for driving tips and exclusive offers.</p>
+        <h4 class="font-label-caps text-label-caps uppercase text-secondary-fixed dark:text-brand-teal tracking-widest font-bold">Newsletter</h4>
+        <p class="font-body-sm text-body-sm text-on-primary/80 dark:text-on-surface-variant">Subscribe for driving tips and exclusive offers.</p>
         <form class="flex flex-col gap-sm mt-xs" onsubmit="event.preventDefault();">
-            <input type="email" placeholder="Your email address" class="w-full bg-primary-container text-on-primary-container border-none rounded-lg px-md py-sm font-body-sm focus:ring-2 focus:ring-secondary-fixed dark:focus:ring-secondary outline-none" required>
-            <button type="submit" class="w-full bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider py-sm rounded-lg hover:bg-secondary-container hover:text-on-secondary-container transition-colors shadow-sm">Subscribe</button>
+            <div class="relative w-full">
+                <input type="email" placeholder="Your email address" class="w-full bg-primary-container/80 dark:bg-surface-container-high text-on-primary dark:text-on-surface placeholder:text-on-primary/60 dark:placeholder:text-on-surface-variant/70 border border-outline-variant/30 dark:border-outline-variant/60 rounded-lg px-md py-sm font-body-sm focus:ring-2 focus:ring-brand-orange focus:border-brand-orange outline-none transition-all" required>
+            </div>
+            <button type="submit" class="w-full bg-brand-orange hover:bg-[#e6692e] text-white font-label-caps text-label-caps uppercase tracking-wider py-sm rounded-lg transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.99] font-bold">Subscribe</button>
         </form>
     </div>
 </div>
 
 <!-- Bottom Bar -->
 <div class="px-gutter py-md max-w-container-max mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-sm">
-    <span class="font-body-sm text-body-sm text-on-primary/50">© 2024 Elite Driving Academy. All rights reserved.</span>
+    <span class="font-body-sm text-body-sm text-on-primary/70 dark:text-on-surface-variant/70">© 2026 CARZDRIZ Driving Academy. All rights reserved.</span>
     
-    <!-- Social Icons using SVG for actual brands instead of just material icons -->
+    <!-- Social Icons -->
     <div class="flex gap-md opacity-80">
-        <a href="#" class="hover:text-secondary-fixed dark:hover:text-secondary hover:opacity-100 transition-all text-on-primary" aria-label="Facebook">
+        <a href="#" class="hover:text-brand-orange dark:hover:text-brand-orange hover:opacity-100 transition-all text-on-primary dark:text-on-surface" aria-label="Facebook">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
         </a>
-        <a href="#" class="hover:text-secondary-fixed dark:hover:text-secondary hover:opacity-100 transition-all text-on-primary" aria-label="Twitter">
+        <a href="#" class="hover:text-brand-orange dark:hover:text-brand-orange hover:opacity-100 transition-all text-on-primary dark:text-on-surface" aria-label="Twitter">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
         </a>
-        <a href="#" class="hover:text-secondary-fixed dark:hover:text-secondary hover:opacity-100 transition-all text-on-primary" aria-label="Instagram">
+        <a href="#" class="hover:text-brand-orange dark:hover:text-brand-orange hover:opacity-100 transition-all text-on-primary dark:text-on-surface" aria-label="Instagram">
             <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </a>
     </div>
@@ -713,8 +853,15 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- Mobile Menu Sidebar -->
 <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 max-w-sm bg-surface z-[70] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
     <div class="p-lg flex justify-between items-center border-b border-outline-variant/30">
-        <span class="text-headline-sm font-headline-sm font-bold text-primary">Menu</span>
-        <button id="close-mobile-menu" class="text-on-surface-variant hover:text-primary p-sm rounded-full hover:bg-surface-container transition-colors">
+    <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary p-[1.5px] shadow-sm">
+            <div class="w-full h-full bg-surface dark:bg-surface-container-highest rounded-[6px] flex items-center justify-center p-0.5">
+                <img src="images/logo-icon.svg" alt="CARZDRIZ Logo" class="w-full h-full object-contain">
+            </div>
+        </div>
+        <span class="text-lg font-black font-display tracking-tight text-primary dark:text-on-surface">CARZ<span class="text-brand-orange">DRIZ</span></span>
+    </div>
+    <button id="close-mobile-menu" class="text-on-surface-variant hover:text-primary p-sm rounded-full hover:bg-surface-container transition-colors">
             <span class="material-symbols-outlined">close</span>
         </button>
     </div>
